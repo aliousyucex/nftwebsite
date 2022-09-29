@@ -1,0 +1,25 @@
+Manifesto için kısım eklenecek
+
+Subscribe butonu ile database'e mail kaydedilecek.
+
+whitelist Now tuşu ile nasıl whitelist'e katılırım açıklamasına link verilecek.
+
+Sosyal media linkleri düzenlenecek.
+
+The Story kısmı için story özeti yazılacak.
+
+Roadmap readmore için ne yapılacağı düşünülecek.
+
+Our Team ve The story kısımları için hover kısmı eklenecek.
+
+Game'in sağına ve soluna howToPlay ve HowToWin eklenecek
+
+Game mobildeyken yukarı aşağı sağa sola ok tuşları oyunun solunda ve sağında spawn edilecek.
+
+Faqs'ın animasyonları düzgün çalışmıyor onlar düzeltilecek.
+
+Logo eklenecek
+
+Collection kısmı eklenecek.
+
+About kısmı için ekstra bir alan eklenecek?

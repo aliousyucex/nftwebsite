@@ -1,0 +1,1509 @@
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Elephant Yacht Club</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<style>
+  html {
+    scroll-behavior: smooth;
+    scroll-margin: 50px;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  @font-face {
+    font-family: Poppins;
+    src: url('./fonts/Poppins.ttf');
+  }
+
+  [type=radio] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  /* IMAGE STYLES */
+  [type=radio]+img {
+    width: 50;
+    height: 50;
+    cursor: pointer;
+  }
+
+  .mint {
+    background-image: '';
+  }
+
+  .story {
+    height: 1000;
+  }
+
+  .topmenu {
+
+    font-family: 'Bakbak One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    /* Surface */
+
+    color: #FFFFFF;
+  }
+
+  /* CHECKED STYLES */
+  [type=radio]:checked+img {
+    outline: 2px solid #f00;
+  }
+
+  .creatorTd {
+    font-size: 25;
+    font-family: game;
+    color: rgb(196, 188, 120);
+  }
+
+  section {
+    width: 690px;
+    height: 180px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .faq {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    width: 690px;
+    height: 92px;
+
+    /* Surface main */
+
+    background: #141B22;
+    backdrop-filter: blur(10px);
+  }
+
+  .question {
+    font-family: 'Bakbak One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 30px;
+    /* identical to box height, or 125% */
+
+    text-transform: capitalize;
+
+    /* Surface */
+
+    color: #FFFFFF;
+  }
+
+  .answer {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+
+    color: #C2C3C5;
+
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s ease;
+  }
+
+  .answer p {
+    padding-top: 1rem;
+    line-height: 1.6;
+    font-size: 1.4rem;
+  }
+
+  .faq.active .answer {
+    max-height: 500;
+
+  }
+
+  strong {
+    color: white;
+  }
+
+  @keyframes fade {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+
+  .dclink:hover {
+    color: #5964F2;
+  }
+
+  .twlink:hover {
+    color: #3FA9F5;
+  }
+
+  @font-face {
+    font-family: 'Bakbak One';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Bakbak One'), url('./fonts/BakbakOneRegular.woff') format('woff');
+  }
+
+  .countdown {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    gap: 10px;
+
+    width: 108px;
+    height: 108px;
+
+    background: rgba(194, 195, 197, 0.15);
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 25px 25px 10px 25px;
+    font-family: 'Bakbak One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 56px;
+    line-height: 68px;
+    /* identical to box height, or 121% */
+
+    text-transform: capitalize;
+
+    color: #FFFFFF;
+  }
+
+  .countdownHead {
+    display: flex;
+    position: relative;
+    top: 200px;
+
+    font-family: 'Bakbak One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 56px;
+    line-height: 68px;
+
+    letter-spacing: 0.625em;
+    text-transform: uppercase;
+
+    /* On Surface */
+
+    color: #FFFFFF;
+  }
+
+  .countdownSub {
+    width: 50px;
+    height: 28px;
+    /* Heading/06 */
+
+    font-family: 'Bakbak One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    text-transform: uppercase;
+
+    color: #C2C3C5;
+  }
+
+  input[type=email] {
+    padding: 12px 20px;
+  }
+
+  .topSignIn {
+    position: relative;
+    width: 466px;
+    height: 56px;
+    background: rgba(194, 195, 197, 0.15);
+    margin-inline-start: 2px;
+    padding: 2px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 20px;
+    line-height: 26px;
+    color: #C2C3C5;
+  }
+
+  .singInBtn {
+    display: flex;
+    position: relative;
+    font-family: 'Bakbak One';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 24px;
+    row-gap: 8px;
+
+    width: 150px;
+    height: 56px;
+
+    /* Primary */
+    background: #21E786;
+  }
+
+  .topDiscord {
+    position: absolute;
+    display: flex;
+    font-family: 'Bakbak One';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: white;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    width: 147px;
+    height: 48px;
+
+    background: #5865F2;
+
+  }
+
+  .topDiscord:hover {
+    background: #5370f1;
+  }
+
+  .whiteList {
+    display: flex;
+    position: absolute;
+    font-family: 'Bakbak One';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: black;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    width: 168px;
+    height: 48px;
+    background: #21E786;
+  }
+
+  .whiteList:hover {
+    background-color: #07bd65;
+  }
+
+  .socialMedia:hover {
+    background: rgba(194, 195, 197, 0.25);
+  }
+
+  .socialMedia {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 60px;
+    height: 60px;
+    background: rgba(194, 195, 197, 0.15);
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 12px 40px 12px;
+    font-family: 'Bakbak One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 56px;
+    line-height: 68px;
+    /* identical to box height, or 121% */
+    text-transform: capitalize;
+  }
+
+  .socialMediaFooter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 50px;
+  }
+
+  .storyHead {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    width: 635px;
+    margin-top: 20px;
+    font-family: 'Bakbak One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 44px;
+    line-height: 90px;
+
+    text-transform: uppercase;
+
+    color: #FFFFFF;
+  }
+
+  .storyText {
+    display: flex;
+    position: relative;
+    text-align: left;
+    flex-direction: row;
+    width: 550px;
+    height: 84px;
+
+    /* Body/02 */
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+
+    color: #C2C3C5;
+  }
+
+  .storyModalClose {
+    width: 690px;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+  }
+
+  .stroyModals {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 330px;
+    height: 252px;
+    background: #141B22;
+    margin: 15px;
+  }
+
+
+  .modalNo {
+    display: flex;
+    position: absolute;
+    top: 30px;
+    left: 118.5px;
+
+    font-family: 'Bakbak One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 80px;
+    line-height: 96px;
+
+    text-transform: uppercase;
+
+    /* Primary */
+
+    color: #21E786;
+
+    opacity: 0.3;
+  }
+
+  .modalHead {
+    display: flex;
+    position: absolute;
+    width: 210px;
+    height: 32px;
+    left: 60px;
+    top: 82px;
+
+    font-family: 'Bakbak One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    /* identical to box height, or 133% */
+
+    text-transform: capitalize;
+
+    color: #FFFFFF;
+  }
+
+  .modalText {
+    display: flex;
+    position: absolute;
+    width: 270px;
+    height: 84px;
+    left: 30px;
+    top: 138px;
+
+    /* Body/02 */
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    /* or 156% */
+
+    text-align: center;
+
+    /* Secondary3 */
+
+    color: #C2C3C5;
+  }
+
+  .itemHead {
+    width: 183px;
+    height: 28px;
+
+    /* Heading/06 */
+
+    font-family: 'Bakbak One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    /* identical to box height, or 140% */
+
+    display: flex;
+    position: relative;
+    align-items: flex-end;
+    text-transform: capitalize;
+
+    /* Secondary3 */
+
+    color: #C2C3C5;
+  }
+
+  .count {
+
+    font-family: 'Bakbak One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 56px;
+    line-height: 68px;
+    /* identical to box height, or 121% */
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    text-transform: capitalize;
+
+    /* On Surface */
+
+    color: #FFFFFF;
+
+    text-shadow: 0px 4px 16px rgba(255, 255, 255, 0.4);
+  }
+
+  .starOne {
+    display: flex;
+    position: absolute;
+    left: 1.64%;
+    right: 78.76%;
+    top: 30.81%;
+    bottom: 17.45%;
+
+    background: linear-gradient(180deg, #1D2328 0%, rgba(29, 35, 40, 0) 100%);
+    filter: blur(6px);
+    transform: rotate(-63.1deg);
+  }
+
+  .readmore {
+    box-sizing: border-box;
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    width: 138px;
+    height: 48px;
+
+    /* Primary */
+
+    border: 2px solid #21E786;
+  }
+
+  .readmore:hover {
+    background-color: #21E786;
+  }
+
+  .readmore:hover .readmoreText {
+    color: black;
+  }
+
+
+  .readmoreText {
+    width: 138px;
+    height: 24px;
+
+    font-family: 'Bakbak One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+
+    text-transform: uppercase;
+
+    /* On Surface */
+
+    color: #FFFFFF;
+  }
+
+  .head {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+
+    font-family: 'Bakbak One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 44px;
+    line-height: 56px;
+    /* identical to box height, or 127% */
+
+    text-align: center;
+    text-transform: uppercase;
+
+    /* On Surface */
+
+    color: #FFFFFF;
+  }
+
+  .roadmapModal {
+    display: flex;
+    position: absolute;
+    width: 1410px;
+    height: 566px;
+    margin-top: 120px;
+
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .roadmapImgOne {
+    margin: 48px 20px 48px 48px;
+  }
+
+  .roadmapImgTwo {
+    display: flex;
+    margin: 48px 0px 20px 0px;
+  }
+
+  .arrow {
+    display: flex;
+    position: absolute;
+    border: solid #888B8E;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+  }
+
+  .arrow:hover {
+    display: flex;
+    position: absolute;
+    border: solid #21E786;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+  }
+
+  .right {
+    right: -20px;
+    top: -1px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+
+  .left {
+    left: -20px;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+  }
+
+  .roadmapSelector {
+    display: flex;
+    position: relative;
+    top: 2px;
+
+    width: 1316px;
+
+    border: 1px solid #434343;
+  }
+
+  .roadmapSelectorComplate {
+    width: 168px;
+
+    border: 0.1px solid #21E786;
+  }
+
+  .roadmapBtns {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: -3.5px;
+    border-radius: 50%;
+
+    /* seconday 2 */
+
+    background: #888B8E;
+  }
+
+  .roadmapBtnsS {
+    display: flex;
+    position: relative;
+    top: -7.5px;
+    left: -7.5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    opacity: 0.1;
+  }
+
+
+  .roadmapBtns:hover {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: -3.5px;
+
+    background: #21E786;
+  }
+
+  .roadmapBtnsS:hover {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: -7.5px;
+    left: -7.5px;
+
+    background: rgba(33, 231, 134, 0.2);
+  }
+
+  .roadmapBtnsS:active {
+    background: #21E786;
+  }
+
+
+  .creators {
+    display: flex;
+    margin: 15px;
+    position: relative;
+    width: 330px;
+    height: 339px;
+
+    background: #141B22;
+
+    box-shadow: 0px 2px 5px rgba(28, 36, 51, 0.1);
+  }
+
+  .creatorPng {
+    height: 120px;
+    width: 120px;
+    position: absolute;
+    border-radius: 50%;
+    justify-content: center;
+    left: 106px;
+    top: 39px;
+
+    background-color: #C2C3C5;
+  }
+
+  .creatorsName {
+    top: 190px;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    font-family: 'Bakbak One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 30px;
+    /* identical to box height, or 125% */
+
+    text-align: center;
+    text-transform: capitalize;
+
+    /* Surface main */
+
+    color: #FFFFFF;
+  }
+
+  .creatorSubTitle {
+    top: 197px;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 100;
+    font-size: 18px;
+    line-height: 28px;
+    /* identical to box height, or 156% */
+
+    text-align: center;
+
+    /* Secondary3 */
+
+    color: #C2C3C5;
+  }
+
+  .creatorSocialMedia {
+    top: 200px;
+    display: flex;
+    position: relative;
+    padding: 15px;
+    justify-content: center;
+  }
+
+  .partner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 14px;
+    gap: 30px;
+    color: white;
+    width: 210px;
+    height: 100px;
+  }
+
+  .partnerGray {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 14px;
+    gap: 30px;
+    color: white;
+    width: 210px;
+    height: 100px;
+
+    /* Surface main */
+
+    background: #141B22;
+  }
+
+  .padding {
+    margin: 15px;
+  }
+
+  details {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-family: 'Bakbak One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 30px;
+    /* or 125% */
+
+    text-transform: capitalize;
+
+    /* Secondary3 */
+
+    color: #C2C3C5;
+    background: #141B22;
+    margin: 20px;
+  }
+
+  summary {
+    display: flex;
+    position: relative;
+    top: 30px;
+    left: 20px;
+    width: 690px;
+    height: 92px;
+    align-items: center;
+    justify-content: left;
+    list-style: none;
+    transition: height 2s ease;
+
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  summary:after {
+    display: flex;
+    content: "\002B";
+    font-family: 'Poppins';
+    font-size: 40px;
+    width: 20px;
+    color: #21E786;
+    position: absolute;
+    top: 0;
+    right: 40px;
+  }
+
+  @keyframes sweep {
+    0% {
+      opacity: 0;
+      margin-top: -28px
+    }
+
+    100% {
+      opacity: 1;
+      margin-top: -18px
+    }
+  }
+
+  details[open] summary {
+    color: white;
+  }
+
+  details[open] summary:after {
+
+    content: "-";
+    right: 38px;
+    top: 1;
+    font-size: 50px;
+  }
+
+  details[open] div {
+    animation: sweep 0.5s ease-in-out;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    color: #C2C3C5;
+    align-self: stretch;
+    border-top: 1px solid #434343;
+    margin: -18px 15px 0px 9px;
+    padding: 0.5em;
+  }
+
+  .joinCommunity {
+    display: flex;
+    position: absolute;
+    width: 1410px;
+    height: 246px;
+
+    background: linear-gradient(268.28deg, #2333DE -1.34%, #0ABE66 100%);
+    border-radius: 8px;
+  }
+
+  .poppins {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    display: flex;
+    position: relative;
+  }
+
+  .lastPart {
+    background: #141B22;
+  }
+
+  .footerHead {
+    font-family: 'Bakbak One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    margin: 0px 0px 20px 0px;
+    /* identical to box height, or 150% */
+
+    text-transform: uppercase;
+
+    /* On Surface */
+
+    color: #FFFFFF;
+  }
+
+  .footerText {
+    top: 70px;
+    display: flex;
+    position: relative;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color: white;
+  }
+
+  .footerLink {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    /* identical to box height, or 157% */
+
+    margin: 0px 0px 16px 0px;
+    text-align: left;
+
+    /* Secondary3 */
+
+    color: #C2C3C5;
+  }
+  .change {
+    animation: roadmapchange 0.3s ease;
+  }
+  @keyframes roadmapchange {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  .zindex {
+    z-index: 1;
+  }
+</style>
+
+<body style="width: 1920px; overflow-x: hidden;">
+  
+  <div id="home" style="background-color: #040B11; ">
+    <div  class="mx-auto" style="width: 100%; height: 108px; position: fixed; background-color: #040B11; z-index: 1;">
+      <div class="mx-auto" style="width: 73%;">
+        <span class="head" style="display: flex; position: absolute;">LOGO</span>
+        <div class="container mx-auto" style="width: 670; margin-top: 35px;">
+          <table class="max-w-prose mx-auto select-none display: flex; position: absolute;">
+            <tr>
+              <td class="topmenu"><a href="#home">HOME</a>&nbsp;</td>
+              <td class="topmenu" style="padding-left: 32;"><a href="#about">ABOUT</a>&nbsp;</td>
+              <td class="topmenu" style="padding-left: 32;"><a href="#roadmap">ROADMAP</a>&nbsp;</td>
+              <td class="topmenu" style="padding-left: 32;"><a href="#creators">COLLECTION</a>&nbsp;</td>
+              <td class="topmenu" style="padding-left: 32;"><a href="#faqs">FAQS</a>&nbsp;</td>
+              <td class="topmenu" style="padding-left: 32;"><a href="#footer">PAGES</a>&nbsp;</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div style="background-color: #040B11;  position: relative;">
+      <div id="backgroundEl"
+        style="background-position-y: bottom; box-shadow: rgb(4 11 17) 0px 140px 200px 130px inset;">
+        <span class="countdownHead select-none" style="justify-content: center; text-align: center;">coming soon</span>
+        <div class="select-none "
+          style="display: flex; justify-content: center; text-align: center; margin-top: 200px;">
+          <span>
+            <span class="countdown" id="days"> </span>
+            <span class="countdownSub">DAYS</span>
+          </span>
+          <span>
+            <span class="countdown" id="hours"></span>
+            <span class="countdownSub">HOURS</span>
+          </span>
+          <span>
+            <span class="countdown" id="minutes"></span>
+            <span class="countdownSub">MINUTES</span>
+          </span>
+          <span>
+            <span class="countdown" id="seconds"></span>
+            <span class="countdownSub">SECONDS</span>
+          </span>
+        </div>
+        <div class="mx-auto"
+          style="width: 616px; display: flex; height: 56px; position: relative; flex-direction: row; margin-top: 60px;">
+          <span><input class="topSignIn" type="email" placeholder="Enter your email.."></span>
+          <span><button class="singInBtn">SUBSCRIBE</button></span>
+        </div>
+
+        <div class="mx-auto"
+          style="width: 339px; height: 48px; position: relative; padding-top: 60px; display: flex; padding-bottom: 80px;">
+          <a href="https://discord.gg/" target="_blank" class="topDiscord" style="left: 0; flex-direction: row;"><img
+              id="logo" style="height: 20px;"> DISCORD</a>
+          <a href="#" class="whiteList" style="right: 0;">WHITELIST NOW</a>
+        </div>
+        <div style="display: flex; justify-content: center; position: relative; ">
+
+          <span><a href="" target="_blank"><span class="socialMedia"><img id="twitter"></span></a></span>
+          <span><a href="" target="_blank"><span class="socialMedia"><img id="facebook"></span></a></span>
+          <span><a href="" target="_blank"><span class="socialMedia"><img id="telegram"></span></a></span>
+          <span><a href="" target="_blank"><span class="socialMedia"><img id="youtube"></span></a></span>
+          <span><a href="" target="_blank"><span class="socialMedia"><img id="tiktok"></span></a></span>
+          <span><a href="" target="_blank"><span class="socialMedia"><img id="discord"></span></a></span>
+        </div>
+      </div>
+      <div style="width: 1414px; background: linear-gradient(356.98deg, #040B11 25.85%, rgba(4, 11, 17, 0) 54.01%);"
+        class="container mx-auto">
+        <div >
+          <div class="justify-center text-center">
+            <div class="container mx-auto" style="justify-content: center; background-color: #040B11;">
+              <div id="about"><br><br><br><br></div>
+              <div class="mx-auto"
+                style=" justify-content: center; position: relative; display: flex; padding-bottom: 60px;">
+                <div style="display: flex; position: relative; flex-direction: column;">
+                  <div class="starOne"></div>
+                  <div>
+                    <h2 class="storyHead">the story</h2>
+                    <p class="storyText">Lorem Ipsum has been the industry's standard dummy text ever since the
+                      1500s,
+                      when
+                      an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                  </div>
+                  <div style="flex-direction: row; display: flex; position: relative; margin-top: 58px;">
+                    <div style="flex-direction: column;">
+                      <h3 class="itemHead">Total Iteam</h3>
+                      <h2 class="count">2240+</h2>
+                    </div>
+                    <div style="flex-direction: column; margin-left: 78px;">
+                      <h3 class="itemHead">Profiles Whitelisted</h3>
+                      <h2 class="count">1000+</h2>
+                    </div>
+                  </div>
+                  <div style="flex-direction: row; display: flex; position: relative; margin-top: 58px;">
+                    <button class="readmore">
+                      <span class="readmoreText">READ MORE</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="storyModalClose">
+                  <div style="display: flex; position: relative; flex-direction: row; float: right;">
+                    <span class="stroyModals ">
+                      <span class="modalNo select-none">01</span>
+                      <span class="modalHead">Why Do We Use It?</span>
+                      <span class="modalText">Lorem Ipsum is simply dummy text of the printing and typesetting
+                        industry</span>
+                    </span>
+                    <span class="stroyModals">
+                      <span class="modalNo select-none">02</span>
+                      <span class="modalHead">Why Do We Use It?</span>
+                      <span class="modalText">Lorem Ipsum is simply dummy text of the printing and typesetting
+                        industry</span>
+                    </span>
+                  </div>
+                  <div style="display: flex; position: relative; flex-direction: row;">
+                    <span class="stroyModals">
+                      <span class="modalNo select-none">03</span>
+                      <span class="modalHead">Why Do We Use It?</span>
+                      <span class="modalText">Lorem Ipsum is simply dummy text of the printing and typesetting
+                        industry</span>
+                    </span>
+                    <span class="stroyModals">
+                      <span class="modalNo select-none">04</span>
+                      <span class="modalHead">Why Do We Use It?</span>
+                      <span class="modalText">Lorem Ipsum is simply dummy text of the printing and typesetting
+                        industry</span>
+                    </span>
+                  </div>
+
+                </div>
+              </div>
+              <div id="roadmap"><br><br><br><br></div>
+              <div class="mx-auto" style="display: flex; position: relative; height: 800px; justify-content: center;">
+                <div class="head mx-auto">
+                  <h1>roadmap</h1>
+                </div>
+                <div id="roadmapModal" class="roadmapModal">
+
+                  <div style="display: flex; position: relative; flex-direction: row;">
+
+                    <div style="display: flex; position: relative; flex-direction: row;">
+                      <span>
+                        <img id="roadmapImgOne" class="roadmapImgOne" style="width: 470px; height: 470px; background-color: black;">
+                      </span>
+                    </div>
+
+                    <div style="display: flex; position: relative; flex-direction: column;">
+                      <span>
+                        <img id="roadmapImgTwo" class="roadmapImgTwo" style="width: 225px; height: 225px; background-color: black;">
+                      </span>
+                      <span>
+
+                        <img id="roadmapImgThree" class="stroyModaTwo" style="width: 225px; height: 225px; background-color: black;">
+                      </span>
+                    </div>
+                  </div>
+                  <div class="mx-auto"
+                    style="display: flex; position: relative; flex-direction: row; align-items: center;">
+                    <div class="max-w-md">
+                      <span style="display: flow-root; position: relative; left: 95px;">
+                        <span style="flex-direction: row; position: relative;">
+                          <h1 id="roadmapHead" class="head"
+                            style="font-size: 36px; height: 40px; position: relative; margin-bottom: 35px; justify-content: left;">
+                            PHASE 1</h1>
+                        </span>
+                        <span style="flex-direction: row; position: relative;">
+                          <span id="roadmapText1" class="storyText" style="height: 50px;">Game demo version</span>
+                          <span id="roadmapText2" class="storyText" style="height: 50px;">Private mint</span>
+                          <span id="roadmapText3" class="storyText" style="height: 50px;">Airdrop</span>
+                          <span id="roadmapText4" class="storyText" style="height: 50px;">Public mint?</span>
+                        </span>
+                        <div style="flex-direction: row; display: flex; position: relative; margin-top: 20px;">
+                          <button class="readmore">
+                            <span class="readmoreText">READ MORE</span>
+                          </button>
+                        </div>
+                      </span>
+                    </div>
+                  </div>
+
+
+                </div>
+                <div class="mx-auto" style="display: flex; position: relative; align-self: flex-end;">
+                  <span style="margin-bottom: 50px;">
+                    <button id="roadmapLeftArrow" class="arrow left"></button>
+                    
+                    <span>
+                      <span class="roadmapSelector"><span class="roadmapSelectorComplate"></span></span>
+                      <button id="roadmapBtnOne" class="roadmapBtns" style="left: 168px; background: #21E786;"><span class="roadmapBtnsS"></span></button>
+                      <button id="roadmapBtnTwo" class="roadmapBtns" style="left: 606px;"><span class="roadmapBtnsS"></span></button>
+                      <button id="roadmapBtnThree" class="roadmapBtns" style="left: 1054px;"><span class="roadmapBtnsS"></span></button>
+                    </span>
+                    <button id="roadmapRightArrow" class="arrow right"></button>
+                  </span>
+                </div>
+              </div>
+              <div id="creators"><br><br><br><br></div>
+              <div class="mx-auto"
+                style="display: flex; position: relative; height: 520px; justify-content: center; margin-top: 40px;">
+                <div class="head mx-auto">
+                  <span>
+                    our team
+                  </span>
+                </div>
+
+                <div style="display: flex; position: relative; flex-direction: row; top: 100px">
+                  <span class="creators" style="flex-direction: column;">
+                    <img id="creator1"  class="creatorPng">
+                    <span class="creatorsName">Ali Desidero</span>
+                    <span class="creatorSubTitle">Çuf Çuf master</span>
+                    <span class="creatorSocialMedia">
+                      <a href="" target="_blank" style="padding: 10px;"><img id="linkedinSmall"></a>
+                      <a href="" target="_blank" style="padding: 10px;"><img id="facebookSmall"></a>
+                      <a href="" target="_blank" style="padding: 10px;"><img id="instagramSmall"></a>
+                      <a href="" target="_blank" style="padding: 10px;"><img id="telegramSmall"></a>
+                    </span>
+                  </span>
+                  <span class="creators" style="flex-direction: column;">
+                    <img id="creator2" class="creatorPng">
+                    <span class="creatorsName">Berkay</span>
+                    <span class="creatorSubTitle">Çuf Çuf master</span>
+                    <span class="creatorSocialMedia">
+                      <a href="" target="_blank" style="padding: 10px;"><img id="linkedinSmall1"></a>
+                      <a href="" target="_blank" style="padding: 10px;"><img id="facebookSmall1"></a>
+                      <a href="" target="_blank" style="padding: 10px;"><img id="instagramSmall1"></a>
+                      <a href="" target="_blank" style="padding: 10px;"><img id="telegramSmall1"></a>
+                    </span>
+                  </span>
+                  <span class="creators" style="flex-direction: column;">
+                    <img id="creator3" class="creatorPng">
+                    <span class="creatorsName">Ahmet</span>
+                    <span class="creatorSubTitle">Çuf Çuf master</span>
+                    <span class="creatorSocialMedia">
+                      <a href="" target="_blank" style="padding: 10px;"><img id="linkedinSmall2"></a>
+                      <a href="" target="_blank" style="padding: 10px;"><img id="facebookSmall2"></a>
+                      <a href="" target="_blank" style="padding: 10px;"><img id="instagramSmall2"></a>
+                      <a href="" target="_blank" style="padding: 10px;"><img id="telegramSmall2"></a>
+                    </span>
+                  </span>
+                </div>
+              </div>
+
+              <div class="mx-auto"
+                style="display: flex; position: relative; height: 550px; justify-content: center; margin-top: 70px;">
+                <div class="head mx-auto">
+                  <span>
+                    Partner
+                  </span>
+                </div>
+                <div style="display: flex; position: relative; top: 100px; flex-direction: column;">
+                  <span style="display: flex; position: relative; flex-direction: column; height: 120px;">
+                    <span style="display: flex; position: relative; flex-direction: row;">
+                      <span class="partner padding">1 Partner</span>
+                      <span class="partnerGray padding">2 Partner</span>
+                      <span class="partner padding">3 Partner</span>
+                      <span class="partnerGray padding"> 4Partner</span>
+                      <span class="partner padding"> Partner</span>
+                      <span class="partnerGray padding">Partner</span>
+                    </span>
+                  </span>
+                  <span style="display: flex; position: relative; flex-direction: column; height: 120px;">
+                    <span style="display: flex; position: relative; flex-direction: row;">
+                      <span class="partnerGray padding">Partner</span>
+                      <span class="partner padding"> Partner</span>
+                      <span class="partnerGray padding">Partner</span>
+                      <span class="partner padding"> Easter Egg</span>
+                      <span class="partnerGray padding">Partner</span>
+                      <span class="partner padding"> Partner</span>
+                    </span>
+                  </span>
+                  <span style="display: flex; position: relative; flex-direction: column; height: 120px;">
+                    <span style="display: flex; position: relative; flex-direction: row;">
+                      <span class="partner padding"> Partner</span>
+                      <span class="partnerGray padding">Partner</span>
+                      <span class="partner padding"> Partner</span>
+                      <span class="partnerGray padding">Partner</span>
+                      <span class="partner padding"> Partner</span>
+                      <span class="partnerGray padding">Partner</span>
+                    </span>
+                  </span>
+                </div>
+              </div>
+              <div class="mx-auto"
+                style="display: flex; position: relative; height: 1000px; justify-content: center; margin-top: 70px;">
+                <div class="head mx-auto">
+                  <span>
+                    PEANUT RUSH!
+                  </span>
+                </div>
+                <div style="margin-top: 100px;">
+                  <div id="game" class="relative  overflow-hidden" style="height: 900px; padding-bottom: 60rem;">
+                    <div class="container mx-auto max-w-max" style="height: 750px;" id="contain">
+                      <div class="bg-black mt-8 relative rounded ">
+                        <div class="absolute text-white text-sm ml-2 mt-1 select-none">
+                          <label id="score" style="font-family: Poppins;">Skor: </label><label id="score"
+                            style="font-family: Poppins;"></label>
+                        </div>
+                        <!-- Interactiv Menü Kısmı -->
+                        <div class="absolute inset-0 flex items-center justify-center text-white" style="display: flex;"
+                          id="menu">
+                          <div class=" max-w-md w-full p-6 text-center"
+                            style="background-color: #141B22; border-radius: 5%;">
+                            <!-- Score Kısmı -->
+                            <h1 class="text-4xl font-bold" style="font-family: Poppins;" id="goscore">0</h1>
+                            <p class="text-sm mb-1" style="font-family: Poppins;">Score</p>
+                            <!-- Radio button Table -->
+                            <div>
+                              <table class="items-center justify-center ml-12 select-none">
+                                <tr>
+                                  <td>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;
+                                  </td>
+                                  <td class="ml-5">
+                                    <label class="p-1">
+                                      <input type="radio" name="test" value="1" id="r1" checked>
+                                      <img id="p1" />
+                                    </label>
+                                  </td>
+                                  <td></td>
+                                  <td></td>
+                                  <td>
+                                    <label class="p-1">
+                                      <input type="radio" name="test" value="2" id="r2">
+                                      <img id="p2" />
+                                    </label>
+                                  </td>
+                                  <td></td>
+                                  <td></td>
+                                  <td>
+                                    <label class="p-1">
+                                      <input type="radio" name="test" value="3" id="r3">
+                                      <img id="p3" />
+                                    </label>
+                                  </td>
+                                </tr>
+                              </table>
+                            </div>
+                            <!-- Start Butonu -->
+                            <div>
+                              <button class="text-black text-2xl w-full py-3 rounded-full select-none"
+                                style="background-color: #21E786; font-family: Bakbak One;" id="start">Start</button>
+                            </div>
+                          </div>
+                        </div>
+                        <canvas id="canvas"></canvas>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div></div>
+              <div id="faqs"><br><br><br><br></div>
+              <div class="mx-auto" style="display: flex; position: relative; justify-content: center;  min-height: 730px;
+                    max-height: 925px; margin-bottom: 100px;">
+                <div class="head mx-auto">
+                  <span>FAQS
+                </div>
+                <div class="mx-auto" style="display: flex; position: relative; flex-direction: row; top: 60px">
+                  <div style="display: flex; position: relative; flex-direction: row; text-align: left;">
+                    <div>
+                      <details>
+                        <summary>Why Elephant?</summary>
+                        <div class="zindex">
+                          We aim to raise awareness about the "Elephant Tusks" genocide in today's conditions and
+                          enable
+                          more
+                          people to have information about it.
+                        </div>
+                      </details>
+                      <details>
+                        <summary>Do you give a gift to NFT?</summary>
+                        <div class="zindex">
+                          NFT will be given as a gift in the DEMO version of the game. You can join our <strong
+                            class="font-bold"><a href="https://discord.gg/hUaHrSTZyj" class="dclink"
+                              target="_blank">Discord</a></strong> channel to learn how to win these
+                          giveaway
+                          NFTs, which will
+                          be limited only.
+                        </div>
+                      </details>
+                      <details>
+                        <summary>Will everyone be able to play the game?</summary>
+                        <div class="zindex">
+                          Anyone who owns an NFT will be able to play, if you are not an NFT owner, you can play the
+                          game
+                          by renting an NFT from any of the NFT owners.
+                        </div>
+                      </details>
+                      <details>
+                        <summary>Will there be a pre-sale?</summary>
+                        <div class="zindex">
+                          The WhiteList sale will take place. You can find the details on our <strong
+                            class="font-bold"><a href="https://discord.gg/hUaHrSTZyj" class="dclink"
+                              target="_blank">Discord</a></strong>
+                          channel.
+                        </div>
+                      </details>
+                      <details>
+                        <summary>How can I get whitelisted?</summary>
+                        <div class="zindex">
+                          You can access the details on our <strong class="font-bold">
+                            <a href="https://discord.gg/hUaHrSTZyj" class="dclink" target="_blank">Discord</a></strong>
+                          channel.
+                        </div>
+                      </details>
+                    </div>
+                    <div>
+                      <details>
+                        <summary>NFT mint prices?</summary>
+                        <div class="zindex">
+                          <p>
+                            Prices for WhiteList 0.11 ETH
+                          </p>
+                          <p>
+                            Prices for public 0.55 ETH
+                          </p>
+                        </div>
+                      </details>
+                      <details>
+                        <summary>How will I know how rare my NFT is?</summary>
+                        <div class="zindex">
+                          NFT has special accessories. That's Dimond, Gold, Silver, and Bronze. We have a few surprises
+                          for
+                          rarity.
+                        </div>
+                      </details>
+                      <details>
+                        <summary>>Why should I buy your NFTs</summary>
+                        <div class="zindex">
+                          With the leasing mechanics, you will be able to earn a side income from your NFTs.
+                        </div>
+                      </details>
+                      <details>
+                        <summary>When will the rental arrive?</summary>
+                        <div class="zindex">
+                          NFT rental will come in Phase 3.
+                        </div>
+                      </details>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mx-auto"
+                style="display: flex; position: relative; height: 100px; justify-content: center; margin-top: 50px;">
+                <span class="joinCommunity">
+                  <div class="head mx-auto">
+                    <span style="display: flex; position: relative; top: 40px; left: 465px;">JOIN OUR
+                      COMMUNITY</span>
+                  </div>
+                  <div>
+                    <span class="poppins" style="top: 100px; left:360px; color: white;">Lorem Ipsum is simply dummy
+                      text
+                      of the printing and typesetting industry. </span>
+                  </div>
+                  <div style="width: 339px; height: 48px; position: relative; display: flex; left: -136px; top: 150px;">
+                    <a href="https://discord.gg/" target="_blank" class="topDiscord"
+                      style="left: 0; flex-direction: row;"><img id="logo2" style="height: 20px;">DISCORD</a>
+                    <a href="#" class="whiteList" style="right: 0;">WHITELIST NOW</a>
+                  </div>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer" class="lastPart">
+    <div class="mx-auto" style="height: 570px; width: 1414px;">
+      <div class="mx-auto" style="display: flex; position: relative; top: 196px;  flex-direction: row;">
+        <div style="display: flex; position: relative; width: 324px; margin-right: 170px;">
+          <span class="head">LOGO</span>
+          <span class="footerText">Bir elin neyi var??? Iki elin sesi var qarsim.</span>
+        </div>
+        <div style="display: flex; position: relative; width: 83px; flex-direction: column; margin-right: 130px;">
+          <span class="footerHead">SUBSCRIBE</span>
+          <span class="footerLink"><a href="#home">Home</a></span>
+          <span class="footerLink"><a href="#about">About</a></span>
+          <span class="footerLink"><a href="#roadmap">Roadmap</a></span>
+          <span class="footerLink"><a href="#creators">Our Team</a></span>
+          <span class="footerLink"><a href="#faqs">FAQs</a></span>
+        </div>
+        <div style="display: flex; position: relative; width: 123px; flex-direction: column; margin-right: 130px;">
+          <span class="footerHead">COMPANY</span>
+          <span class="footerLink">Terms Canditions</span>
+          <span class="footerLink">Privacy Policy</span>
+          <span class="footerLink">Whitepaper</span>
+          <span class="footerLink">Help Center</span>
+        </div>
+        <div style="display: flex; position: relative; width: 324px; flex-direction: column;">
+          <span class="footerHead">SUBSCRIBE</span>
+          <div style="display: flex; position: relative; flex-direction: row;">
+            <span><input class="topSignIn" type="email" placeholder="Enter your email.." style="width: 287px;"></span>
+            <span><button class="singInBtn" style="width: 154px;">SUBSCRIBE</button></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mx-auto" style="border-top: 1px solid #434343; display: flex; bottom: 0; padding: 20px; width: 1414px;">
+      <span style="display: flex; position: relative; left: -20px; font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 22px;
+            
+            color: #C2C3C5;">2022 - ALL rights reserved</span>
+      <span style="right: -928px; display: flex; position: relative;">
+        <div style="display: flex; justify-content: center; position: relative;">
+
+          <span class="socialMediaFooter"><a href="" target="_blank"><img style="height: 20px;"
+                id="twitterfooter"></a></span>
+          <span class="socialMediaFooter"><a href="" target="_blank"><img style="height: 20px;"
+                id="facebookfooter"></a></span>
+          <span class="socialMediaFooter"><a href="" target="_blank"><img style="height: 20px;"
+                id="telegramfooter"></a></span>
+          <span class="socialMediaFooter"><a href="" target="_blank"><img style="height: 20px;"
+                id="youtubefooter"></a></span>
+          <span class="socialMediaFooter"><a href="" target="_blank"><img style="height: 20px;"
+                id="tiktokfooter"></a></span>
+          <span class="socialMediaFooter"><a href="" target="_blank"><img style="height: 20px;"
+                id="discordfooter"></a></span>
+        </div>
+      </span>
+    </div>
+  </div>
+
+</body>
+
+</html>

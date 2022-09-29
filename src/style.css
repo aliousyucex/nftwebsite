@@ -1,0 +1,231 @@
+html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  .faqs {
+    color: black;
+    font-weight: 9000;
+  }
+
+  @font-face {
+    font-family: game;
+    src: url('./fonts/ocraext.ttf');
+  }
+
+  [type=radio] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  button:hover {
+    background-color: rgb(204, 159, 25);
+  }
+
+  /* IMAGE STYLES */
+  [type=radio]+img {
+    width: 50;
+    height: 50;
+    cursor: pointer;
+  }
+
+  .mint {
+    background-image: '';
+  }
+
+  .story {
+    height: 1000;
+  }
+
+  .topmenu {
+    margin-top: 42px;
+
+    width: 50px;
+    height: 24px;
+
+    font-family: 'Bakbak One Regular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    /* Surface */
+
+    color: #FFFFFF;
+  }
+
+  .mintlabel {
+    font-family: game;
+    font-size: 55;
+    color: white;
+  }
+
+  a:hover {
+    color: rgb(252, 244, 129);
+  }
+
+  /* CHECKED STYLES */
+  [type=radio]:checked+img {
+    outline: 2px solid #f00;
+  }
+
+  .creatorTd {
+    font-size: 25;
+    font-family: game;
+    color: rgb(196, 188, 120);
+  }
+
+  section {
+    min-height: 100vh;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .faq {
+    cursor: pointer;
+    border-bottom: 1px solid rgb(124, 124, 124);
+    text-shadow: 15px;
+  }
+
+  .question {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 5;
+  }
+
+  .question h3 {
+    padding-top: 20;
+  }
+
+  .answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s ease;
+  }
+
+  .answer p {
+    padding-top: 1rem;
+    line-height: 1.6;
+    font-size: 1.4rem;
+  }
+
+  .faq.active .answer {
+    max-height: 300;
+    animation: fade 1s ease-in-out;
+  }
+
+  strong {
+    color: white;
+  }
+
+  @keyframes fade {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+
+  .dclink:hover {
+    color: #5964F2;
+  }
+
+  .twlink:hover {
+    color: #3FA9F5;
+  }
+
+  @font-face {
+    font-family: 'Bakbak One Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Bakbak One Regular'), url('./fonts/BakbakOneRegular.woff') format('woff');
+  }
+
+  .countdown {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 10px;
+
+    width: 108px;
+    height: 108px;
+
+    background: rgba(194, 195, 197, 0.15);
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 20px;
+    font-family: 'Bakbak One Regular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 56px;
+    line-height: 68px;
+    /* identical to box height, or 121% */
+
+    text-transform: capitalize;
+
+    color: #FFFFFF;
+  }
+
+  .countdownHead {
+    position: relative;
+    left: 21px;
+    top: 200px;
+
+    font-family: 'Bakbak One Regular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 56px;
+    line-height: 68px;
+
+    letter-spacing: 0.625em;
+    text-transform: uppercase;
+
+    /* On Surface */
+
+    color: #FFFFFF;
+  }
+
+  .countdownSub {
+    width: 50px;
+    height: 28px;
+    /* Heading/06 */
+
+    font-family: 'Bakbak One Regular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    text-transform: uppercase;
+
+    color: #C2C3C5;
+  }
+
+.topSignIn {
+  position: absolute;
+  width: 466px;
+  height: 56px;
+  left: 0px;
+  top: 0px;
+
+  background: #C2C3C5;
+  opacity: 0.15;
+}
