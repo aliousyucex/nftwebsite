@@ -243,6 +243,10 @@
     line-height: 26px;
     color: #C2C3C5;
   }
+  
+  .topSignIn:after {
+    border: solid blue;
+  }
 
   .singInBtn {
     display: flex;
@@ -1021,8 +1025,8 @@
         </div>
         <div class="mx-auto"
           style="width: 616px; display: flex; height: 56px; position: relative; flex-direction: row; margin-top: 60px;">
-          <span><input class="topSignIn" type="email" placeholder="Enter your email.."></span>
-          <span><button class="singInBtn">SUBSCRIBE</button></span>
+          <span><input class="topSignIn" id="topSubMail" type="email" placeholder="Enter your email.."></span>
+          <span><button class="singInBtn" id="topSubBtn">SUBSCRIBE</button></span>
         </div>
 
         <div class="mx-auto"
@@ -1470,8 +1474,8 @@
         <div style="display: flex; position: relative; width: 324px; flex-direction: column;">
           <span class="footerHead">SUBSCRIBE</span>
           <div style="display: flex; position: relative; flex-direction: row;">
-            <span><input class="topSignIn" type="email" placeholder="Enter your email.." style="width: 287px;"></span>
-            <span><button class="singInBtn" style="width: 154px;">SUBSCRIBE</button></span>
+            <span><input class="topSignIn" id="bottomSubMail" type="email" placeholder="Enter your email.." style="width: 287px; font-size: 16px;"></span>
+            <span><button class="singInBtn" id="bottomSubBtn" style="width: 154px;">SUBSCRIBE</button></span>
           </div>
         </div>
       </div>

@@ -39,6 +39,9 @@ import bgElephant from '../IMG/background.png';
 import creator1 from '../IMG/ali.png';
 import creator2 from '../IMG/berkay.jpg';
 import creator3 from '../IMG/ahmet.jpg';
+import { data } from 'browserslist';
+import json_parse_better_errors from 'json-parse-better-errors';
+import e from 'cors';
 
 ///  HTML ITEMS ///
 let web3;
@@ -51,6 +54,12 @@ const RoadmapImageThree = document.getElementById('roadmapImgThree');
 const roadmapBtnOne = document.getElementById('roadmapBtnOne');
 const roadmapBtnTwo = document.getElementById('roadmapBtnTwo');
 const roadmapBtnThree = document.getElementById('roadmapBtnThree');
+
+const topSubBtn = document.getElementById('topSubBtn');
+const topSubMail = document.getElementById('topSubMail');
+
+const bottomSubBtn = document.getElementById('bottomSubBtn');
+const bottomSubMail = document.getElementById('bottomSubMail');
 
 const roadmapModal = document.getElementById('roadmapModal');
 const roadmapHead = document.getElementById('roadmapHead');
@@ -596,3 +605,61 @@ home.style.width = window.innerWidth;
 window.addEventListener('resize', () => {
     home.style.width = window.innerWidth;
 });
+
+const onEmailSubmit = (data, elementName, returnData, color) => {
+    elementName = elementName == 'topSubMail' ? elementName = topSubMail : elementName = bottomSubMail;
+    elementName.value = '';
+    elementName.style.border = color == 'error' ? '1px solid rgb(247, 0, 0)' : '2px solid rgba(31, 247, 103, 0.85)';
+    elementName.placeholder = `${returnData}`;
+    setTimeout(() => {
+        elementName.style.borderWidth = '0px';
+    }, 3000);
+}
+
+const isEmailValid = (mail, elementName) => {
+    var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    if (!filter.test(mail)) {
+        onEmailSubmit(mail, elementName, 'Please enter valid email adress!', 'error');
+        return false;
+    }
+    return true;
+}
+
+const subscribeBtnClick = async (data, elementName) => {
+    const response = await fetch('http://localhost:3003/subscribe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+          },
+        body: JSON.stringify({
+            email: data,
+        })
+    })
+    .then(response => {
+        if (response.status == 200 ) {
+            onEmailSubmit(data, elementName, 'Email sucsessfuly added!', 'sucsess');
+        } else {
+            onEmailSubmit(data, elementName, 'This email is already exist!', 'error');
+        }
+        
+    });
+}
+
+topSubBtn.addEventListener('click', () => {
+    const valid = isEmailValid(topSubMail.value, 'topSubMail');
+    if (valid) {
+        subscribeBtnClick(topSubMail.value, 'topSubMail');
+    }
+});
+
+bottomSubBtn.addEventListener('click', () => {
+    const valid = isEmailValid(bottomSubMail.value, 'bottomSubMail');
+    if (valid) {
+        subscribeBtnClick(bottomSubMail.value, 'bottomSubMail');
+    }
+});
+
+
+
+
+
