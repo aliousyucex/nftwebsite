@@ -39,9 +39,6 @@ import bgElephant from '../IMG/background.png';
 import creator1 from '../IMG/ali.png';
 import creator2 from '../IMG/berkay.jpg';
 import creator3 from '../IMG/ahmet.jpg';
-import { data } from 'browserslist';
-import json_parse_better_errors from 'json-parse-better-errors';
-import e from 'cors';
 
 ///  HTML ITEMS ///
 let web3;
@@ -54,12 +51,16 @@ const RoadmapImageThree = document.getElementById('roadmapImgThree');
 const roadmapBtnOne = document.getElementById('roadmapBtnOne');
 const roadmapBtnTwo = document.getElementById('roadmapBtnTwo');
 const roadmapBtnThree = document.getElementById('roadmapBtnThree');
+const playername = document.getElementById('playername');
 
 const topSubBtn = document.getElementById('topSubBtn');
 const topSubMail = document.getElementById('topSubMail');
 
 const bottomSubBtn = document.getElementById('bottomSubBtn');
 const bottomSubMail = document.getElementById('bottomSubMail');
+
+const topWhiteList = document.getElementById('topWhiteList');
+const bottomWhiteList = document.getElementById('bottomWhiteList');
 
 const roadmapModal = document.getElementById('roadmapModal');
 const roadmapHead = document.getElementById('roadmapHead');
@@ -203,7 +204,7 @@ canvas.width = 1000;
 canvas.height = 750;
 c.fillStyle = 'black';
 c.fillRect(0, 0, canvas.width, canvas.height);
-let highscore = [];
+const data = {};
 let isTableCreated = 0;
 var td = [];
 let levelchechk = 1;
@@ -222,7 +223,7 @@ const keys = { right: { pressed: false }, left: { pressed: false } };
 sayacLabel.style.display = 'none';
 sayacLabel.innerHTML = "00:00";
 goscore.innerHTML = "00:00:00";
-
+whoIsHaveBiggestScore();
 radioBttn1.onchange = function chg() { player.currentsprite = player.sprites.run[0].right; playerImg = 0 };
 radioBttn2.onchange = function chg() { player.currentsprite = player.sprites.run[1].right; playerImg = 1 };
 radioBttn3.onchange = function chg() { player.currentsprite = player.sprites.run[2].right; playerImg = 2 };
@@ -356,6 +357,10 @@ function animate() {
                 cancelAnimationFrame(animationID);
                 menu.style.display = 'flex';
                 sayacLabel.style.display = 'none';
+
+                data.userName = playername.value;
+                addNewScore(data);
+                whoIsHaveBiggestScore();
             }
             // Level UP POINT
             if (sayac % levelup == 0 && sayac != 0) {
@@ -414,37 +419,41 @@ function PlatformsCreate() {
 };
 
 startbutton.addEventListener('click', () => {
-    timeMin = 0;
-    timeSec = 0;
-    level = 0;
-    sayac = 0;
-    sayacLabel.style.display = 'flex';
-    sayacLabel.innerHTML = "00:00";
-    goscore.innerHTML = sayacLabel.innerHTML;
-    sayacLabel.style.display = 'flex';
-    initf();
-    animate();
-    var myfunc = setInterval(function Gametime() {
-        timeSal++;
-        if (timeSal == 100) {
-            timeSal = 0;
-            timeSec++;
-            if (timeSec == 60) {
-                timeMin++;
-                timeSec = 0;
+    if (playername.value == '') {
+        console.log('isim girsene orospu çocu');
+        window.alert('Please enter your Discord Nickname');
+    } else {
+        timeMin = 0;
+        timeSec = 0;
+        level = 0;
+        sayac = 0;
+        sayacLabel.style.display = 'flex';
+        sayacLabel.innerHTML = "00:00";
+        goscore.innerHTML = sayacLabel.innerHTML;
+        sayacLabel.style.display = 'flex';
+        initf();
+        animate();
+        var myfunc = setInterval(function Gametime() {
+            timeSal++;
+            if (timeSal == 100) {
+                timeSal = 0;
+                timeSec++;
+                if (timeSec == 60) {
+                    timeMin++;
+                    timeSec = 0;
+                }
             }
-        }
-        score = String(timeMin).padStart(2, '0') + ":" + String(timeSec).padStart(2, '0') + ":" + String(timeSal).padStart(2, '0');
-        sayacLabel.innerHTML = score;
-        goscore.innerHTML = score;
-        highscore[1] = String(timeMin).padStart(2, '0') + String(timeSec).padStart(2, '0') + String(timeSal).padStart(2, '0');
-        highscore[2] = score;
-        if (level == Positions.length) {
-            clearInterval(myfunc);
-        }
-    }, 10)
-    menu.style.display = 'none';
-
+            score = String(timeMin).padStart(2, '0') + ":" + String(timeSec).padStart(2, '0') + ":" + String(timeSal).padStart(2, '0');
+            sayacLabel.innerHTML = score;
+            goscore.innerHTML = score;
+            data.scoreInt = String(timeMin).padStart(2, '0') + String(timeSec).padStart(2, '0') + String(timeSal).padStart(2, '0');
+            data.scoreText = score;
+            if (level == Positions.length) {
+                clearInterval(myfunc);
+            }
+        }, 10)
+        menu.style.display = 'none';
+    }
 })
 
 // window.onload = () => {
@@ -545,19 +554,19 @@ roadmapRightArrow.addEventListener('click', () => {
 
 const decideRoadmapLevel = (level) => {
     switch (roadmapLevel) {
-        case 0: 
+        case 0:
             roadmapBtnOne.style.background = '#21E786';
             roadmapBtnTwo.style.background = '#888B8E';
             roadmapBtnThree.style.background = '#888B8E';
             roadmapChange(changeValue.btn1);
             break;
-        case 1: 
+        case 1:
             roadmapBtnOne.style.background = '#888B8E';
             roadmapBtnTwo.style.background = '#21E786';
             roadmapBtnThree.style.background = '#888B8E';
             roadmapChange(changeValue.btn2);
             break;
-        case 2: 
+        case 2:
             roadmapBtnOne.style.background = '#888B8E';
             roadmapBtnTwo.style.background = '#888B8E';
             roadmapBtnThree.style.background = '#21E786';
@@ -569,7 +578,7 @@ const decideRoadmapLevel = (level) => {
         roadmapModal.classList.remove('change');
     }, 300);
 }
- 
+
 
 roadmapBtnOne.addEventListener('click', () => {
     if (roadmapLevel == 0) return;
@@ -629,20 +638,20 @@ const subscribeBtnClick = async (data, elementName) => {
     const response = await fetch('http://localhost:3003/subscribe', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
-          },
+            'Content-Type': 'application/json'
+        },
         body: JSON.stringify({
             email: data,
         })
     })
-    .then(response => {
-        if (response.status == 200 ) {
-            onEmailSubmit(data, elementName, 'Email sucsessfuly added!', 'sucsess');
-        } else {
-            onEmailSubmit(data, elementName, 'This email is already exist!', 'error');
-        }
-        
-    });
+        .then(response => {
+            if (response.status == 200) {
+                onEmailSubmit(data, elementName, 'Email sucsessfuly added!', 'sucsess');
+            } else {
+                onEmailSubmit(data, elementName, 'This email is already exist!', 'error');
+            }
+
+        });
 }
 
 topSubBtn.addEventListener('click', () => {
@@ -659,7 +668,74 @@ bottomSubBtn.addEventListener('click', () => {
     }
 });
 
+async function fetchText(i, j) {
+    let mydata = fetch('http://localhost:3003/score');
+    mydata.then(response => {
+        return response.json();
+    })
+        .then(data => {
+            if (data[i].userName.length > 14) {
+                let tempData = data[i].userName;
+                tempData = tempData.slice(0, 14);
+                tempData += '...';
+                data[i].userName = tempData;
+            }
+            td[i + 2 + j].innerHTML = data[i].userName;
+            td[i + 3 + j].innerHTML = data[i].scoreText;
+        })
+        ;
+}
 
+function whoIsHaveBiggestScore() {
+    let tableEl = document.getElementById('ScoreTable');
+    let j = 0;
+    for (let i = 0; i < 5; i++) {
+        if (isTableCreated == 0) {
+            var tr = document.createElement('tr');
+            td[i + 1 + j] = document.createElement('td');
+            td[i + 2 + j] = document.createElement('td');
+            td[i + 3 + j] = document.createElement('td');
+            td[i + 1 + j].innerHTML = i + 1;
+            tr.appendChild(td[i + 1 + j]);
+            tr.appendChild(td[i + 2 + j]);
+            tr.appendChild(td[i + 3 + j]);
+            tableEl.appendChild(tr);
+            td[i + 1 + j].className = "pl-12 scoreTableUsers";
+            td[i + 2 + j].className = "pl-12 scoreTableUsers";
+            td[i + 3 + j].className = "pl-12 scoreTableUsers";
+        }
+        fetchText(i, j);    
+        j += 3;
+    }
 
+    isTableCreated = 1;
+}
 
+const addNewScore = async (data) => {
+    const response = await fetch('http://localhost:3003/score', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                userName: data.userName,
+                scoreText: data.scoreText,
+                scoreInt: data.scoreInt,
+            })
+        }).then(response => response.json());
+}
+const detail = document.getElementById('faqWhiteList');
 
+topWhiteList.addEventListener('click', () => {
+    setTimeout(() => {
+        detail.open = true;
+        detail.toggle;
+    }, 1000);
+});
+
+bottomWhiteList.addEventListener('click', () => {
+    setTimeout(() => {
+        detail.open = true;
+        detail.toggle;
+    }, 1000);
+});

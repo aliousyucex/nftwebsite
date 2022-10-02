@@ -1,7 +1,7 @@
 <html>
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>Elephant Yacht Club</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -243,7 +243,7 @@
     line-height: 26px;
     color: #C2C3C5;
   }
-  
+
   .topSignIn:after {
     border: solid blue;
   }
@@ -401,6 +401,7 @@
     height: 252px;
     background: #141B22;
     margin: 15px;
+    align-items: center;
   }
 
 
@@ -448,23 +449,16 @@
   .modalText {
     display: flex;
     position: absolute;
-    width: 270px;
-    height: 84px;
-    left: 30px;
-    top: 138px;
-
-    /* Body/02 */
+    width: 300px;
+    height: 252px;
+    align-items: center;
+    margin: auto;
 
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 13px;
     line-height: 28px;
-    /* or 156% */
-
-    text-align: center;
-
-    /* Secondary3 */
 
     color: #C2C3C5;
   }
@@ -962,9 +956,11 @@
 
     color: #C2C3C5;
   }
+
   .change {
     animation: roadmapchange 0.3s ease;
   }
+
   @keyframes roadmapchange {
     from {
       opacity: 0;
@@ -978,12 +974,32 @@
   .zindex {
     z-index: 1;
   }
+
+  .scoreTable {
+    margin-top: 20px;
+  }
+
+  .scoreTableHeaders {
+    font-family: Poppins;
+    font-weight: bold;
+    text-align: center;
+    font-size: 18px;
+    color: white;
+  }
+
+  .scoreTableUsers {
+    font-family: Poppins;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    color: white;
+  }
 </style>
 
 <body style="width: 1920px; overflow-x: hidden;">
-  
+
   <div id="home" style="background-color: #040B11; ">
-    <div  class="mx-auto" style="width: 100%; height: 108px; position: fixed; background-color: #040B11; z-index: 1;">
+    <div class="mx-auto" style="width: 100%; height: 108px; position: fixed; background-color: #040B11; z-index: 1;">
       <div class="mx-auto" style="width: 73%;">
         <span class="head" style="display: flex; position: absolute;">LOGO</span>
         <div class="container mx-auto" style="width: 670; margin-top: 35px;">
@@ -1033,7 +1049,7 @@
           style="width: 339px; height: 48px; position: relative; padding-top: 60px; display: flex; padding-bottom: 80px;">
           <a href="https://discord.gg/" target="_blank" class="topDiscord" style="left: 0; flex-direction: row;"><img
               id="logo" style="height: 20px;"> DISCORD</a>
-          <a href="#" class="whiteList" style="right: 0;">WHITELIST NOW</a>
+          <a href="#faqs" class="whiteList" id="topWhiteList" style="right: 0;">WHITELIST NOW</a>
         </div>
         <div style="display: flex; justify-content: center; position: relative; ">
 
@@ -1047,7 +1063,7 @@
       </div>
       <div style="width: 1414px; background: linear-gradient(356.98deg, #040B11 25.85%, rgba(4, 11, 17, 0) 54.01%);"
         class="container mx-auto">
-        <div >
+        <div>
           <div class="justify-center text-center">
             <div class="container mx-auto" style="justify-content: center; background-color: #040B11;">
               <div id="about"><br><br><br><br></div>
@@ -1076,35 +1092,50 @@
                     <button class="readmore">
                       <span class="readmoreText">READ MORE</span>
                     </button>
+                    <div class="dialog">
+                      Some Text Some Captions and/or images etc..
+                
+                     <button class="btn btn-warning" data-toggle="modal" data-target="#modal1">Show More</button>
+                </div>
+                 
+                
+                <div class="modal" id="modal1" tabindex="-1" role="dialog" aria-labelledby="modallabel1" aria-hidden= "true">
+                      <h1>Some Text for the Modals
+                      Some Text for the Modals
+                      Some Text for the Modals
+                      Some Text for the Modals</h1>
+                </div>
                   </div>
                 </div>
                 <div class="storyModalClose">
                   <div style="display: flex; position: relative; flex-direction: row; float: right;">
                     <span class="stroyModals ">
                       <span class="modalNo select-none">01</span>
-                      <span class="modalHead">Why Do We Use It?</span>
-                      <span class="modalText">Lorem Ipsum is simply dummy text of the printing and typesetting
-                        industry</span>
+                      <span class="modalText">First of all, we are here with the joy and excitement of bringing you a
+                        new NFT collection. We need
+                        to inform you about the foundations of this NFT collection. Although we are not an aid campaign.</span>
                     </span>
                     <span class="stroyModals">
                       <span class="modalNo select-none">02</span>
-                      <span class="modalHead">Why Do We Use It?</span>
-                      <span class="modalText">Lorem Ipsum is simply dummy text of the printing and typesetting
-                        industry</span>
+                      <span class="modalText">We aim to raise awareness about the "Elephant Tusks" genocide
+                        in today's conditions and enable more people to have information about it. To show that there are
+                        many ways to spread this awareness and be a source of inspiration for many different projects, we
+                        decided to branch this project into different directions.</span>
                     </span>
                   </div>
                   <div style="display: flex; position: relative; flex-direction: row;">
                     <span class="stroyModals">
                       <span class="modalNo select-none">03</span>
-                      <span class="modalHead">Why Do We Use It?</span>
-                      <span class="modalText">Lorem Ipsum is simply dummy text of the printing and typesetting
-                        industry</span>
+                      <span class="modalText">The first of these branches begins with a 3-season story that we have written for you. This story
+                        serves as a building block in raising the awareness needed for both our NFTs and elephants. Another
+                        of these branches is the game we developed, PeanutRush. </span>
                     </span>
                     <span class="stroyModals">
                       <span class="modalNo select-none">04</span>
-                      <span class="modalHead">Why Do We Use It?</span>
-                      <span class="modalText">Lorem Ipsum is simply dummy text of the printing and typesetting
-                        industry</span>
+                      <span class="modalText">Based on platform game PeanutRush, the main
+                        character is an elephant, and they chase their favorite food, peanuts. With this game, we aim to
+                        bring the mentality of playing with and renting their collection pieces (with certain collection
+                        pieces in the Demo version) to our collectors and collector candidates.</span>
                     </span>
                   </div>
 
@@ -1121,17 +1152,20 @@
 
                     <div style="display: flex; position: relative; flex-direction: row;">
                       <span>
-                        <img id="roadmapImgOne" class="roadmapImgOne" style="width: 470px; height: 470px; background-color: black;">
+                        <img id="roadmapImgOne" class="roadmapImgOne"
+                          style="width: 470px; height: 470px; background-color: black;">
                       </span>
                     </div>
 
                     <div style="display: flex; position: relative; flex-direction: column;">
                       <span>
-                        <img id="roadmapImgTwo" class="roadmapImgTwo" style="width: 225px; height: 225px; background-color: black;">
+                        <img id="roadmapImgTwo" class="roadmapImgTwo"
+                          style="width: 225px; height: 225px; background-color: black;">
                       </span>
                       <span>
 
-                        <img id="roadmapImgThree" class="stroyModaTwo" style="width: 225px; height: 225px; background-color: black;">
+                        <img id="roadmapImgThree" class="stroyModaTwo"
+                          style="width: 225px; height: 225px; background-color: black;">
                       </span>
                     </div>
                   </div>
@@ -1164,12 +1198,15 @@
                 <div class="mx-auto" style="display: flex; position: relative; align-self: flex-end;">
                   <span style="margin-bottom: 50px;">
                     <button id="roadmapLeftArrow" class="arrow left"></button>
-                    
+
                     <span>
                       <span class="roadmapSelector"><span class="roadmapSelectorComplate"></span></span>
-                      <button id="roadmapBtnOne" class="roadmapBtns" style="left: 168px; background: #21E786;"><span class="roadmapBtnsS"></span></button>
-                      <button id="roadmapBtnTwo" class="roadmapBtns" style="left: 606px;"><span class="roadmapBtnsS"></span></button>
-                      <button id="roadmapBtnThree" class="roadmapBtns" style="left: 1054px;"><span class="roadmapBtnsS"></span></button>
+                      <button id="roadmapBtnOne" class="roadmapBtns" style="left: 168px; background: #21E786;"><span
+                          class="roadmapBtnsS"></span></button>
+                      <button id="roadmapBtnTwo" class="roadmapBtns" style="left: 606px;"><span
+                          class="roadmapBtnsS"></span></button>
+                      <button id="roadmapBtnThree" class="roadmapBtns" style="left: 1054px;"><span
+                          class="roadmapBtnsS"></span></button>
                     </span>
                     <button id="roadmapRightArrow" class="arrow right"></button>
                   </span>
@@ -1186,7 +1223,7 @@
 
                 <div style="display: flex; position: relative; flex-direction: row; top: 100px">
                   <span class="creators" style="flex-direction: column;">
-                    <img id="creator1"  class="creatorPng">
+                    <img id="creator1" class="creatorPng">
                     <span class="creatorsName">Ali Desidero</span>
                     <span class="creatorSubTitle">Çuf Çuf master</span>
                     <span class="creatorSocialMedia">
@@ -1319,8 +1356,19 @@
                             </div>
                             <!-- Start Butonu -->
                             <div>
+                              <input type="text" placeholder="Name#TAG" class="topSignIn" id="playername"
+                                style="position: relative; width: 250px; height: 40px; margin-bottom: 10px; padding: 2px;">
                               <button class="text-black text-2xl w-full py-3 rounded-full select-none"
                                 style="background-color: #21E786; font-family: Bakbak One;" id="start">Start</button>
+                            </div>
+                            <div>
+                              <table id="ScoreTable" class="select-none scoreTable">
+                                <tr>
+                                  <td class="pl-12 scoreTableHeaders">POS</td>
+                                  <td class="pl-12 scoreTableHeaders">NAME</td>
+                                  <td class="pl-12 scoreTableHeaders">SCORE</td>
+                                </tr>
+                              </table>
                             </div>
                           </div>
                         </div>
@@ -1419,6 +1467,12 @@
                           NFT rental will come in Phase 3.
                         </div>
                       </details>
+                      <details id="faqWhiteList">
+                        <summary>Whiteliste basinca acilacak olan</summary>
+                        <div class="zindex">
+                          bak ne de guzel acildi xd.
+                        </div>
+                      </details>
                     </div>
                   </div>
                 </div>
@@ -1438,7 +1492,7 @@
                   <div style="width: 339px; height: 48px; position: relative; display: flex; left: -136px; top: 150px;">
                     <a href="https://discord.gg/" target="_blank" class="topDiscord"
                       style="left: 0; flex-direction: row;"><img id="logo2" style="height: 20px;">DISCORD</a>
-                    <a href="#" class="whiteList" style="right: 0;">WHITELIST NOW</a>
+                    <a href="#faqs" id="bottomWhiteList" class="whiteList" style="right: 0;">WHITELIST NOW</a>
                   </div>
                 </span>
               </div>
@@ -1474,7 +1528,8 @@
         <div style="display: flex; position: relative; width: 324px; flex-direction: column;">
           <span class="footerHead">SUBSCRIBE</span>
           <div style="display: flex; position: relative; flex-direction: row;">
-            <span><input class="topSignIn" id="bottomSubMail" type="email" placeholder="Enter your email.." style="width: 287px; font-size: 16px;"></span>
+            <span><input class="topSignIn" id="bottomSubMail" type="email" placeholder="Enter your email.."
+                style="width: 287px; font-size: 16px;"></span>
             <span><button class="singInBtn" id="bottomSubBtn" style="width: 154px;">SUBSCRIBE</button></span>
           </div>
         </div>
