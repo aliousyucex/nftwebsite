@@ -428,18 +428,17 @@
 
   .modalHead {
     display: flex;
-    position: absolute;
-    width: 210px;
+    position: relative;
     height: 32px;
-    left: 60px;
-    top: 82px;
-
+    top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
     font-family: 'Bakbak One';
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
     line-height: 32px;
-    /* identical to box height, or 133% */
 
     text-transform: capitalize;
 
@@ -448,16 +447,17 @@
 
   .modalText {
     display: flex;
-    position: absolute;
+    position: relative;
     width: 300px;
     height: 252px;
+    bottom: 0px;
     align-items: center;
     margin: auto;
 
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
-    font-size: 13px;
+    font-size: 14px;
     line-height: 28px;
 
     color: #C2C3C5;
@@ -1073,69 +1073,54 @@
                   <div class="starOne"></div>
                   <div>
                     <h2 class="storyHead">the story</h2>
-                    <p class="storyText">Lorem Ipsum has been the industry's standard dummy text ever since the
-                      1500s,
-                      when
-                      an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                    <p class="storyText">An elephant without a single tusk in the elephant tribe faces a great dilemma.
+                      Are these teeth a blessing or punishment?</p>
+                    <p class="storyText">Click read more and find out!</p>
                   </div>
                   <div style="flex-direction: row; display: flex; position: relative; margin-top: 58px;">
                     <div style="flex-direction: column;">
                       <h3 class="itemHead">Total Iteam</h3>
-                      <h2 class="count">2240+</h2>
+                      <h2 class="count">13.000</h2>
                     </div>
                     <div style="flex-direction: column; margin-left: 78px;">
-                      <h3 class="itemHead">Profiles Whitelisted</h3>
-                      <h2 class="count">1000+</h2>
+                      <h3 class="itemHead">Subscribe Count</h3>
+                      <h2 class="count" id="subCount">3</h2>
                     </div>
                   </div>
                   <div style="flex-direction: row; display: flex; position: relative; margin-top: 58px;">
                     <button class="readmore">
                       <span class="readmoreText">READ MORE</span>
                     </button>
-                    <div class="dialog">
-                      Some Text Some Captions and/or images etc..
-                
-                     <button class="btn btn-warning" data-toggle="modal" data-target="#modal1">Show More</button>
-                </div>
-                 
-                
-                <div class="modal" id="modal1" tabindex="-1" role="dialog" aria-labelledby="modallabel1" aria-hidden= "true">
-                      <h1>Some Text for the Modals
-                      Some Text for the Modals
-                      Some Text for the Modals
-                      Some Text for the Modals</h1>
-                </div>
                   </div>
                 </div>
                 <div class="storyModalClose">
                   <div style="display: flex; position: relative; flex-direction: row; float: right;">
                     <span class="stroyModals ">
                       <span class="modalNo select-none">01</span>
-                      <span class="modalText">First of all, we are here with the joy and excitement of bringing you a
-                        new NFT collection. We need
-                        to inform you about the foundations of this NFT collection. Although we are not an aid campaign.</span>
+                      <span class="modalHead">Elephants</span>
+                      <span class="modalText">Elephants, which are under the order of proboscis, are entitled to be
+                        classified as intelligent animals. There are two classes of Asian and African elephants. They
+                        are facing extinction!</span>
                     </span>
                     <span class="stroyModals">
                       <span class="modalNo select-none">02</span>
-                      <span class="modalText">We aim to raise awareness about the "Elephant Tusks" genocide
-                        in today's conditions and enable more people to have information about it. To show that there are
-                        many ways to spread this awareness and be a source of inspiration for many different projects, we
-                        decided to branch this project into different directions.</span>
+                      <span class="modalHead">Ne yazsak ki aq</span>
+                      <span class="modalText">Buraya yazmalık yarak kürek bişiler bulmamız lazım he.</span>
                     </span>
                   </div>
                   <div style="display: flex; position: relative; flex-direction: row;">
                     <span class="stroyModals">
                       <span class="modalNo select-none">03</span>
-                      <span class="modalText">The first of these branches begins with a 3-season story that we have written for you. This story
-                        serves as a building block in raising the awareness needed for both our NFTs and elephants. Another
-                        of these branches is the game we developed, PeanutRush. </span>
+                      <span class="modalHead">We Are Not Alone</span>
+                      <span class="modalText">Elephants, which have been illegally hunted for accessories and ornaments
+                        in the last century, are facing extinction. We want to say something about this.</span>
                     </span>
                     <span class="stroyModals">
                       <span class="modalNo select-none">04</span>
-                      <span class="modalText">Based on platform game PeanutRush, the main
-                        character is an elephant, and they chase their favorite food, peanuts. With this game, we aim to
-                        bring the mentality of playing with and renting their collection pieces (with certain collection
-                        pieces in the Demo version) to our collectors and collector candidates.</span>
+                      <span class="modalHead">Manifest</span>
+                      <span class="modalText">First of all, we are here with the joy and excitement of bringing you a
+                        new NFT collection. We need to inform you about the foundations of this NFT collection...
+                      </span>
                     </span>
                   </div>
 
@@ -1227,10 +1212,8 @@
                     <span class="creatorsName">Ali Desidero</span>
                     <span class="creatorSubTitle">Çuf Çuf master</span>
                     <span class="creatorSocialMedia">
-                      <a href="" target="_blank" style="padding: 10px;"><img id="linkedinSmall"></a>
-                      <a href="" target="_blank" style="padding: 10px;"><img id="facebookSmall"></a>
-                      <a href="" target="_blank" style="padding: 10px;"><img id="instagramSmall"></a>
-                      <a href="" target="_blank" style="padding: 10px;"><img id="telegramSmall"></a>
+                      <a href="https://www.linkedin.com/in/ali-o%C4%9Fuzhan-y%C3%BCce-672759188" target="_blank" style="padding: 10px;"><img id="linkedinSmall"></a>
+                      <a href="https://www.instagram.com/aliousyuce/" target="_blank" style="padding: 10px;"><img id="instagramSmall"></a>
                     </span>
                   </span>
                   <span class="creators" style="flex-direction: column;">
@@ -1238,10 +1221,8 @@
                     <span class="creatorsName">Berkay</span>
                     <span class="creatorSubTitle">Çuf Çuf master</span>
                     <span class="creatorSocialMedia">
-                      <a href="" target="_blank" style="padding: 10px;"><img id="linkedinSmall1"></a>
-                      <a href="" target="_blank" style="padding: 10px;"><img id="facebookSmall1"></a>
-                      <a href="" target="_blank" style="padding: 10px;"><img id="instagramSmall1"></a>
-                      <a href="" target="_blank" style="padding: 10px;"><img id="telegramSmall1"></a>
+                      <a href="https://www.linkedin.com/search/results/all/?heroEntityKey=urn%3Ali%3Afsd_profile%3AACoAACbNcU0BhfdVl8c-masEuwIRHp1W1aXMLvI&keywords=berkay%20%C3%A7ebi&origin=RICH_QUERY_SUGGESTION&position=0&searchId=c4a96b68-2396-4632-a335-55d667fd1752&sid=yq3" target="_blank" style="padding: 10px;"><img id="linkedinSmall1"></a>
+                      <a href="https://www.instagram.com/bceby/" target="_blank" style="padding: 10px;"><img id="instagramSmall1"></a>
                     </span>
                   </span>
                   <span class="creators" style="flex-direction: column;">
@@ -1249,10 +1230,7 @@
                     <span class="creatorsName">Ahmet</span>
                     <span class="creatorSubTitle">Çuf Çuf master</span>
                     <span class="creatorSocialMedia">
-                      <a href="" target="_blank" style="padding: 10px;"><img id="linkedinSmall2"></a>
-                      <a href="" target="_blank" style="padding: 10px;"><img id="facebookSmall2"></a>
-                      <a href="" target="_blank" style="padding: 10px;"><img id="instagramSmall2"></a>
-                      <a href="" target="_blank" style="padding: 10px;"><img id="telegramSmall2"></a>
+                      <a href="https://www.linkedin.com/in/ahmtcnsz/" target="_blank" style="padding: 10px;"><img id="linkedinSmall2"></a>
                     </span>
                   </span>
                 </div>
@@ -1356,8 +1334,8 @@
                             </div>
                             <!-- Start Butonu -->
                             <div>
-                              <input type="text" placeholder="Name#TAG" class="topSignIn" id="playername"
-                                style="position: relative; width: 250px; height: 40px; margin-bottom: 10px; padding: 2px;">
+                              <input type="text" placeholder="Discord#TAG" class="topSignIn" id="playername"
+                                style="position: relative; width: 250px; height: 40px; margin-bottom: 10px; padding: 10px;">
                               <button class="text-black text-2xl w-full py-3 rounded-full select-none"
                                 style="background-color: #21E786; font-family: Bakbak One;" id="start">Start</button>
                             </div>
@@ -1456,7 +1434,7 @@
                         </div>
                       </details>
                       <details>
-                        <summary>>Why should I buy your NFTs</summary>
+                        <summary>Why should I buy your NFTs</summary>
                         <div class="zindex">
                           With the leasing mechanics, you will be able to earn a side income from your NFTs.
                         </div>

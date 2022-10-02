@@ -1378,6 +1378,7 @@ var roadmapBtnOne = document.getElementById('roadmapBtnOne');
 var roadmapBtnTwo = document.getElementById('roadmapBtnTwo');
 var roadmapBtnThree = document.getElementById('roadmapBtnThree');
 var playername = document.getElementById('playername');
+var subCount = document.getElementById('subCount');
 var topSubBtn = document.getElementById('topSubBtn');
 var topSubMail = document.getElementById('topSubMail');
 var bottomSubBtn = document.getElementById('bottomSubBtn');
@@ -1421,17 +1422,15 @@ var ytf = document.getElementById('youtubefooter');
 var ttf = document.getElementById('tiktokfooter');
 var dcf = document.getElementById('discordfooter');
 var ln = document.getElementById('linkedinSmall');
-var fbs = document.getElementById('facebookSmall');
 var igs = document.getElementById('instagramSmall');
-var tls = document.getElementById('telegramSmall');
-var ln1 = document.getElementById('linkedinSmall1');
-var fbs1 = document.getElementById('facebookSmall1');
-var igs1 = document.getElementById('instagramSmall1');
-var tls1 = document.getElementById('telegramSmall1');
-var ln2 = document.getElementById('linkedinSmall2');
-var fbs2 = document.getElementById('facebookSmall2');
-var igs2 = document.getElementById('instagramSmall2');
-var tls2 = document.getElementById('telegramSmall2');
+var ln1 = document.getElementById('linkedinSmall1'); // const fbs1 = document.getElementById('facebookSmall1');
+
+var igs1 = document.getElementById('instagramSmall1'); // const tls1 = document.getElementById('telegramSmall1');
+
+var ln2 = document.getElementById('linkedinSmall2'); // const fbs2 = document.getElementById('facebookSmall2');
+// const igs2 = document.getElementById('instagramSmall2');
+// const tls2 = document.getElementById('telegramSmall2');
+
 var op = document.getElementById('opensea');
 var giFil1 = document.getElementById('gfil1');
 var giFil2 = document.getElementById('gfil2');
@@ -1472,17 +1471,15 @@ tlf.src = _IMG_telegram_png__WEBPACK_IMPORTED_MODULE_27__["default"];
 fbf.src = _IMG_facebook_png__WEBPACK_IMPORTED_MODULE_28__["default"];
 ttf.src = _IMG_tiktok_png__WEBPACK_IMPORTED_MODULE_29__["default"];
 ln.src = _IMG_linkedinSmall_png__WEBPACK_IMPORTED_MODULE_22__["default"];
-fbs.src = _IMG_facebookSmall_png__WEBPACK_IMPORTED_MODULE_23__["default"];
 igs.src = _IMG_instagramSmall_png__WEBPACK_IMPORTED_MODULE_24__["default"];
-tls.src = _IMG_telegramSmall_png__WEBPACK_IMPORTED_MODULE_25__["default"];
-ln1.src = _IMG_linkedinSmall_png__WEBPACK_IMPORTED_MODULE_22__["default"];
-fbs1.src = _IMG_facebookSmall_png__WEBPACK_IMPORTED_MODULE_23__["default"];
-igs1.src = _IMG_instagramSmall_png__WEBPACK_IMPORTED_MODULE_24__["default"];
-tls1.src = _IMG_telegramSmall_png__WEBPACK_IMPORTED_MODULE_25__["default"];
-ln2.src = _IMG_linkedinSmall_png__WEBPACK_IMPORTED_MODULE_22__["default"];
-fbs2.src = _IMG_facebookSmall_png__WEBPACK_IMPORTED_MODULE_23__["default"];
-igs2.src = _IMG_instagramSmall_png__WEBPACK_IMPORTED_MODULE_24__["default"];
-tls2.src = _IMG_telegramSmall_png__WEBPACK_IMPORTED_MODULE_25__["default"]; // op.src = opensea;
+ln1.src = _IMG_linkedinSmall_png__WEBPACK_IMPORTED_MODULE_22__["default"]; // fbs1.src = facebooks;
+
+igs1.src = _IMG_instagramSmall_png__WEBPACK_IMPORTED_MODULE_24__["default"]; // tls1.src = telegrams;
+
+ln2.src = _IMG_linkedinSmall_png__WEBPACK_IMPORTED_MODULE_22__["default"]; // fbs2.src = facebooks;
+// igs2.src = instagrams;
+// tls2.src = telegrams;
+// op.src = opensea;
 
 var playerConfigs = _json_player_json__WEBPACK_IMPORTED_MODULE_3__;
 var Positions = _json_platforms_json__WEBPACK_IMPORTED_MODULE_2__;
@@ -2064,6 +2061,7 @@ topSubBtn.addEventListener('click', function () {
 
   if (valid) {
     subscribeBtnClick(topSubMail.value, 'topSubMail');
+    subCountHandler();
   }
 });
 bottomSubBtn.addEventListener('click', function () {
@@ -2071,6 +2069,7 @@ bottomSubBtn.addEventListener('click', function () {
 
   if (valid) {
     subscribeBtnClick(bottomSubMail.value, 'bottomSubMail');
+    subCountHandler();
   }
 });
 
@@ -2080,13 +2079,11 @@ function fetchText(_x3, _x4) {
 
 function _fetchText() {
   _fetchText = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3(i, j) {
-    var mydata;
     return regeneratorRuntime.wrap(function _callee3$(_context3) {
       while (1) {
         switch (_context3.prev = _context3.next) {
           case 0:
-            mydata = fetch('http://localhost:3003/score');
-            mydata.then(function (response) {
+            fetch('http://localhost:3003/score').then(function (response) {
               return response.json();
             }).then(function (data) {
               if (data[i].userName.length > 14) {
@@ -2100,7 +2097,7 @@ function _fetchText() {
               td[i + 3 + j].innerHTML = data[i].scoreText;
             });
 
-          case 2:
+          case 1:
           case "end":
             return _context3.stop();
         }
@@ -2186,8 +2183,36 @@ bottomWhiteList.addEventListener('click', function () {
   setTimeout(function () {
     detail.open = true;
     detail.toggle;
-  }, 1000);
+  }, 1500);
 });
+
+function subCountHandler() {
+  return _subCountHandler.apply(this, arguments);
+}
+
+function _subCountHandler() {
+  _subCountHandler = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
+    return regeneratorRuntime.wrap(function _callee4$(_context4) {
+      while (1) {
+        switch (_context4.prev = _context4.next) {
+          case 0:
+            fetch('http://localhost:3003/subscribe').then(function (response) {
+              return response.json();
+            }).then(function (data) {
+              subCount.innerHTML = data[0].subcount;
+            });
+
+          case 1:
+          case "end":
+            return _context4.stop();
+        }
+      }
+    }, _callee4);
+  }));
+  return _subCountHandler.apply(this, arguments);
+}
+
+subCountHandler();
 
 /***/ }),
 

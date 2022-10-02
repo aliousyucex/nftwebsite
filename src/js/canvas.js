@@ -53,6 +53,8 @@ const roadmapBtnTwo = document.getElementById('roadmapBtnTwo');
 const roadmapBtnThree = document.getElementById('roadmapBtnThree');
 const playername = document.getElementById('playername');
 
+const subCount = document.getElementById('subCount');
+
 const topSubBtn = document.getElementById('topSubBtn');
 const topSubMail = document.getElementById('topSubMail');
 
@@ -104,19 +106,17 @@ const ttf = document.getElementById('tiktokfooter');
 const dcf = document.getElementById('discordfooter');
 
 const ln = document.getElementById('linkedinSmall');
-const fbs = document.getElementById('facebookSmall');
 const igs = document.getElementById('instagramSmall');
-const tls = document.getElementById('telegramSmall');
 
 const ln1 = document.getElementById('linkedinSmall1');
-const fbs1 = document.getElementById('facebookSmall1');
+// const fbs1 = document.getElementById('facebookSmall1');
 const igs1 = document.getElementById('instagramSmall1');
-const tls1 = document.getElementById('telegramSmall1');
+// const tls1 = document.getElementById('telegramSmall1');
 
 const ln2 = document.getElementById('linkedinSmall2');
-const fbs2 = document.getElementById('facebookSmall2');
-const igs2 = document.getElementById('instagramSmall2');
-const tls2 = document.getElementById('telegramSmall2');
+// const fbs2 = document.getElementById('facebookSmall2');
+// const igs2 = document.getElementById('instagramSmall2');
+// const tls2 = document.getElementById('telegramSmall2');
 
 const op = document.getElementById('opensea');
 const giFil1 = document.getElementById('gfil1');
@@ -166,19 +166,17 @@ fbf.src = facebook;
 ttf.src = tiktok;
 
 ln.src = linkedins;
-fbs.src = facebooks;
 igs.src = instagrams;
-tls.src = telegrams;
 
 ln1.src = linkedins;
-fbs1.src = facebooks;
+// fbs1.src = facebooks;
 igs1.src = instagrams;
-tls1.src = telegrams;
+// tls1.src = telegrams;
 
 ln2.src = linkedins;
-fbs2.src = facebooks;
-igs2.src = instagrams;
-tls2.src = telegrams;
+// fbs2.src = facebooks;
+// igs2.src = instagrams;
+// tls2.src = telegrams;
 // op.src = opensea;
 
 
@@ -658,6 +656,7 @@ topSubBtn.addEventListener('click', () => {
     const valid = isEmailValid(topSubMail.value, 'topSubMail');
     if (valid) {
         subscribeBtnClick(topSubMail.value, 'topSubMail');
+        subCountHandler();
     }
 });
 
@@ -665,12 +664,13 @@ bottomSubBtn.addEventListener('click', () => {
     const valid = isEmailValid(bottomSubMail.value, 'bottomSubMail');
     if (valid) {
         subscribeBtnClick(bottomSubMail.value, 'bottomSubMail');
+        subCountHandler();
     }
 });
 
 async function fetchText(i, j) {
-    let mydata = fetch('http://localhost:3003/score');
-    mydata.then(response => {
+    fetch('http://localhost:3003/score')
+    .then(response => {
         return response.json();
     })
         .then(data => {
@@ -737,5 +737,15 @@ bottomWhiteList.addEventListener('click', () => {
     setTimeout(() => {
         detail.open = true;
         detail.toggle;
-    }, 1000);
+    }, 1500);
 });
+
+async function subCountHandler() {
+    fetch('http://localhost:3003/subscribe')
+    .then(response => response.json())
+        .then(data => {
+        subCount.innerHTML = data[0].subcount;
+    })
+}
+
+subCountHandler();
