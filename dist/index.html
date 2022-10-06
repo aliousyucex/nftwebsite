@@ -8,7 +8,6 @@
 <style>
   html {
     scroll-behavior: smooth;
-    scroll-margin: 50px;
   }
 
   body {
@@ -43,7 +42,6 @@
   }
 
   .topmenu {
-
     font-family: 'Bakbak One';
     font-style: normal;
     font-weight: 400;
@@ -51,8 +49,6 @@
     line-height: 24px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-
-    /* Surface */
 
     color: #FFFFFF;
   }
@@ -402,6 +398,10 @@
     background: #141B22;
     margin: 15px;
     align-items: center;
+  }
+
+  .manifest:hover {
+    background: #1c232b;
   }
 
 
@@ -958,7 +958,7 @@
   }
 
   .change {
-    animation: roadmapchange 0.3s ease;
+    animation: roadmapchange 0.3s ease-in-out;
   }
 
   @keyframes roadmapchange {
@@ -994,11 +994,171 @@
     text-align: center;
     color: white;
   }
+
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 120px;
+    padding-bottom: 120px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .modal-content {
+    background-color: #040B11;
+    margin: auto;
+    padding: 20px;
+    color: #C2C3C5;
+    border: 1px solid #010203;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    width: 1414px;
+    animation: roadmapchange 0.3s ease-in-out;
+  }
+
+  .close {
+    color: #21E786;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .scrollbar {
+    justify-items: center;
+    height: 100%;
+    width: 1426px;
+    overflow-y: scroll;
+  }
+
+  .force-overflow {
+    min-height: 450px;
+  }
+
+  #style-1::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: #040B11;
+  }
+
+  #style-1::-webkit-scrollbar {
+    width: 12px;
+    background-color: #040B11;
+  }
+
+  #style-1::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #555;
+  }
 </style>
 
 <body style="width: 1920px; overflow-x: hidden;">
-
   <div id="home" style="background-color: #040B11; ">
+    <div id="storyModal" class="modal" style="left: 228px;">
+      <div class="scrollbar" id="style-1">
+      
+        <div class="modal-content force-overflow">
+          <span class="close">&times;</span>
+          <div id="story" style="flex-direction: column;">
+            <div
+              style="flex-direction: row; display: flex; position: relative; justify-content: center; align-items: center; padding-top: 40px; padding-bottom: 40px;">
+              <div style="padding-right: 40px;"><img style="width: 400px;" src="a.png" alt=""></div>
+              <div style="width: 900px;">As he walked through the grass that was starting to grow green,
+                Toothless was devoted to figuring out which greens tasted best. He was happy when he plucked
+                the greens he found with his trunk and brought them to his mouth. Toothless, walking further
+                into the bushes so he could try a different herb each time, saw something strange brown on
+                the
+                ground he hadn't seen before. He sniffed, grabbed it with his hose, and looked closely. Then
+                he thought that he wouldn't understand what it was until he ate it and popped it into his
+                mouth. It tasted different from the herbs he had tasted before, but it was too small to
+                satisfy him.</div>
+            </div>
+            <div
+              style="flex-direction: row; display: flex; position: relative; justify-content: center; align-items: center; padding-bottom: 40px;">
+              <div style="width: 900px; padding-right: 40px;">He saw another one a short distance away and
+                popped it into his mouth
+                at once. While saying that this is not enough, I must find more than that; he saw another
+                one
+                in the further. Then another, anotherâ€¦ He suddenly found himself in a place with a lot of
+                weird brown stuff. He focused only on the brown thing and proceeded to eat them. He popped a
+                big hose of brown stuff into his mouth and started eating. As he was finishing his mouthful,
+                he suddenly realized that these strange things were in the red on the edges of the pile.
+                When
+                he followed the reds, he saw that they were multiplying, and there was a massive pile of
+                strange red things ahead. While he was trying to figure out the red ones, he saw an elephant
+                lying next to the enormous pile. The elephant lay with its back turned to itself. He went to
+                her, thinking that she had eaten a lot of this pile, and lay down for a nap. When he got to
+                him, he realized that the teeth shined like diamonds were broken. The elephant he thought
+                was
+                taking a nap was a murdered, bloody corpse and began to tremble. He raised his trunk with
+                all
+                his might to gather the elephants around him and shouted. The elephants gathered around him
+                from afar, and they saw Toothless. The elephant was lying on the ground in blood, with the
+                diamond tusks cut off. The elephants were very surprised by this event and tried to
+                understand
+                how such a thing happened. While they were crying among themselves and trying to resolve the
+                horror, they saw something coming toward them from among the trees ahead.</div>
+              <div><img style="width: 400px;" src="a.png" alt=""></div>
+            </div>
+            <div
+              style="flex-direction: row; display: flex; position: relative; justify-content: center; align-items: center; padding-bottom: 40px;">
+              <div style="padding-right: 40px;"><img style="width: 400px;" src="a.png" alt=""></div>
+              <div style="width: 900px;">This animal, which walked on two legs, which they had never seen
+                before, had two diamond ivory tusks on its back and something strange on its front legs.
+                They
+                were frozen, wondering whether they should go to this animal or run away. Still, none of
+                them
+                stayed where they were, without even moving. Then came a loud noise, while all the elephants
+                were startled and frightened by the sound, one of them fell to the groundâ€¦ Blood began to
+                flow from the fallen elephant. Shocked, Toothless didn't know what to do. Should he help or
+                run? Where did this sound come from? The same sound was repeated, and another elephant fell
+                to
+                the ground. Toothless stood still as the elephants scrambled to escape when the sound was
+                repeated. The sound came again and again. Almost all the elephants fell to the groundâ€¦ The
+                two-legged animal came up to the elephants. The two-legged beast caught Toothless's eye,
+                ignored him as if he weren't there, and continued. He went to Toothless's dead friends and
+                began to pluck and cut their teeth savagely. Among the Diamond teeth he carried on his back,
+                he added the teeth of Toothless's friends. Toothless couldn't understand why he hadn't
+                fallen
+                and was covered in blood. Toothless, still unable to move from the shock of his two-legged
+                animal walking away with their friends' teeth, he turned and looked at the bodies of his
+                friends lying on the ground.</div>
+            </div>
+            <div
+              style="flex-direction: row; display: flex; position: relative; justify-content: center; align-items: center; padding-bottom: 40px;">
+              <div style="width: 900px; padding-right: 40px;">At that moment, something started to come to
+                life in his mind. All
+                his friends lying on the ground bloodied were elephants with tusks, their tusks smashed and
+                uprooted, and those that could not be removed were cut off. He realized that he had not been
+                knocked down because there was no tooth to be removed. Was it really because he survived
+                because he was toothless? Why was he toothless? Why was the 2-legged animal just here
+                killing
+                elephants for these tusks? Toothless began to wonder if he was lucky to have no teeth at
+                that
+                moment or if he was worthless because he was toothless.</div>
+              <div><img style="width: 400px;" src="a.png" alt=""></div>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
     <div class="mx-auto" style="width: 100%; height: 108px; position: fixed; background-color: #040B11; z-index: 1;">
       <div class="mx-auto" style="width: 73%;">
         <span class="head" style="display: flex; position: absolute;">LOGO</span>
@@ -1006,11 +1166,12 @@
           <table class="max-w-prose mx-auto select-none display: flex; position: absolute;">
             <tr>
               <td class="topmenu"><a href="#home">HOME</a>&nbsp;</td>
-              <td class="topmenu" style="padding-left: 32;"><a href="#about">ABOUT</a>&nbsp;</td>
+              <td class="topmenu" style="padding-left: 32;"><a href="#story">story</a>&nbsp;</td>
               <td class="topmenu" style="padding-left: 32;"><a href="#roadmap">ROADMAP</a>&nbsp;</td>
-              <td class="topmenu" style="padding-left: 32;"><a href="#creators">COLLECTION</a>&nbsp;</td>
+              <td class="topmenu" style="padding-left: 32;"><a href="#ourteam">OUR team</a>&nbsp;</td>
+              <td class="topmenu" style="padding-left: 32;"><a href="#partner">partner</a>&nbsp;</td>
+              <td class="topmenu" style="padding-left: 32;"><a href="#gamearea">game area</a>&nbsp;</td>
               <td class="topmenu" style="padding-left: 32;"><a href="#faqs">FAQS</a>&nbsp;</td>
-              <td class="topmenu" style="padding-left: 32;"><a href="#footer">PAGES</a>&nbsp;</td>
             </tr>
           </table>
         </div>
@@ -1066,7 +1227,7 @@
         <div>
           <div class="justify-center text-center">
             <div class="container mx-auto" style="justify-content: center; background-color: #040B11;">
-              <div id="about"><br><br><br><br></div>
+              <div id="story"><br><br><br><br></div>
               <div class="mx-auto"
                 style=" justify-content: center; position: relative; display: flex; padding-bottom: 60px;">
                 <div style="display: flex; position: relative; flex-direction: column;">
@@ -1089,7 +1250,7 @@
                   </div>
                   <div style="flex-direction: row; display: flex; position: relative; margin-top: 58px;">
                     <button class="readmore">
-                      <span class="readmoreText">READ MORE</span>
+                      <span class="readmoreText" id="storyReadMore">READ MORE</span>
                     </button>
                   </div>
                 </div>
@@ -1115,13 +1276,17 @@
                       <span class="modalText">Elephants, which have been illegally hunted for accessories and ornaments
                         in the last century, are facing extinction. We want to say something about this.</span>
                     </span>
-                    <span class="stroyModals">
+                    <button style="width: 300; height: 252;"">
+                    <span class="stroyModals manifest">
+                      
                       <span class="modalNo select-none">04</span>
                       <span class="modalHead">Manifest</span>
                       <span class="modalText">First of all, we are here with the joy and excitement of bringing you a
                         new NFT collection. We need to inform you about the foundations of this NFT collection...
                       </span>
+                    
                     </span>
+                  </button>
                   </div>
 
                 </div>
@@ -1197,7 +1362,7 @@
                   </span>
                 </div>
               </div>
-              <div id="creators"><br><br><br><br></div>
+              <div id="ourteam"><br><br><br><br></div>
               <div class="mx-auto"
                 style="display: flex; position: relative; height: 520px; justify-content: center; margin-top: 40px;">
                 <div class="head mx-auto">
@@ -1212,8 +1377,10 @@
                     <span class="creatorsName">Ali Desidero</span>
                     <span class="creatorSubTitle">Çuf Çuf master</span>
                     <span class="creatorSocialMedia">
-                      <a href="https://www.linkedin.com/in/ali-o%C4%9Fuzhan-y%C3%BCce-672759188" target="_blank" style="padding: 10px;"><img id="linkedinSmall"></a>
-                      <a href="https://www.instagram.com/aliousyuce/" target="_blank" style="padding: 10px;"><img id="instagramSmall"></a>
+                      <a href="https://www.linkedin.com/in/ali-o%C4%9Fuzhan-y%C3%BCce-672759188" target="_blank"
+                        style="padding: 10px;"><img id="linkedinSmall"></a>
+                      <a href="https://www.instagram.com/aliousyuce/" target="_blank" style="padding: 10px;"><img
+                          id="instagramSmall"></a>
                     </span>
                   </span>
                   <span class="creators" style="flex-direction: column;">
@@ -1221,8 +1388,10 @@
                     <span class="creatorsName">Berkay</span>
                     <span class="creatorSubTitle">Çuf Çuf master</span>
                     <span class="creatorSocialMedia">
-                      <a href="https://www.linkedin.com/search/results/all/?heroEntityKey=urn%3Ali%3Afsd_profile%3AACoAACbNcU0BhfdVl8c-masEuwIRHp1W1aXMLvI&keywords=berkay%20%C3%A7ebi&origin=RICH_QUERY_SUGGESTION&position=0&searchId=c4a96b68-2396-4632-a335-55d667fd1752&sid=yq3" target="_blank" style="padding: 10px;"><img id="linkedinSmall1"></a>
-                      <a href="https://www.instagram.com/bceby/" target="_blank" style="padding: 10px;"><img id="instagramSmall1"></a>
+                      <a href="https://www.linkedin.com/search/results/all/?heroEntityKey=urn%3Ali%3Afsd_profile%3AACoAACbNcU0BhfdVl8c-masEuwIRHp1W1aXMLvI&keywords=berkay%20%C3%A7ebi&origin=RICH_QUERY_SUGGESTION&position=0&searchId=c4a96b68-2396-4632-a335-55d667fd1752&sid=yq3"
+                        target="_blank" style="padding: 10px;"><img id="linkedinSmall1"></a>
+                      <a href="https://www.instagram.com/bceby/" target="_blank" style="padding: 10px;"><img
+                          id="instagramSmall1"></a>
                     </span>
                   </span>
                   <span class="creators" style="flex-direction: column;">
@@ -1230,7 +1399,8 @@
                     <span class="creatorsName">Ahmet</span>
                     <span class="creatorSubTitle">Çuf Çuf master</span>
                     <span class="creatorSocialMedia">
-                      <a href="https://www.linkedin.com/in/ahmtcnsz/" target="_blank" style="padding: 10px;"><img id="linkedinSmall2"></a>
+                      <a href="https://www.linkedin.com/in/ahmtcnsz/" target="_blank" style="padding: 10px;"><img
+                          id="linkedinSmall2"></a>
                     </span>
                   </span>
                 </div>
@@ -1339,10 +1509,10 @@
                               <button class="text-black text-2xl w-full py-3 rounded-full select-none"
                                 style="background-color: #21E786; font-family: Bakbak One;" id="start">Start</button>
                             </div>
-                            <div>
+                            <div style="display: flex; position: relative; justify-content: center;">
                               <table id="ScoreTable" class="select-none scoreTable">
                                 <tr>
-                                  <td class="pl-12 scoreTableHeaders">POS</td>
+                                  <td class="scoreTableHeaders">POS</td>
                                   <td class="pl-12 scoreTableHeaders">NAME</td>
                                   <td class="pl-12 scoreTableHeaders">SCORE</td>
                                 </tr>
@@ -1491,9 +1661,9 @@
         <div style="display: flex; position: relative; width: 83px; flex-direction: column; margin-right: 130px;">
           <span class="footerHead">SUBSCRIBE</span>
           <span class="footerLink"><a href="#home">Home</a></span>
-          <span class="footerLink"><a href="#about">About</a></span>
+          <span class="footerLink"><a href="#story">Story</a></span>
           <span class="footerLink"><a href="#roadmap">Roadmap</a></span>
-          <span class="footerLink"><a href="#creators">Our Team</a></span>
+          <span class="footerLink"><a href="#ourteam">Our Team</a></span>
           <span class="footerLink"><a href="#faqs">FAQs</a></span>
         </div>
         <div style="display: flex; position: relative; width: 123px; flex-direction: column; margin-right: 130px;">

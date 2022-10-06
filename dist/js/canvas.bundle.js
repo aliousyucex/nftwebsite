@@ -1443,6 +1443,29 @@ var stroyFour = document.getElementById('stroyfour');
 var creator1El = document.getElementById('creator1');
 var creator2El = document.getElementById('creator2');
 var creator3El = document.getElementById('creator3');
+var modal = document.getElementById("storyModal");
+var storyReadMore = document.getElementById("storyReadMore");
+var span = document.getElementsByClassName("close")[0];
+
+storyReadMore.onclick = function () {
+  home.style.overflow = "hidden";
+  modal.style.display = "block";
+};
+
+window.onclick = function (event) {
+  if (event.target == modal) {
+    home.style.overflow = "auto";
+    home.style.overflowX = "hidden";
+    modal.style.display = "none";
+  }
+};
+
+span.onclick = function () {
+  home.style.overflow = "auto";
+  home.style.overflowX = "hidden";
+  modal.style.display = "none";
+};
+
 creator1El.src = _IMG_ali_png__WEBPACK_IMPORTED_MODULE_33__["default"];
 creator2El.src = _IMG_berkay_jpg__WEBPACK_IMPORTED_MODULE_34__["default"];
 creator3El.src = _IMG_ahmet_jpg__WEBPACK_IMPORTED_MODULE_35__["default"];
@@ -1982,6 +2005,7 @@ function roadmapChange(changeValue) {
   RoadmapImageOne.style.backgroundColor = changeValue.color;
   RoadmapImageTwo.style.backgroundColor = changeValue.color;
   RoadmapImageThree.style.backgroundColor = changeValue.color;
+  RoadmapImageThree.style.display = 'none';
   roadmapHead.innerHTML = changeValue.head;
   roadmapText1.innerHTML = changeValue.text1;
   roadmapText2.innerHTML = changeValue.text2;
@@ -1998,7 +2022,7 @@ window.addEventListener('resize', function () {
 var onEmailSubmit = function onEmailSubmit(data, elementName, returnData, color) {
   elementName = elementName == 'topSubMail' ? elementName = topSubMail : elementName = bottomSubMail;
   elementName.value = '';
-  elementName.style.border = color == 'error' ? '1px solid rgb(247, 0, 0)' : '2px solid rgba(31, 247, 103, 0.85)';
+  elementName.style.border = color == 'error' ? '1px solid #FF0D47' : '2px solid rgba(31, 247, 103, 0.85)';
   elementName.placeholder = "".concat(returnData);
   setTimeout(function () {
     elementName.style.borderWidth = '0px';
@@ -2122,7 +2146,7 @@ function whoIsHaveBiggestScore() {
       tr.appendChild(td[i + 2 + j]);
       tr.appendChild(td[i + 3 + j]);
       tableEl.appendChild(tr);
-      td[i + 1 + j].className = "pl-12 scoreTableUsers";
+      td[i + 1 + j].className = "scoreTableUsers";
       td[i + 2 + j].className = "pl-12 scoreTableUsers";
       td[i + 3 + j].className = "pl-12 scoreTableUsers";
     }

@@ -131,6 +131,30 @@ const creator1El = document.getElementById('creator1');
 const creator2El = document.getElementById('creator2');
 const creator3El = document.getElementById('creator3');
 
+const modal = document.getElementById("storyModal");
+const storyReadMore = document.getElementById("storyReadMore");
+const span = document.getElementsByClassName("close")[0];
+
+storyReadMore.onclick = function() {
+    home.style.overflow = "hidden";
+    modal.style.display = "block";
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        home.style.overflow = "auto";
+        home.style.overflowX = "hidden";
+        modal.style.display = "none";
+    }
+  }
+
+  span.onclick = function() {
+    home.style.overflow = "auto";
+    home.style.overflowX = "hidden";
+    modal.style.display = "none";
+  }
+
+
 creator1El.src = creator1;
 creator2El.src = creator2;
 creator3El.src = creator3;
@@ -600,6 +624,7 @@ function roadmapChange(changeValue) {
     RoadmapImageOne.style.backgroundColor = changeValue.color;
     RoadmapImageTwo.style.backgroundColor = changeValue.color;
     RoadmapImageThree.style.backgroundColor = changeValue.color;
+    RoadmapImageThree.style.display = 'none';
     roadmapHead.innerHTML = changeValue.head;
     roadmapText1.innerHTML = changeValue.text1;
     roadmapText2.innerHTML = changeValue.text2;
@@ -616,7 +641,7 @@ window.addEventListener('resize', () => {
 const onEmailSubmit = (data, elementName, returnData, color) => {
     elementName = elementName == 'topSubMail' ? elementName = topSubMail : elementName = bottomSubMail;
     elementName.value = '';
-    elementName.style.border = color == 'error' ? '1px solid rgb(247, 0, 0)' : '2px solid rgba(31, 247, 103, 0.85)';
+    elementName.style.border = color == 'error' ? '1px solid #FF0D47' : '2px solid rgba(31, 247, 103, 0.85)';
     elementName.placeholder = `${returnData}`;
     setTimeout(() => {
         elementName.style.borderWidth = '0px';
@@ -700,7 +725,7 @@ function whoIsHaveBiggestScore() {
             tr.appendChild(td[i + 2 + j]);
             tr.appendChild(td[i + 3 + j]);
             tableEl.appendChild(tr);
-            td[i + 1 + j].className = "pl-12 scoreTableUsers";
+            td[i + 1 + j].className = "scoreTableUsers";
             td[i + 2 + j].className = "pl-12 scoreTableUsers";
             td[i + 3 + j].className = "pl-12 scoreTableUsers";
         }
