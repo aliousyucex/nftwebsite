@@ -47,6 +47,7 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
+    height: 24px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
 
@@ -190,7 +191,7 @@
   .countdownHead {
     display: flex;
     position: relative;
-    top: 200px;
+    top: 208px;
 
     font-family: 'Bakbak One';
     font-style: normal;
@@ -235,7 +236,7 @@
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 200;
-    font-size: 20px;
+    font-size: 16px;
     line-height: 26px;
     color: #C2C3C5;
   }
@@ -638,9 +639,6 @@
     position: relative;
     top: 2px;
 
-    width: 1316px;
-
-    border: 1px solid #434343;
   }
 
   .roadmapSelectorComplate {
@@ -649,11 +647,17 @@
     border: 0.1px solid #21E786;
   }
 
+  .roadmapSelectorUnComplate {
+    width: 1148px;
+
+    border: 0.1px solid #434343;
+  }
+
   .roadmapBtns {
     position: absolute;
     width: 15px;
     height: 15px;
-    top: -3.5px;
+    top: -4.5px;
     border-radius: 50%;
 
     /* seconday 2 */
@@ -678,7 +682,7 @@
     position: absolute;
     width: 15px;
     height: 15px;
-    top: -3.5px;
+    top: -4.5px;
 
     background: #21E786;
   }
@@ -831,7 +835,7 @@
     align-items: center;
     justify-content: left;
     list-style: none;
-    transition: height 2s ease;
+    transition: height 0.35s ease;
 
   }
 
@@ -875,8 +879,9 @@
     font-size: 50px;
   }
 
+
   details[open] div {
-    animation: sweep 0.5s ease-in-out;
+    animation: sweep 0.3s ease-in-out;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
@@ -998,7 +1003,7 @@
   .modal {
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     padding-top: 120px;
     padding-bottom: 120px;
     left: 0;
@@ -1011,38 +1016,24 @@
   }
 
   .modal-content {
-    background-color: #040B11;
+    background: linear-gradient(268.28deg, #2333DE -1.34%, #0ABE66 100%);
     margin: auto;
     padding: 20px;
-    color: #C2C3C5;
-    border: 1px solid #010203;
+    color: white;
     font-family: 'Poppins';
+    border-radius: 1%;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 26px;
-    width: 1414px;
+    width: 1410px;
     animation: roadmapchange 0.3s ease-in-out;
   }
 
-  .close {
-    color: #21E786;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-
-  .close:hover,
-  .close:focus {
-    color: white;
-    text-decoration: none;
-    cursor: pointer;
-  }
 
   .scrollbar {
-    justify-items: center;
-    height: 100%;
     width: 1426px;
+    margin: auto;
     overflow-y: scroll;
   }
 
@@ -1053,12 +1044,10 @@
   #style-1::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
-    background-color: #040B11;
   }
 
   #style-1::-webkit-scrollbar {
     width: 12px;
-    background-color: #040B11;
   }
 
   #style-1::-webkit-scrollbar-thumb {
@@ -1070,12 +1059,13 @@
 
 <body style="width: 1920px; overflow-x: hidden;">
   <div id="home" style="background-color: #040B11; ">
-    <div id="storyModal" class="modal" style="left: 228px;">
-      <div class="scrollbar" id="style-1">
-      
+
+    <div id="storyModal" class="modal"
+      style=" width: 100%; height: 100%; justify-content: center; align-items: center;  display: none;">
+      <div class="scrollbar" style="height: 100%;" id="style-1">
+
         <div class="modal-content force-overflow">
-          <span class="close">&times;</span>
-          <div id="story" style="flex-direction: column;">
+          <div style="flex-direction: column;">
             <div
               style="flex-direction: row; display: flex; position: relative; justify-content: center; align-items: center; padding-top: 40px; padding-bottom: 40px;">
               <div style="padding-right: 40px;"><img style="width: 400px;" src="a.png" alt=""></div>
@@ -1156,30 +1146,95 @@
             </div>
           </div>
         </div>
-  
+
       </div>
     </div>
-    <div class="mx-auto" style="width: 100%; height: 108px; position: fixed; background-color: #040B11; z-index: 1;">
-      <div class="mx-auto" style="width: 73%;">
-        <span class="head" style="display: flex; position: absolute;">LOGO</span>
-        <div class="container mx-auto" style="width: 670; margin-top: 35px;">
-          <table class="max-w-prose mx-auto select-none display: flex; position: absolute;">
+
+    <div id="manifestModal" class="modal"
+      style="width: 100%; height: 100%; justify-content: center; align-items: center;  display: none; overflow: hidden;">
+      <div class="scrollbar" style="height: 100%; margin-top: 25px;" id="style-1">
+
+        <div class="modal-content force-overflow">
+          <div>
+            <h1>Hi there!</h1>
+            <p><br> 
+            First of all, we are here with the joy and excitement of bringing you a new NFT collection. We need to
+            inform you about the foundations of this NFT collection.
+            </p><p><br> 
+
+            Although we are not an aid campaign, we aim to raise awareness about the "Elephant Tusks" genocide in
+            today's conditions and enable more people to have information about it. To show that there are many ways to
+            spread this awareness and be a source of inspiration for many different projects, we decided to branch this
+            project into different directions.
+            </p><p><br>
+            The first of these branches begins with a 3-season story that we have written for you. This story serves as
+            a building block in raising the awareness needed for both our NFTs and elephants. Another of these branches
+            is the game we developed, PeanutRush. Based on platform game PeanutRush, the main character is an elephant,
+            and they chase their favorite food, peanuts. With this game, we aim to bring the mentality of playing with
+            and renting their collection pieces (with certain collection pieces in the Demo version) to our collectors
+            and collector candidates.
+            </p><p><br>
+            Hiring: We aim to create a sustainable ecosystem with a game mechanic that allows our collectors to earn an
+            income other than NFT trading.
+            </p><p><br>
+
+            NFT Collectors: We strive to provide the right to participate in special events and tournaments (in our
+            game) that we will organize for those who have any item from the EYC collection in their wallet.
+            </p><p><br>
+
+            In addition, we aim to define the right to 1 complimentary drink per week from our shop in the future. In
+            the Metaverse universe that will be created, it is aimed that the wallets with this collection will have
+            different rights from other projects.
+            </p><p style="color: red; font-size: 14px;"><br>
+
+            "Hiring doesn't make you an NFT collector. For this reason, it is not possible to participate in these
+            events by renting."</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="whitelistModal" class="modal"
+      style="width: 100%; height: 100%; justify-content: center; align-items: center;  display: none;">
+      <div class="modal-content" style="width: 700px; margin-top: 200px;">
+        <div>
+          You can join our <strong class="font-bold">
+            <a href="https://discord.gg/hUaHrSTZyj" class="dclink" target="_blank">Discord</a></strong>
+          channel and other social media accounts. We will post all kind of offers on social media. 
+          <br><br>
+          But we have one secret path for this... 
+          <br><br>
+          If you play our game and put your name to best score board, you can take WhiteList or Airdrop to us.
+        </div>
+      </div>
+    </div>
+
+
+    <div class="mx-auto" style="width: 100%; height: 100px; position: fixed; background-color: #040B11; z-index: 1;">
+      <div class="mx-auto" style="width: 1414px;">
+        <span class="head"
+          style="display: flex; position: absolute; margin-left: 10px; top: 22px; font-size: 32px;">LOGO</span>
+        <div class="container mx-auto" style="width: 780px; margin-top: 35px;">
+          <table class="select-none display: flex;">
             <tr>
-              <td class="topmenu"><a href="#home">HOME</a>&nbsp;</td>
-              <td class="topmenu" style="padding-left: 32;"><a href="#story">story</a>&nbsp;</td>
-              <td class="topmenu" style="padding-left: 32;"><a href="#roadmap">ROADMAP</a>&nbsp;</td>
-              <td class="topmenu" style="padding-left: 32;"><a href="#ourteam">OUR team</a>&nbsp;</td>
-              <td class="topmenu" style="padding-left: 32;"><a href="#partner">partner</a>&nbsp;</td>
-              <td class="topmenu" style="padding-left: 32;"><a href="#gamearea">game area</a>&nbsp;</td>
-              <td class="topmenu" style="padding-left: 32;"><a href="#faqs">FAQS</a>&nbsp;</td>
+              <td class="topmenu"><a href="#home">HOME</a></td>
+              <td class="topmenu" style="padding-left: 32;"><a href="#storyMain">the story</a></td>
+              <td class="topmenu" style="padding-left: 32;"><a href="#roadmap">ROADMAP</a></td>
+              <td class="topmenu" style="padding-left: 32;"><a href="#ourteam">OUR team</a></td>
+              <td class="topmenu" style="padding-left: 32;"><a href="#partner">partner</a></td>
+              <td class="topmenu" style="padding-left: 32;"><a href="#gamearea">game area</a></td>
+              <td class="topmenu" style="padding-left: 32;"><a href="#faqs">FAQS</a></td>
             </tr>
           </table>
         </div>
       </div>
     </div>
+
+
     <div style="background-color: #040B11;  position: relative;">
       <div id="backgroundEl"
-        style="background-position-y: bottom; box-shadow: rgb(4 11 17) 0px 140px 200px 130px inset;">
+        style="background-position-y: bottom; box-shadow: rgb(4 11 17) 0px 140px 200px 130px inset; height: 820px;">
         <span class="countdownHead select-none" style="justify-content: center; text-align: center;">coming soon</span>
         <div class="select-none "
           style="display: flex; justify-content: center; text-align: center; margin-top: 200px;">
@@ -1202,7 +1257,7 @@
         </div>
         <div class="mx-auto"
           style="width: 616px; display: flex; height: 56px; position: relative; flex-direction: row; margin-top: 60px;">
-          <span><input class="topSignIn" id="topSubMail" type="email" placeholder="Enter your email.."></span>
+          <span><input class="topSignIn" id="topSubMail" type="email" placeholder="Enter your email"></span>
           <span><button class="singInBtn" id="topSubBtn">SUBSCRIBE</button></span>
         </div>
 
@@ -1210,7 +1265,7 @@
           style="width: 339px; height: 48px; position: relative; padding-top: 60px; display: flex; padding-bottom: 80px;">
           <a href="https://discord.gg/" target="_blank" class="topDiscord" style="left: 0; flex-direction: row;"><img
               id="logo" style="height: 20px;"> DISCORD</a>
-          <a href="#faqs" class="whiteList" id="topWhiteList" style="right: 0;">WHITELIST NOW</a>
+          <button class="whiteList" id="topWhiteList" style="right: 0;">WHITELIST NOW</button>
         </div>
         <div style="display: flex; justify-content: center; position: relative; ">
 
@@ -1227,7 +1282,7 @@
         <div>
           <div class="justify-center text-center">
             <div class="container mx-auto" style="justify-content: center; background-color: #040B11;">
-              <div id="story"><br><br><br><br></div>
+              <div id="storyMain"><br><br><br><br></div>
               <div class="mx-auto"
                 style=" justify-content: center; position: relative; display: flex; padding-bottom: 60px;">
                 <div style="display: flex; position: relative; flex-direction: column;">
@@ -1254,44 +1309,38 @@
                     </button>
                   </div>
                 </div>
-                <div class="storyModalClose">
+                <div class="storyModalClose select-none">
                   <div style="display: flex; position: relative; flex-direction: row; float: right;">
                     <span class="stroyModals ">
-                      <span class="modalNo select-none">01</span>
                       <span class="modalHead">Elephants</span>
                       <span class="modalText">Elephants, which are under the order of proboscis, are entitled to be
                         classified as intelligent animals. There are two classes of Asian and African elephants. They
                         are facing extinction!</span>
                     </span>
                     <span class="stroyModals">
-                      <span class="modalNo select-none">02</span>
                       <span class="modalHead">Ne yazsak ki aq</span>
                       <span class="modalText">Buraya yazmalık yarak kürek bişiler bulmamız lazım he.</span>
                     </span>
                   </div>
                   <div style="display: flex; position: relative; flex-direction: row;">
                     <span class="stroyModals">
-                      <span class="modalNo select-none">03</span>
                       <span class="modalHead">We Are Not Alone</span>
                       <span class="modalText">Elephants, which have been illegally hunted for accessories and ornaments
                         in the last century, are facing extinction. We want to say something about this.</span>
                     </span>
-                    <button style="width: 300; height: 252;"">
-                    <span class="stroyModals manifest">
-                      
-                      <span class="modalNo select-none">04</span>
+
+                    <button id="manifest" class=" stroyModals manifest">
                       <span class="modalHead">Manifest</span>
                       <span class="modalText">First of all, we are here with the joy and excitement of bringing you a
                         new NFT collection. We need to inform you about the foundations of this NFT collection...
                       </span>
-                    
-                    </span>
-                  </button>
+
+                    </button>
                   </div>
 
                 </div>
               </div>
-              <div id="roadmap"><br><br><br><br></div>
+              <div id="roadmap" style="margin-top: -85px;"><br><br><br><br></div>
               <div class="mx-auto" style="display: flex; position: relative; height: 800px; justify-content: center;">
                 <div class="head mx-auto">
                   <h1>roadmap</h1>
@@ -1345,17 +1394,19 @@
 
 
                 </div>
-                <div class="mx-auto" style="display: flex; position: relative; align-self: flex-end;">
-                  <span style="margin-bottom: 50px;">
-                    <button id="roadmapLeftArrow" class="arrow left"></button>
+                <div class="mx-auto"
+                  style="display: flex; position: relative; align-self: flex-end; justify-content: center; width: 1355px;">
+                  <span style="margin-bottom: 60px;">
+                    <button id="roadmapLeftArrow" class="arrow left" s></button>
 
                     <span>
-                      <span class="roadmapSelector"><span class="roadmapSelectorComplate"></span></span>
-                      <button id="roadmapBtnOne" class="roadmapBtns" style="left: 168px; background: #21E786;"><span
+                      <span class="roadmapSelector"><span class="roadmapSelectorComplate"></span><span
+                          class="roadmapSelectorUnComplate"></span></span>
+                      <button id="roadmapBtnOne" class="roadmapBtns" style="left: 187px; background: #21E786;"><span
                           class="roadmapBtnsS"></span></button>
-                      <button id="roadmapBtnTwo" class="roadmapBtns" style="left: 606px;"><span
+                      <button id="roadmapBtnTwo" class="roadmapBtns" style="left: 625px;"><span
                           class="roadmapBtnsS"></span></button>
-                      <button id="roadmapBtnThree" class="roadmapBtns" style="left: 1054px;"><span
+                      <button id="roadmapBtnThree" class="roadmapBtns" style="left: 1073px;"><span
                           class="roadmapBtnsS"></span></button>
                     </span>
                     <button id="roadmapRightArrow" class="arrow right"></button>
@@ -1405,7 +1456,7 @@
                   </span>
                 </div>
               </div>
-
+              <div id="partner" style="margin-top: -100px;"><br><br></div>
               <div class="mx-auto"
                 style="display: flex; position: relative; height: 550px; justify-content: center; margin-top: 70px;">
                 <div class="head mx-auto">
@@ -1446,6 +1497,7 @@
                   </span>
                 </div>
               </div>
+              <div id="gamearea" style="margin-top: -100px;"><br></div>
               <div class="mx-auto"
                 style="display: flex; position: relative; height: 1000px; justify-content: center; margin-top: 70px;">
                 <div class="head mx-auto">
@@ -1453,73 +1505,75 @@
                     PEANUT RUSH!
                   </span>
                 </div>
-                <div style="margin-top: 100px;">
+                <div style="margin-top: 118px;">
                   <div id="game" class="relative  overflow-hidden" style="height: 900px; padding-bottom: 60rem;">
-                    <div class="container mx-auto max-w-max" style="height: 750px;" id="contain">
-                      <div class="bg-black mt-8 relative rounded ">
+                    <div class="container mx-auto max-w-max" id="contain">
+                      <div class="bg-black mt-8 relative rounded" style="margin: auto;">
                         <div class="absolute text-white text-sm ml-2 mt-1 select-none">
                           <label id="score" style="font-family: Poppins;">Skor: </label><label id="score"
                             style="font-family: Poppins;"></label>
                         </div>
                         <!-- Interactiv Menü Kısmı -->
-                        <div class="absolute inset-0 flex items-center justify-center text-white" style="display: flex;"
-                          id="menu">
-                          <div class=" max-w-md w-full p-6 text-center"
-                            style="background-color: #141B22; border-radius: 5%;">
-                            <!-- Score Kısmı -->
-                            <h1 class="text-4xl font-bold" style="font-family: Poppins;" id="goscore">0</h1>
-                            <p class="text-sm mb-1" style="font-family: Poppins;">Score</p>
-                            <!-- Radio button Table -->
-                            <div>
-                              <table class="items-center justify-center ml-12 select-none">
-                                <tr>
-                                  <td>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    &nbsp;&nbsp;
-                                  </td>
-                                  <td class="ml-5">
-                                    <label class="p-1">
-                                      <input type="radio" name="test" value="1" id="r1" checked>
-                                      <img id="p1" />
-                                    </label>
-                                  </td>
-                                  <td></td>
-                                  <td></td>
-                                  <td>
-                                    <label class="p-1">
-                                      <input type="radio" name="test" value="2" id="r2">
-                                      <img id="p2" />
-                                    </label>
-                                  </td>
-                                  <td></td>
-                                  <td></td>
-                                  <td>
-                                    <label class="p-1">
-                                      <input type="radio" name="test" value="3" id="r3">
-                                      <img id="p3" />
-                                    </label>
-                                  </td>
-                                </tr>
-                              </table>
-                            </div>
-                            <!-- Start Butonu -->
-                            <div>
-                              <input type="text" placeholder="Discord#TAG" class="topSignIn" id="playername"
-                                style="position: relative; width: 250px; height: 40px; margin-bottom: 10px; padding: 10px;">
-                              <button class="text-black text-2xl w-full py-3 rounded-full select-none"
-                                style="background-color: #21E786; font-family: Bakbak One;" id="start">Start</button>
-                            </div>
-                            <div style="display: flex; position: relative; justify-content: center;">
-                              <table id="ScoreTable" class="select-none scoreTable">
-                                <tr>
-                                  <td class="scoreTableHeaders">POS</td>
-                                  <td class="pl-12 scoreTableHeaders">NAME</td>
-                                  <td class="pl-12 scoreTableHeaders">SCORE</td>
-                                </tr>
-                              </table>
+                        <div
+                          style="display: flex; position: relative; justify-content: center; margin: auto; top: 100px;">
+                          <div class="absolute text-white" style="width: 1200px;" id="menu">
+                            <div class="p-6 text-center"
+                              style="background-color: #141B22; border-radius: 4%; justify-content: center; align-items: center;">
+                              <!-- Score Kısmı -->
+                              <h1 class="text-4xl font-bold" style="font-family: Poppins;" id="goscore">0</h1>
+                              <p class="text-sm mb-1" style="font-family: Poppins;">Score</p>
+                              <!-- Radio button Table -->
+                              <div>
+                                <table class="flex items-center justify-center select-none">
+                                  <tr>
+                                    <td class="ml-5">
+                                      <label class="p-1">
+                                        <input type="radio" name="test" value="1" id="r1" checked>
+                                        <img id="p1" />
+                                      </label>
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                      <label class="p-1">
+                                        <input type="radio" name="test" value="2" id="r2">
+                                        <img id="p2" />
+                                      </label>
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                      <label class="p-1">
+                                        <input type="radio" name="test" value="3" id="r3">
+                                        <img id="p3" />
+                                      </label>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </div>
+                              <!-- Start Butonu -->
+                              <div
+                                style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                                <input type="text" placeholder="Discord#TAG" class="topSignIn" id="playername"
+                                  style="position: relative; width: 250px; height: 40px; margin-bottom: 10px; padding: 10px;">
+                                <button class="text-black text-2xl py-3 rounded-full select-none"
+                                  style="background-color: #21E786; font-family: Bakbak One; width: 250px;"
+                                  id="start">Start</button>
+                              </div>
+                              <!-- Tier List -->
+                              <div style="display: flex; position: relative; justify-content: center;">
+                                <table id="ScoreTable" class="select-none scoreTable">
+                                  <tr>
+                                    <td class="scoreTableHeaders">POS</td>
+                                    <td class="pl-12 scoreTableHeaders">NAME</td>
+                                    <td class="pl-12 scoreTableHeaders">SCORE</td>
+                                  </tr>
+                                </table>
+                              </div>
                             </div>
                           </div>
                         </div>
+
                         <canvas id="canvas"></canvas>
                       </div>
 
@@ -1528,7 +1582,7 @@
                 </div>
               </div>
               <div></div>
-              <div id="faqs"><br><br><br><br></div>
+              <div id="faqs" style="margin-top: -190px;"><br><br><br><br></div>
               <div class="mx-auto" style="display: flex; position: relative; justify-content: center;  min-height: 730px;
                     max-height: 925px; margin-bottom: 100px;">
                 <div class="head mx-auto">
@@ -1640,7 +1694,7 @@
                   <div style="width: 339px; height: 48px; position: relative; display: flex; left: -136px; top: 150px;">
                     <a href="https://discord.gg/" target="_blank" class="topDiscord"
                       style="left: 0; flex-direction: row;"><img id="logo2" style="height: 20px;">DISCORD</a>
-                    <a href="#faqs" id="bottomWhiteList" class="whiteList" style="right: 0;">WHITELIST NOW</a>
+                    <button id="bottomWhiteList" class="whiteList" style="right: 0;">WHITELIST NOW</button>
                   </div>
                 </span>
               </div>
@@ -1661,7 +1715,7 @@
         <div style="display: flex; position: relative; width: 83px; flex-direction: column; margin-right: 130px;">
           <span class="footerHead">SUBSCRIBE</span>
           <span class="footerLink"><a href="#home">Home</a></span>
-          <span class="footerLink"><a href="#story">Story</a></span>
+          <span class="footerLink"><a href="#storyMain">Story</a></span>
           <span class="footerLink"><a href="#roadmap">Roadmap</a></span>
           <span class="footerLink"><a href="#ourteam">Our Team</a></span>
           <span class="footerLink"><a href="#faqs">FAQs</a></span>
@@ -1676,8 +1730,8 @@
         <div style="display: flex; position: relative; width: 324px; flex-direction: column;">
           <span class="footerHead">SUBSCRIBE</span>
           <div style="display: flex; position: relative; flex-direction: row;">
-            <span><input class="topSignIn" id="bottomSubMail" type="email" placeholder="Enter your email.."
-                style="width: 287px; font-size: 16px;"></span>
+            <span><input class="topSignIn" id="bottomSubMail" type="email" placeholder="Enter your email"
+                style="width: 287px; font-size: 14px;"></span>
             <span><button class="singInBtn" id="bottomSubBtn" style="width: 154px;">SUBSCRIBE</button></span>
           </div>
         </div>

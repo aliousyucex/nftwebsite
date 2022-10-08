@@ -1443,27 +1443,36 @@ var stroyFour = document.getElementById('stroyfour');
 var creator1El = document.getElementById('creator1');
 var creator2El = document.getElementById('creator2');
 var creator3El = document.getElementById('creator3');
-var modal = document.getElementById("storyModal");
+var storyModal = document.getElementById("storyModal");
+var manifestModal = document.getElementById("manifestModal");
+var whitelistModal = document.getElementById("whitelistModal");
 var storyReadMore = document.getElementById("storyReadMore");
-var span = document.getElementsByClassName("close")[0];
+var manifest = document.getElementById("manifest");
+
+topWhiteList.onclick = function () {
+  whitelistModal.style.display = "block";
+};
+
+bottomWhiteList.onclick = function () {
+  whitelistModal.style.display = "block";
+};
 
 storyReadMore.onclick = function () {
-  home.style.overflow = "hidden";
-  modal.style.display = "block";
+  storyModal.style.display = "block";
+};
+
+manifest.onclick = function () {
+  manifestModal.style.display = "block";
 };
 
 window.onclick = function (event) {
-  if (event.target == modal) {
+  if (event.target == storyModal || event.target == manifestModal || event.target == whitelistModal) {
     home.style.overflow = "auto";
     home.style.overflowX = "hidden";
-    modal.style.display = "none";
+    storyModal.style.display = "none";
+    manifestModal.style.display = "none";
+    whitelistModal.style.display = "none";
   }
-};
-
-span.onclick = function () {
-  home.style.overflow = "auto";
-  home.style.overflowX = "hidden";
-  modal.style.display = "none";
 };
 
 creator1El.src = _IMG_ali_png__WEBPACK_IMPORTED_MODULE_33__["default"];
@@ -1510,7 +1519,7 @@ var peanutPositions = _json_peanutPositions_json__WEBPACK_IMPORTED_MODULE_1__; /
 
 var levelup = 3;
 var gravity = .5;
-var playerspeed = 7; /// LEVEL-PLAYER SETTİNGS ///
+var playerspeed = 5; /// LEVEL-PLAYER SETTİNGS ///
 
 var animationID;
 var level = 0;
@@ -1523,8 +1532,8 @@ var timeMin = 0,
 var peanut;
 var player;
 var platfroms = [];
-canvas.width = 1000;
-canvas.height = 750;
+canvas.width = 1414;
+canvas.height = 700;
 c.fillStyle = 'black';
 c.fillRect(0, 0, canvas.width, canvas.height);
 var data = {};
@@ -1725,7 +1734,7 @@ function animate() {
         peanut.position.x = -50;
         peanut.position.y = -50;
         cancelAnimationFrame(animationID);
-        menu.style.display = 'flex';
+        menu.style.display = 'block';
         sayacLabel.style.display = 'none';
         data.userName = playername.value;
         addNewScore(data);
@@ -1829,10 +1838,9 @@ function PlatformsCreate() {
 
 ;
 startbutton.addEventListener('click', function () {
-  if (playername.value == '') {
-    console.log('isim girsene orospu çocu');
-    window.alert('Please enter your Discord Nickname');
-  } else {
+  var discordValidation = /^((?!(discordtag|everyone|here)#)((?!@|#|:|```).{2,32})#\d{4})/;
+
+  if (playername.value != '' && discordValidation.test(playername.value)) {
     timeMin = 0;
     timeSec = 0;
     level = 0;
@@ -1867,6 +1875,9 @@ startbutton.addEventListener('click', function () {
       }
     }, 10);
     menu.style.display = 'none';
+  } else {
+    console.log('Duzgun isim gir lan pic');
+    window.alert('Duzgun isim gir lan pic');
   }
 }); // window.onload = () => {
 //     web3 = new Web3(window.ethereum);
@@ -2197,18 +2208,6 @@ var addNewScore = /*#__PURE__*/function () {
 }();
 
 var detail = document.getElementById('faqWhiteList');
-topWhiteList.addEventListener('click', function () {
-  setTimeout(function () {
-    detail.open = true;
-    detail.toggle;
-  }, 1000);
-});
-bottomWhiteList.addEventListener('click', function () {
-  setTimeout(function () {
-    detail.open = true;
-    detail.toggle;
-  }, 1500);
-});
 
 function subCountHandler() {
   return _subCountHandler.apply(this, arguments);

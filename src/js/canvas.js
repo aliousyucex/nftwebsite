@@ -131,29 +131,38 @@ const creator1El = document.getElementById('creator1');
 const creator2El = document.getElementById('creator2');
 const creator3El = document.getElementById('creator3');
 
-const modal = document.getElementById("storyModal");
+const storyModal = document.getElementById("storyModal");
+const manifestModal = document.getElementById("manifestModal");
+const whitelistModal = document.getElementById("whitelistModal");
 const storyReadMore = document.getElementById("storyReadMore");
-const span = document.getElementsByClassName("close")[0];
+const manifest = document.getElementById("manifest");
 
-storyReadMore.onclick = function() {
-    home.style.overflow = "hidden";
-    modal.style.display = "block";
+topWhiteList.onclick = function() {
+    whitelistModal.style.display = "block";
 }
 
+bottomWhiteList.onclick = function() {
+    whitelistModal.style.display = "block";
+}
+
+storyReadMore.onclick = function() {
+    storyModal.style.display = "block";
+}
+
+manifest.onclick = function() {
+    manifestModal.style.display = "block";
+}
+
+
 window.onclick = function(event) {
-    if (event.target == modal) {
+    if (event.target == storyModal || event.target == manifestModal || event.target == whitelistModal) {
         home.style.overflow = "auto";
         home.style.overflowX = "hidden";
-        modal.style.display = "none";
+        storyModal.style.display = "none";
+        manifestModal.style.display = "none";
+        whitelistModal.style.display = "none";
     }
   }
-
-  span.onclick = function() {
-    home.style.overflow = "auto";
-    home.style.overflowX = "hidden";
-    modal.style.display = "none";
-  }
-
 
 creator1El.src = creator1;
 creator2El.src = creator2;
@@ -212,7 +221,7 @@ let peanutPositions = PeanutPosition;
 /// LEVEL-PLAYER SETTİNGS ///
 let levelup = 3;
 const gravity = .5;
-let playerspeed = 7;
+let playerspeed = 5;
 /// LEVEL-PLAYER SETTİNGS ///
 
 let animationID;
@@ -222,8 +231,8 @@ let timeMin = 0, timeSec = 0, timeSal = 0, score, compaireablescore;
 let peanut;
 let player;
 const platfroms = [];
-canvas.width = 1000;
-canvas.height = 750;
+canvas.width = 1414;
+canvas.height = 700;
 c.fillStyle = 'black';
 c.fillRect(0, 0, canvas.width, canvas.height);
 const data = {};
@@ -377,7 +386,7 @@ function animate() {
                 peanut.position.x = -50;
                 peanut.position.y = -50;
                 cancelAnimationFrame(animationID);
-                menu.style.display = 'flex';
+                menu.style.display = 'block';
                 sayacLabel.style.display = 'none';
 
                 data.userName = playername.value;
@@ -441,10 +450,8 @@ function PlatformsCreate() {
 };
 
 startbutton.addEventListener('click', () => {
-    if (playername.value == '') {
-        console.log('isim girsene orospu çocu');
-        window.alert('Please enter your Discord Nickname');
-    } else {
+    const discordValidation = /^((?!(discordtag|everyone|here)#)((?!@|#|:|```).{2,32})#\d{4})/;
+    if (playername.value != '' && discordValidation.test(playername.value)) {
         timeMin = 0;
         timeSec = 0;
         level = 0;
@@ -475,7 +482,11 @@ startbutton.addEventListener('click', () => {
             }
         }, 10)
         menu.style.display = 'none';
-    }
+    } else
+    {
+        console.log('Duzgun isim gir lan pic');
+        window.alert('Duzgun isim gir lan pic');
+    } 
 })
 
 // window.onload = () => {
@@ -750,20 +761,6 @@ const addNewScore = async (data) => {
         }).then(response => response.json());
 }
 const detail = document.getElementById('faqWhiteList');
-
-topWhiteList.addEventListener('click', () => {
-    setTimeout(() => {
-        detail.open = true;
-        detail.toggle;
-    }, 1000);
-});
-
-bottomWhiteList.addEventListener('click', () => {
-    setTimeout(() => {
-        detail.open = true;
-        detail.toggle;
-    }, 1500);
-});
 
 async function subCountHandler() {
     fetch('http://localhost:3003/subscribe')
