@@ -1055,6 +1055,19 @@
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
     background-color: #555;
   }
+
+  .mailError {
+    top: -30px;
+    padding-left: 5px;
+    display: none;
+    position: absolute;
+    left: 2px;
+    background-color: rgb(233, 135, 135);
+    border-radius: 10px;
+    border: 1px solid red;
+    color: white;
+    width: 366px;
+  }
 </style>
 
 <body style="width: 1920px; overflow-x: hidden;">
@@ -1152,46 +1165,48 @@
 
     <div id="manifestModal" class="modal"
       style="width: 100%; height: 100%; justify-content: center; align-items: center;  display: none; overflow: hidden;">
-      <div class="scrollbar" style="height: 100%; margin-top: 25px;" id="style-1">
-
-        <div class="modal-content force-overflow">
-          <div>
-            <h1>Hi there!</h1>
-            <p><br> 
+      <div class="modal-content force-overflow">
+        <div>
+          <h1>Hi there!</h1>
+          <p><br>
             First of all, we are here with the joy and excitement of bringing you a new NFT collection. We need to
             inform you about the foundations of this NFT collection.
-            </p><p><br> 
+          </p>
+          <p><br>
 
             Although we are not an aid campaign, we aim to raise awareness about the "Elephant Tusks" genocide in
             today's conditions and enable more people to have information about it. To show that there are many ways to
             spread this awareness and be a source of inspiration for many different projects, we decided to branch this
             project into different directions.
-            </p><p><br>
+          </p>
+          <p><br>
             The first of these branches begins with a 3-season story that we have written for you. This story serves as
             a building block in raising the awareness needed for both our NFTs and elephants. Another of these branches
             is the game we developed, PeanutRush. Based on platform game PeanutRush, the main character is an elephant,
             and they chase their favorite food, peanuts. With this game, we aim to bring the mentality of playing with
             and renting their collection pieces (with certain collection pieces in the Demo version) to our collectors
             and collector candidates.
-            </p><p><br>
+          </p>
+          <p><br>
             Hiring: We aim to create a sustainable ecosystem with a game mechanic that allows our collectors to earn an
             income other than NFT trading.
-            </p><p><br>
+          </p>
+          <p><br>
 
             NFT Collectors: We strive to provide the right to participate in special events and tournaments (in our
             game) that we will organize for those who have any item from the EYC collection in their wallet.
-            </p><p><br>
+          </p>
+          <p><br>
 
             In addition, we aim to define the right to 1 complimentary drink per week from our shop in the future. In
             the Metaverse universe that will be created, it is aimed that the wallets with this collection will have
             different rights from other projects.
-            </p><p style="color: red; font-size: 14px;"><br>
+          </p>
+          <p style="color: red; font-size: 14px;"><br>
 
             "Hiring doesn't make you an NFT collector. For this reason, it is not possible to participate in these
             events by renting."</p>
-          </div>
         </div>
-
       </div>
     </div>
 
@@ -1201,21 +1216,27 @@
         <div>
           You can join our <strong class="font-bold">
             <a href="https://discord.gg/hUaHrSTZyj" class="dclink" target="_blank">Discord</a></strong>
-          channel and other social media accounts. We will post all kind of offers on social media. 
+          channel and other social media accounts. We will post all kind of offers on social media.
           <br><br>
-          But we have one secret path for this... 
+          But we have a secret path for this...
           <br><br>
-          If you play our game and put your name to best score board, you can take WhiteList or Airdrop to us.
+          If you play our game and write your name on the best scoreboard, you can win Whitelist or Airdrop from us.
         </div>
       </div>
     </div>
 
 
     <div class="mx-auto" style="width: 100%; height: 100px; position: fixed; background-color: #040B11; z-index: 1;">
-      <div class="mx-auto" style="width: 1414px;">
-        <span class="head"
-          style="display: flex; position: absolute; margin-left: 10px; top: 22px; font-size: 32px;">LOGO</span>
-        <div class="container mx-auto" style="width: 780px; margin-top: 35px;">
+
+      <div style="width: 1414px; flex-direction: row; margin: auto;">
+
+        <div class="mx-auto" style="width: 1414px;">
+          <span class="head"
+            style="display: flex; position: absolute; margin-left: 10px; top: 22px; font-size: 32px;">LOGO</span>
+        </div>
+
+
+        <div style="margin-left: 244px; width: 780px; margin-top: 35px;">
           <table class="select-none display: flex;">
             <tr>
               <td class="topmenu"><a href="#home">HOME</a></td>
@@ -1228,6 +1249,15 @@
             </tr>
           </table>
         </div>
+
+        <div style="width: 316px; display: flex; position: relative; top: -36px; float: right;">
+          <a href="https://discord.gg/" target="_blank" class="topDiscord" style="left: 0; flex-direction: row;">
+            <img id="discord" style="height: 20px;">
+            DISCORD
+          </a>
+          <button class="whiteList" id="wallet" style="font-size: 18px; right: 0; width: 149px;">CONNECT</button>
+        </div>
+
       </div>
     </div>
 
@@ -1255,10 +1285,13 @@
             <span class="countdownSub">SECONDS</span>
           </span>
         </div>
-        <div class="mx-auto"
-          style="width: 616px; display: flex; height: 56px; position: relative; flex-direction: row; margin-top: 60px;">
-          <span><input class="topSignIn" id="topSubMail" type="email" placeholder="Enter your email"></span>
-          <span><button class="singInBtn" id="topSubBtn">SUBSCRIBE</button></span>
+        <div class="mx-auto" style="width: 616px; position: relative; margin-top: 60px;">
+          <div id="topMailError" class="mailError">
+          </div>
+          <div style="width: 616px; display: flex; height: 56px; position: relative; flex-direction: row;">
+            <span><input class="topSignIn" id="topSubMail" type="email" placeholder="Enter your email"></span>
+            <span><button class="singInBtn" id="topSubBtn">SUBSCRIBE</button></span>
+          </div>
         </div>
 
         <div class="mx-auto"
@@ -1319,7 +1352,7 @@
                     </span>
                     <span class="stroyModals">
                       <span class="modalHead">Ne yazsak ki aq</span>
-                      <span class="modalText">Buraya yazmalık yarak kürek bişiler bulmamız lazım he.</span>
+                      <span class="modalText">Buraya hala yazacak bir sey bulamadim fikri olan soylesin.</span>
                     </span>
                   </div>
                   <div style="display: flex; position: relative; flex-direction: row;">
@@ -1356,7 +1389,7 @@
                       </span>
                     </div>
 
-                    <div style="display: flex; position: relative; flex-direction: column;">
+                    <div id="rightImages" style="display: flex; position: relative; flex-direction: column;">
                       <span>
                         <img id="roadmapImgTwo" class="roadmapImgTwo"
                           style="width: 225px; height: 225px; background-color: black;">
@@ -1383,7 +1416,7 @@
                           <span id="roadmapText3" class="storyText" style="height: 50px;">Airdrop</span>
                           <span id="roadmapText4" class="storyText" style="height: 50px;">Public mint?</span>
                         </span>
-                        <div style="flex-direction: row; display: flex; position: relative; margin-top: 20px;">
+                        <div id="roadMapReadMore" style="flex-direction: row; display: flex; position: relative; margin-top: 20px;">
                           <button class="readmore">
                             <span class="readmoreText">READ MORE</span>
                           </button>
@@ -1554,8 +1587,12 @@
                               <!-- Start Butonu -->
                               <div
                                 style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                                
                                 <input type="text" placeholder="Discord#TAG" class="topSignIn" id="playername"
                                   style="position: relative; width: 250px; height: 40px; margin-bottom: 10px; padding: 10px;">
+                                  <div id="discordNameError" class="mailError" style="width: 250px; top: 225px; left: 477px;">
+                                    Please enter a Discord nickname
+                                  </div>
                                 <button class="text-black text-2xl py-3 rounded-full select-none"
                                   style="background-color: #21E786; font-family: Bakbak One; width: 250px;"
                                   id="start">Start</button>
@@ -1669,12 +1706,6 @@
                           NFT rental will come in Phase 3.
                         </div>
                       </details>
-                      <details id="faqWhiteList">
-                        <summary>Whiteliste basinca acilacak olan</summary>
-                        <div class="zindex">
-                          bak ne de guzel acildi xd.
-                        </div>
-                      </details>
                     </div>
                   </div>
                 </div>
@@ -1729,10 +1760,14 @@
         </div>
         <div style="display: flex; position: relative; width: 324px; flex-direction: column;">
           <span class="footerHead">SUBSCRIBE</span>
-          <div style="display: flex; position: relative; flex-direction: row;">
-            <span><input class="topSignIn" id="bottomSubMail" type="email" placeholder="Enter your email"
-                style="width: 287px; font-size: 14px;"></span>
-            <span><button class="singInBtn" id="bottomSubBtn" style="width: 154px;">SUBSCRIBE</button></span>
+          <div>
+            <div id="bottomMailError" style="width: 250px; top: 105px;" class="mailError">
+            </div>
+            <div style="display: flex; position: relative; flex-direction: row;">
+              <span><input class="topSignIn" id="bottomSubMail" type="email" placeholder="Enter your email"
+                  style="width: 287px; font-size: 14px;"></span>
+              <span><button class="singInBtn" id="bottomSubBtn" style="width: 154px;">SUBSCRIBE</button></span>
+            </div>
           </div>
         </div>
       </div>

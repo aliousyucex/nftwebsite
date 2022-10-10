@@ -527,6 +527,7 @@
     "validate-npm-package-license": "^3.0.4",
     "vm-browserify": "^1.1.2",
     "watchpack": "^1.6.1",
+    "web3": "^1.8.0",
     "webpack": "^4.46.0",
     "webpack-cli": "^4.10.0",
     "webpack-sources": "^1.4.3",

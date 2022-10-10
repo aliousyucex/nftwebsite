@@ -1,3 +1,4 @@
+import Web3 from 'web3';
 import 'regenerator-runtime/runtime';
 import PeanutPosition from '../json/peanutPositions.json';
 import positions from '../json/platforms.json';
@@ -48,10 +49,13 @@ const home = document.querySelector('body');
 const RoadmapImageOne = document.getElementById('roadmapImgOne');
 const RoadmapImageTwo = document.getElementById('roadmapImgTwo');
 const RoadmapImageThree = document.getElementById('roadmapImgThree');
+const rightImages = document.getElementById('rightImages');
+const roadMapReadMore = document.getElementById('roadMapReadMore');
 const roadmapBtnOne = document.getElementById('roadmapBtnOne');
 const roadmapBtnTwo = document.getElementById('roadmapBtnTwo');
 const roadmapBtnThree = document.getElementById('roadmapBtnThree');
 const playername = document.getElementById('playername');
+const discordNameError = document.getElementById('discordNameError');
 
 const subCount = document.getElementById('subCount');
 
@@ -136,6 +140,8 @@ const manifestModal = document.getElementById("manifestModal");
 const whitelistModal = document.getElementById("whitelistModal");
 const storyReadMore = document.getElementById("storyReadMore");
 const manifest = document.getElementById("manifest");
+const topMailError = document.getElementById("topMailError");
+const bottomMailError = document.getElementById("bottomMailError");
 
 topWhiteList.onclick = function() {
     whitelistModal.style.display = "block";
@@ -153,6 +159,15 @@ manifest.onclick = function() {
     manifestModal.style.display = "block";
 }
 
+addEventListener('keydown' , ({keyCode}) => {
+    if (keyCode == 27) {
+        home.style.overflow = "auto";
+        home.style.overflowX = "hidden";
+        storyModal.style.display = "none";
+        manifestModal.style.display = "none";
+        whitelistModal.style.display = "none";
+    }
+})
 
 window.onclick = function(event) {
     if (event.target == storyModal || event.target == manifestModal || event.target == whitelistModal) {
@@ -442,6 +457,7 @@ addEventListener('keyup', ({ keyCode }) => {
     }
 })
 
+
 function PlatformsCreate() {
 
     for (var i = 0; i < Positions[level].length; i++) {
@@ -483,26 +499,43 @@ startbutton.addEventListener('click', () => {
         }, 10)
         menu.style.display = 'none';
     } else
-    {
-        console.log('Duzgun isim gir lan pic');
-        window.alert('Duzgun isim gir lan pic');
+    {   
+        discordNameError.style.opacity = 1;
+        discordNameError.style.display = 'block';
+        setTimeout(() => {
+            fadeOut(discordNameError);
+        }, 2000);
     } 
 })
 
-// window.onload = () => {
-//     web3 = new Web3(window.ethereum);
-//     try {
-//         if (!window.ethereum) throw new Error('Metamask is not installed! Please install Metamask.');
-//         let adress = window.ethereum.request({ method: 'eth_requestAccounts' });
-//         if ((web3.eth.getChainId()) != 1) {
-//             changeNetwork();
-//         }
-//     }
-//     catch (err) {
-//         console.log(err);
-//     }
+const wallet = document.getElementById('wallet');
 
-// };
+wallet.onclick = () => {
+    getWallet();
+}
+
+window.onload = () => {
+    getWallet();
+};
+
+const getWallet = () => {
+    web3 = new Web3(window.ethereum);
+    try {
+        if (!window.ethereum) throw new Error('Metamask is not installed! Please install Metamask.');
+        let adress = window.ethereum.request({ method: 'eth_requestAccounts' });
+        if ((web3.eth.getChainId()) != 1) {
+            changeNetwork();
+        }
+        web3.eth.requestAccounts().then((address) => {
+            let writableAdress = address[0].slice(0, 9);
+            writableAdress += '...';
+            wallet.innerHTML = writableAdress;
+        })
+    }
+    catch (err) {
+        console.log(err);
+    }
+}
 
 // const networkCheck = () => {
 //     if ((web3.eth.getChainId()) != 1) {
@@ -520,6 +553,9 @@ function changeNetwork() {
             }
         ]
     });
+    if ((web3.eth.getChainId()) == 1) {
+        window.location.reload();
+    }
 };
 
 
@@ -545,6 +581,7 @@ setInterval(countDownFunction, 1000);
 
 const changeValue = {
     btn1: {
+        value: 0,
         color: 'black',
         head: 'PHASE 1',
         text1: 'Patates',
@@ -553,6 +590,7 @@ const changeValue = {
         text4: 'It'
     },
     btn2: {
+        value: 1,
         color: 'green',
         head: 'PHASE 2',
         text1: 'Sucuk',
@@ -561,6 +599,7 @@ const changeValue = {
         text4: 'It'
     },
     btn3: {
+        value: 2,
         color: 'gray',
         head: 'PHASE 3',
         text1: 'At',
@@ -594,7 +633,7 @@ const decideRoadmapLevel = (level) => {
             roadmapChange(changeValue.btn1);
             break;
         case 1:
-            roadmapBtnOne.style.background = '#888B8E';
+            roadmapBtnOne.style.display = '#888B8E';
             roadmapBtnTwo.style.background = '#21E786';
             roadmapBtnThree.style.background = '#888B8E';
             roadmapChange(changeValue.btn2);
@@ -635,7 +674,37 @@ function roadmapChange(changeValue) {
     RoadmapImageOne.style.backgroundColor = changeValue.color;
     RoadmapImageTwo.style.backgroundColor = changeValue.color;
     RoadmapImageThree.style.backgroundColor = changeValue.color;
-    RoadmapImageThree.style.display = 'none';
+    switch (changeValue.value) {
+        case 0: 
+            RoadmapImageOne.style.display = 'block';
+            RoadmapImageTwo.style.display = 'block';
+            RoadmapImageThree.style.display = 'block';
+            RoadmapImageTwo.style.width = '225px';
+            RoadmapImageThree.style.width = '225px';
+            RoadmapImageTwo.style.height = '225px';
+            rightImages.style.marginLeft = '0';
+            roadMapReadMore.style.display = 'block';
+            break;
+        case 1:
+            RoadmapImageOne.style.display = 'none';
+            RoadmapImageTwo.style.display = 'block';
+            RoadmapImageThree.style.display = 'block';
+            RoadmapImageTwo.style.width = '717px';
+            RoadmapImageThree.style.width = '717px';
+            RoadmapImageTwo.style.height = '225px';
+            rightImages.style.marginLeft = '48px';
+            roadMapReadMore.style.display = 'none';
+            break;
+        case 2:
+            RoadmapImageOne.style.display = 'none';
+            RoadmapImageTwo.style.display = 'block';
+            RoadmapImageThree.style.display = 'none';
+            RoadmapImageTwo.style.width = '717px';
+            RoadmapImageTwo.style.height = '470px';
+            rightImages.style.marginLeft = '48px';
+            roadMapReadMore.style.display = 'none';
+            break;
+    }
     roadmapHead.innerHTML = changeValue.head;
     roadmapText1.innerHTML = changeValue.text1;
     roadmapText2.innerHTML = changeValue.text2;
@@ -649,26 +718,44 @@ window.addEventListener('resize', () => {
     home.style.width = window.innerWidth;
 });
 
-const onEmailSubmit = (data, elementName, returnData, color) => {
-    elementName = elementName == 'topSubMail' ? elementName = topSubMail : elementName = bottomSubMail;
-    elementName.value = '';
-    elementName.style.border = color == 'error' ? '1px solid #FF0D47' : '2px solid rgba(31, 247, 103, 0.85)';
-    elementName.placeholder = `${returnData}`;
+const onEmailSubmit = (element, returnData, color) => {
+    element.value = '';
+    const subEl = element.id == 'topSubMail' ? topMailError : bottomMailError;    
+    subEl.style.display = 'block';
+    subEl.style.opacity = 1;
+    subEl.style.backgroundColor = color == 'error' ? 'rgb(233, 135, 135)' : 'rgb(91, 202, 110)'; 
+    subEl.innerHTML = `${returnData}`;
+    element.focus();
     setTimeout(() => {
-        elementName.style.borderWidth = '0px';
+        element.style.borderWidth = '0px';
+        fadeOut(subEl);
     }, 3000);
 }
 
-const isEmailValid = (mail, elementName) => {
+function fadeOut(element) {
+    var op = 1;  // initial opacity
+    var timer = setInterval(function () {
+        if (op <= 0.1){
+            element.style.opacity = 0;
+            element.style.display = 'none';
+            clearInterval(timer);
+        }
+        element.style.opacity = op;
+        element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+        op -= op * 0.2;
+    }, 50);
+}
+
+const isEmailValid = (mail, element) => {
     var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     if (!filter.test(mail)) {
-        onEmailSubmit(mail, elementName, 'Please enter valid email adress!', 'error');
+        onEmailSubmit(element, 'Please enter valid email adress!', 'error');
         return false;
     }
     return true;
 }
 
-const subscribeBtnClick = async (data, elementName) => {
+const subscribeBtnClick = async (data, element) => {
     const response = await fetch('http://localhost:3003/subscribe', {
         method: 'POST',
         headers: {
@@ -680,26 +767,26 @@ const subscribeBtnClick = async (data, elementName) => {
     })
         .then(response => {
             if (response.status == 200) {
-                onEmailSubmit(data, elementName, 'Email sucsessfuly added!', 'sucsess');
+                onEmailSubmit(element, 'Email sucsessfuly added!', 'sucses');
             } else {
-                onEmailSubmit(data, elementName, 'This email is already exist!', 'error');
+                onEmailSubmit(element, 'This email is already exist!', 'error');
             }
 
         });
 }
 
 topSubBtn.addEventListener('click', () => {
-    const valid = isEmailValid(topSubMail.value, 'topSubMail');
+    const valid = isEmailValid(topSubMail.value, topSubMail);
     if (valid) {
-        subscribeBtnClick(topSubMail.value, 'topSubMail');
+        subscribeBtnClick(topSubMail.value, topSubMail);
         subCountHandler();
     }
 });
 
 bottomSubBtn.addEventListener('click', () => {
-    const valid = isEmailValid(bottomSubMail.value, 'bottomSubMail');
+    const valid = isEmailValid(bottomSubMail.value, bottomSubMail);
     if (valid) {
-        subscribeBtnClick(bottomSubMail.value, 'bottomSubMail');
+        subscribeBtnClick(bottomSubMail.value, bottomSubMail);
         subCountHandler();
     }
 });
