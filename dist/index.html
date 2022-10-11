@@ -769,7 +769,6 @@
     top: 200px;
     display: flex;
     position: relative;
-    padding: 15px;
     justify-content: center;
   }
 
@@ -825,6 +824,12 @@
     margin: 20px;
   }
 
+  summary:before {
+    transform: rotate(0);
+    transform-origin: .2rem 50%;
+    transition: .25s transform ease;
+  }
+
   summary {
     display: flex;
     position: relative;
@@ -872,7 +877,6 @@
   }
 
   details[open] summary:after {
-
     content: "-";
     right: 38px;
     top: 1;
@@ -889,9 +893,71 @@
     line-height: 28px;
     color: #C2C3C5;
     align-self: stretch;
-    border-top: 1px solid #434343;
     margin: -18px 15px 0px 9px;
+    border-top: 1px solid #434343;
     padding: 0.5em;
+  }
+
+  .item {
+    color: #C2C3C5;
+    background: #141B22;
+    flex-direction: column;
+    width: 690px;
+    margin: 20px;
+    justify-content: center;
+    align-items: left;
+  }
+
+  .accordion {
+    display: flex;
+    margin: 0 20;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Bakbak One';
+    font-style: normal;
+
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 30px;
+    height: 92px;
+    text-transform: capitalize;
+    cursor: pointer;
+    transition: all .3s ease;
+  }
+
+  .accordion:hover {
+    color: white;
+  }
+
+  .panel {
+    max-height: 0px;
+    overflow: hidden;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    align-self: stretch;
+    width: 650px;
+    margin: 0px 20px 20px 20px;
+    transition: all 0.65s ease;
+  }
+
+  .open {
+    color: white;
+    margin: 0 20 10 20;
+    border-bottom: 1px solid #434343;
+  }
+
+  .icon {
+    font-family: 'Poppins';
+    font-size: 40px;
+    color: #21E786;
+  }
+
+  .panel p {
+    margin: 10px 0px 10px 20px;
+    text-align: justify;
   }
 
   .joinCommunity {
@@ -1232,7 +1298,7 @@
 
         <div class="mx-auto" style="width: 1414px;">
           <span class="head"
-            style="display: flex; position: absolute; margin-left: 10px; top: 22px; font-size: 32px;">LOGO</span>
+            style="display: flex; position: absolute; top: 22px; font-size: 32px;">LOGO</span>
         </div>
 
 
@@ -1416,7 +1482,8 @@
                           <span id="roadmapText3" class="storyText" style="height: 50px;">Airdrop</span>
                           <span id="roadmapText4" class="storyText" style="height: 50px;">Public mint?</span>
                         </span>
-                        <div id="roadMapReadMore" style="flex-direction: row; display: flex; position: relative; margin-top: 20px;">
+                        <div id="roadMapReadMore"
+                          style="flex-direction: row; display: flex; position: relative; margin-top: 20px;">
                           <button class="readmore">
                             <span class="readmoreText">READ MORE</span>
                           </button>
@@ -1587,12 +1654,13 @@
                               <!-- Start Butonu -->
                               <div
                                 style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
-                                
+
                                 <input type="text" placeholder="Discord#TAG" class="topSignIn" id="playername"
                                   style="position: relative; width: 250px; height: 40px; margin-bottom: 10px; padding: 10px;">
-                                  <div id="discordNameError" class="mailError" style="width: 250px; top: 225px; left: 477px;">
-                                    Please enter a Discord nickname
-                                  </div>
+                                <div id="discordNameError" class="mailError"
+                                  style="width: 250px; top: 225px; left: 477px;">
+                                  Please enter a Discord nickname
+                                </div>
                                 <button class="text-black text-2xl py-3 rounded-full select-none"
                                   style="background-color: #21E786; font-family: Bakbak One; width: 250px;"
                                   id="start">Start</button>
@@ -1625,21 +1693,40 @@
                 <div class="head mx-auto">
                   <span>FAQS
                 </div>
+
                 <div class="mx-auto" style="display: flex; position: relative; flex-direction: row; top: 60px">
                   <div style="display: flex; position: relative; flex-direction: row; text-align: left;">
                     <div>
-                      <details>
-                        <summary>Why Elephant?</summary>
-                        <div class="zindex">
+
+                      <div class="item">
+                        <div class="accordion">
+                          <span class="title">How To Install ?</span>
+                          <span class="icon">+</span>
+                        </div>
+                        <div class="panel">
+                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem commodi provident modi
+                          eligendi consequuntur esse consequatur quis corrupti delectus quas.
+                        </div>
+                      </div>
+                      <div class="item">
+                        <div class="accordion">
+                          <div class="title">Why Elephant?</div>
+                          <div class="icon">+</div>
+                        </div>
+                        <div class="panel">
                           We aim to raise awareness about the "Elephant Tusks" genocide in today's conditions and
                           enable
                           more
                           people to have information about it.
                         </div>
-                      </details>
-                      <details>
-                        <summary>Do you give a gift to NFT?</summary>
-                        <div class="zindex">
+                      </div>
+
+                      <div class="item">
+                        <div class="accordion">
+                          <div class="title">Do you give a gift to NFT?</div>
+                          <div class="icon">+</div>
+                        </div>
+                        <div class="panel">
                           NFT will be given as a gift in the DEMO version of the game. You can join our <strong
                             class="font-bold"><a href="https://discord.gg/hUaHrSTZyj" class="dclink"
                               target="_blank">Discord</a></strong> channel to learn how to win these
@@ -1647,65 +1734,78 @@
                           NFTs, which will
                           be limited only.
                         </div>
-                      </details>
-                      <details>
-                        <summary>Will everyone be able to play the game?</summary>
-                        <div class="zindex">
+                      </div>
+
+                      <div class="item">
+                        <div class="accordion">
+                          <div class="title">Will everyone be able to play the game?</div>
+                          <div class="icon">+</div>
+                        </div>
+                        <div class="panel">
                           Anyone who owns an NFT will be able to play, if you are not an NFT owner, you can play the
                           game
                           by renting an NFT from any of the NFT owners.
                         </div>
-                      </details>
-                      <details>
-                        <summary>Will there be a pre-sale?</summary>
-                        <div class="zindex">
+                      </div>
+
+                      <div class="item">
+                        <div class="accordion">
+                          <div class="title">Will there be a pre-sale?</div>
+                          <div class="icon">+</div>
+                        </div>
+                        <div class="panel">
                           The WhiteList sale will take place. You can find the details on our <strong
                             class="font-bold"><a href="https://discord.gg/hUaHrSTZyj" class="dclink"
                               target="_blank">Discord</a></strong>
                           channel.
                         </div>
-                      </details>
-                      <details>
-                        <summary>How can I get whitelisted?</summary>
-                        <div class="zindex">
+                      </div>
+                    </div>
+                    <div>
+                      <div class="item">
+                        <div class="accordion">
+                          <div class="title">How can I get whitelisted?</div>
+                          <div class="icon">+</div>
+                        </div>
+                        <div class="panel">
                           You can access the details on our <strong class="font-bold">
                             <a href="https://discord.gg/hUaHrSTZyj" class="dclink" target="_blank">Discord</a></strong>
                           channel.
                         </div>
-                      </details>
-                    </div>
-                    <div>
-                      <details>
-                        <summary>NFT mint prices?</summary>
-                        <div class="zindex">
-                          <p>
-                            Prices for WhiteList 0.11 ETH
-                          </p>
-                          <p>
-                            Prices for public 0.55 ETH
-                          </p>
+                      </div>
+
+                      <div class="item">
+                        <div class="accordion">
+                          <div class="title">NFT mint prices?</div>
+                          <div class="icon">+</div>
                         </div>
-                      </details>
-                      <details>
-                        <summary>How will I know how rare my NFT is?</summary>
-                        <div class="zindex">
+                        <div class="panel">
+                          Prices for WhiteList 0.11 ETH <br>
+                          Prices for public 0.55 ETH
+                        </div>
+                      </div>
+
+                      <div class="item">
+                        <div class="accordion">
+                          <div class="title">How will I know how rare my NFT is?</div>
+                          <div class="icon">+</div>
+                        </div>
+                        <div class="panel">
                           NFT has special accessories. That's Dimond, Gold, Silver, and Bronze. We have a few surprises
                           for
                           rarity.
                         </div>
-                      </details>
-                      <details>
-                        <summary>Why should I buy your NFTs</summary>
-                        <div class="zindex">
+                      </div>
+
+                      <div class="item">
+                        <div class="accordion">
+                          <div class="title">Why should I buy your NFTs?</div>
+                          <div class="icon">+</div>
+                        </div>
+                        <div class="panel">
                           With the leasing mechanics, you will be able to earn a side income from your NFTs.
                         </div>
-                      </details>
-                      <details>
-                        <summary>When will the rental arrive?</summary>
-                        <div class="zindex">
-                          NFT rental will come in Phase 3.
-                        </div>
-                      </details>
+                      </div>
                     </div>
                   </div>
                 </div>
