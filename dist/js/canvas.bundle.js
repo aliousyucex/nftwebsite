@@ -1540,29 +1540,39 @@ var storyReadMore = document.getElementById("storyReadMore");
 var manifest = document.getElementById("manifest");
 var topMailError = document.getElementById("topMailError");
 var bottomMailError = document.getElementById("bottomMailError");
+var topMenuDiv = document.getElementById("topMenuDiv");
 
 topWhiteList.onclick = function () {
   whitelistModal.style.display = "block";
+  home.style.overflowY = "hidden";
+  topMenuDiv.style.paddingRight = "17px";
 };
 
 bottomWhiteList.onclick = function () {
   whitelistModal.style.display = "block";
+  home.style.overflowY = "hidden";
+  topMenuDiv.style.paddingRight = "17px";
 };
 
 storyReadMore.onclick = function () {
   storyModal.style.display = "block";
+  home.style.overflowY = "hidden";
+  topMenuDiv.style.paddingRight = "17px";
 };
 
 manifest.onclick = function () {
   manifestModal.style.display = "block";
+  home.style.overflowY = "hidden";
+  topMenuDiv.style.paddingRight = "17px";
 };
 
 addEventListener('keydown', function (_ref) {
   var keyCode = _ref.keyCode;
 
   if (keyCode == 27) {
-    home.style.overflow = "auto";
+    home.style.overflow = "scroll";
     home.style.overflowX = "hidden";
+    topMenuDiv.style.paddingRight = "0";
     storyModal.style.display = "none";
     manifestModal.style.display = "none";
     whitelistModal.style.display = "none";
@@ -1571,8 +1581,9 @@ addEventListener('keydown', function (_ref) {
 
 window.onclick = function (event) {
   if (event.target == storyModal || event.target == manifestModal || event.target == whitelistModal) {
-    home.style.overflow = "auto";
+    home.style.overflow = "scroll";
     home.style.overflowX = "hidden";
+    topMenuDiv.style.paddingRight = "0";
     storyModal.style.display = "none";
     manifestModal.style.display = "none";
     whitelistModal.style.display = "none";
@@ -2062,28 +2073,28 @@ var changeValue = {
     value: 0,
     color: 'black',
     head: 'PHASE 1',
-    text1: 'Patates',
-    text2: 'Sucuk',
-    text3: 'At',
-    text4: 'It'
+    text1: 'Game demo version',
+    text2: 'Private mint - Airdrop',
+    text3: 'Story Season 1',
+    text4: 'Public mint'
   },
   btn2: {
     value: 1,
     color: 'green',
     head: 'PHASE 2',
-    text1: 'Sucuk',
-    text2: 'Patates',
-    text3: 'At',
-    text4: 'It'
+    text1: 'Game beta',
+    text2: 'Story season 2',
+    text3: 'New NFT Mechanics',
+    text4: 'World Wide Party Details'
   },
   btn3: {
     value: 2,
     color: 'gray',
     head: 'PHASE 3',
-    text1: 'At',
-    text2: 'Sucuk',
-    text3: 'Patates',
-    text4: 'It'
+    text1: 'Game full version - With tournaments',
+    text2: 'Story season 3',
+    text3: 'Creating third generating coffe shop',
+    text4: 'Worl Wide Party'
   }
 };
 var roadmapLevel = 0;

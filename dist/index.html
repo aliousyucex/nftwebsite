@@ -324,18 +324,6 @@
     width: 60px;
     height: 60px;
     background: rgba(194, 195, 197, 0.15);
-    /* Inside auto layout */
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-    margin: 0px 12px 40px 12px;
-    font-family: 'Bakbak One';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 56px;
-    line-height: 68px;
-    /* identical to box height, or 121% */
-    text-transform: capitalize;
   }
 
   .socialMediaFooter {
@@ -1123,6 +1111,7 @@
   }
 
   .mailError {
+    user-select: none;
     top: -30px;
     padding-left: 5px;
     display: none;
@@ -1130,7 +1119,6 @@
     left: 2px;
     background-color: rgb(233, 135, 135);
     border-radius: 10px;
-    border: 1px solid red;
     color: white;
     width: 366px;
   }
@@ -1292,13 +1280,13 @@
     </div>
 
 
-    <div class="mx-auto" style="width: 100%; height: 100px; position: fixed; background-color: #040B11; z-index: 1;">
+    <div class="mx-auto" id="topMenuDiv"
+      style="width: 100%; height: 100px; position: fixed; background-color: #040B11; z-index: 1;">
 
       <div style="width: 1414px; flex-direction: row; margin: auto;">
 
         <div class="mx-auto" style="width: 1414px;">
-          <span class="head"
-            style="display: flex; position: absolute; top: 22px; font-size: 32px;">LOGO</span>
+          <span class="head" style="display: flex; position: absolute; top: 22px; font-size: 32px;">LOGO</span>
         </div>
 
 
@@ -1368,12 +1356,12 @@
         </div>
         <div style="display: flex; justify-content: center; position: relative; ">
 
-          <span><a href="" target="_blank"><span class="socialMedia"><img id="twitter"></span></a></span>
-          <span><a href="" target="_blank"><span class="socialMedia"><img id="facebook"></span></a></span>
-          <span><a href="" target="_blank"><span class="socialMedia"><img id="telegram"></span></a></span>
-          <span><a href="" target="_blank"><span class="socialMedia"><img id="youtube"></span></a></span>
-          <span><a href="" target="_blank"><span class="socialMedia"><img id="tiktok"></span></a></span>
-          <span><a href="" target="_blank"><span class="socialMedia"><img id="discord"></span></a></span>
+          <span style="margin: 0px 12px 40px 12px;"><a href="" target="_blank"><span class="socialMedia"><img id="twitter"></span></a></span>
+          <span style="margin: 0px 12px 40px 12px;"><a href="" target="_blank"><span class="socialMedia"><img id="facebook"></span></a></span>
+          <span style="margin: 0px 12px 40px 12px;"><a href="" target="_blank"><span class="socialMedia"><img id="telegram"></span></a></span>
+          <span style="margin: 0px 12px 40px 12px;"><a href="" target="_blank"><span class="socialMedia"><img id="youtube"></span></a></span>
+          <span style="margin: 0px 12px 40px 12px;"><a href="" target="_blank"><span class="socialMedia"><img id="tiktok"></span></a></span>
+          <span style="margin: 0px 12px 40px 12px;"><a href="" target="_blank"><span class="socialMedia"><img id="discord"></span></a></span>
         </div>
       </div>
       <div style="width: 1414px; background: linear-gradient(356.98deg, #040B11 25.85%, rgba(4, 11, 17, 0) 54.01%);"
@@ -1477,10 +1465,10 @@
                             PHASE 1</h1>
                         </span>
                         <span style="flex-direction: row; position: relative;">
-                          <span id="roadmapText1" class="storyText" style="height: 50px;">Game demo version</span>
-                          <span id="roadmapText2" class="storyText" style="height: 50px;">Private mint</span>
-                          <span id="roadmapText3" class="storyText" style="height: 50px;">Airdrop</span>
-                          <span id="roadmapText4" class="storyText" style="height: 50px;">Public mint?</span>
+                          <span id="roadmapText1" class="storyText" style="height: 50px;">Game</span>
+                          <span id="roadmapText2" class="storyText" style="height: 50px;">Private mint - Airdrop</span>
+                          <span id="roadmapText3" class="storyText" style="height: 50px;">Story Season 1</span>
+                          <span id="roadmapText4" class="storyText" style="height: 50px;">Public mint</span>
                         </span>
                         <div id="roadMapReadMore"
                           style="flex-direction: row; display: flex; position: relative; margin-top: 20px;">
@@ -1528,10 +1516,14 @@
                     <span class="creatorsName">Ali Desidero</span>
                     <span class="creatorSubTitle">Çuf Çuf master</span>
                     <span class="creatorSocialMedia">
-                      <a href="https://www.linkedin.com/in/ali-o%C4%9Fuzhan-y%C3%BCce-672759188" target="_blank"
-                        style="padding: 10px;"><img id="linkedinSmall"></a>
-                      <a href="https://www.instagram.com/aliousyuce/" target="_blank" style="padding: 10px;"><img
-                          id="instagramSmall"></a>
+                      <span style="padding: 10px;">
+                        <a href="https://www.linkedin.com/in/ali-o%C4%9Fuzhan-y%C3%BCce-672759188" target="_blank"
+                          style="height: 20;"><img id="linkedinSmall"></a>
+                      </span>
+                      <span style="padding: 10px;">
+                        <a href="https://www.instagram.com/aliousyuce/" target="_blank" style="height: 20;"><img
+                            id="instagramSmall"></a>
+                      </span>
                     </span>
                   </span>
                   <span class="creators" style="flex-direction: column;">
@@ -1539,10 +1531,14 @@
                     <span class="creatorsName">Berkay</span>
                     <span class="creatorSubTitle">Çuf Çuf master</span>
                     <span class="creatorSocialMedia">
-                      <a href="https://www.linkedin.com/search/results/all/?heroEntityKey=urn%3Ali%3Afsd_profile%3AACoAACbNcU0BhfdVl8c-masEuwIRHp1W1aXMLvI&keywords=berkay%20%C3%A7ebi&origin=RICH_QUERY_SUGGESTION&position=0&searchId=c4a96b68-2396-4632-a335-55d667fd1752&sid=yq3"
-                        target="_blank" style="padding: 10px;"><img id="linkedinSmall1"></a>
-                      <a href="https://www.instagram.com/bceby/" target="_blank" style="padding: 10px;"><img
-                          id="instagramSmall1"></a>
+                      <span style="padding: 10px;">
+                        <a href="https://www.linkedin.com/search/results/all/?heroEntityKey=urn%3Ali%3Afsd_profile%3AACoAACbNcU0BhfdVl8c-masEuwIRHp1W1aXMLvI&keywords=berkay%20%C3%A7ebi&origin=RICH_QUERY_SUGGESTION&position=0&searchId=c4a96b68-2396-4632-a335-55d667fd1752&sid=yq3"
+                          target="_blank"><img id="linkedinSmall1"></a>
+                      </span>
+                      <span style="padding: 10px;">
+                        <a href="https://www.instagram.com/bceby/" target="_blank"><img
+                            id="instagramSmall1"></a>
+                      </span>
                     </span>
                   </span>
                   <span class="creators" style="flex-direction: column;">
@@ -1550,8 +1546,10 @@
                     <span class="creatorsName">Ahmet</span>
                     <span class="creatorSubTitle">Çuf Çuf master</span>
                     <span class="creatorSocialMedia">
-                      <a href="https://www.linkedin.com/in/ahmtcnsz/" target="_blank" style="padding: 10px;"><img
+                      <span style="padding: 10px;">
+                      <a href="https://www.linkedin.com/in/ahmtcnsz/" target="_blank" style="height: 20px;"><img
                           id="linkedinSmall2"></a>
+                        </span>
                     </span>
                   </span>
                 </div>
