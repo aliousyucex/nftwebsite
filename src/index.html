@@ -142,8 +142,13 @@
     }
   }
 
-  .dclink:hover {
+  .dclink {
     color: #5964F2;
+    ;
+  }
+
+  .dclink:hover {
+    color: #7880f3;
   }
 
   .twlink:hover {
@@ -1016,6 +1021,10 @@
     color: #C2C3C5;
   }
 
+  .footerLink:hover {
+    color: white;
+  }
+
   .change {
     animation: roadmapchange 0.3s ease-in-out;
   }
@@ -1306,10 +1315,12 @@
 
         <div style="width: 316px; display: flex; position: relative; top: -36px; float: right;">
           <a href="https://discord.gg/" target="_blank" class="topDiscord" style="left: 0; flex-direction: row;">
-            <img id="discord" style="height: 20px;">
+            <img id="discordUst" style="height: 20px;">
             DISCORD
           </a>
-          <button class="whiteList" id="wallet" style="font-size: 18px; right: 0; width: 149px;">CONNECT</button>
+          <button class="whiteList" id="wallet" style="font-size: 18px; right: 0; width: 149px; flex-direction: row;">
+            <img id="walletImg">
+            CONNECT</button>
         </div>
 
       </div>
@@ -1356,12 +1367,18 @@
         </div>
         <div style="display: flex; justify-content: center; position: relative; ">
 
-          <span style="margin: 0px 12px 40px 12px;"><a href="" target="_blank"><span class="socialMedia"><img id="twitter"></span></a></span>
-          <span style="margin: 0px 12px 40px 12px;"><a href="" target="_blank"><span class="socialMedia"><img id="facebook"></span></a></span>
-          <span style="margin: 0px 12px 40px 12px;"><a href="" target="_blank"><span class="socialMedia"><img id="telegram"></span></a></span>
-          <span style="margin: 0px 12px 40px 12px;"><a href="" target="_blank"><span class="socialMedia"><img id="youtube"></span></a></span>
-          <span style="margin: 0px 12px 40px 12px;"><a href="" target="_blank"><span class="socialMedia"><img id="tiktok"></span></a></span>
-          <span style="margin: 0px 12px 40px 12px;"><a href="" target="_blank"><span class="socialMedia"><img id="discord"></span></a></span>
+          <span style="margin: 0px 12px 40px 12px;"><a href="" target="_blank"><span class="socialMedia"><img
+                  id="twitter"></span></a></span>
+          <span style="margin: 0px 12px 40px 12px;"><a href="" target="_blank"><span class="socialMedia"><img
+                  id="facebook"></span></a></span>
+          <span style="margin: 0px 12px 40px 12px;"><a href="" target="_blank"><span class="socialMedia"><img
+                  id="telegram"></span></a></span>
+          <span style="margin: 0px 12px 40px 12px;"><a href="" target="_blank"><span class="socialMedia"><img
+                  id="youtube"></span></a></span>
+          <span style="margin: 0px 12px 40px 12px;"><a href="" target="_blank"><span class="socialMedia"><img
+                  id="tiktok"></span></a></span>
+          <span style="margin: 0px 12px 40px 12px;"><a href="" target="_blank"><span class="socialMedia"><img
+                  id="discord"></span></a></span>
         </div>
       </div>
       <div style="width: 1414px; background: linear-gradient(356.98deg, #040B11 25.85%, rgba(4, 11, 17, 0) 54.01%);"
@@ -1386,8 +1403,8 @@
                       <h2 class="count">13.000</h2>
                     </div>
                     <div style="flex-direction: column; margin-left: 78px;">
-                      <h3 class="itemHead">Subscribe Count</h3>
-                      <h2 class="count" id="subCount">3</h2>
+                      <h3 class="itemHead">Price</h3>
+                      <h2 class="count" id="subCount">1 ETH</h2>
                     </div>
                   </div>
                   <div style="flex-direction: row; display: flex; position: relative; margin-top: 58px;">
@@ -1400,9 +1417,9 @@
                   <div style="display: flex; position: relative; flex-direction: row; float: right;">
                     <span class="stroyModals ">
                       <span class="modalHead">Elephants</span>
-                      <span class="modalText">Elephants, which are under the order of proboscis, are entitled to be
-                        classified as intelligent animals. There are two classes of Asian and African elephants. They
-                        are facing extinction!</span>
+                      <span class="modalText">Elephants included in the proboscis order have the right to be classified
+                        as intelligent animals. There are two classes Asian and African elephants. They are in danger of
+                        extinction!</span>
                     </span>
                     <span class="stroyModals">
                       <span class="modalHead">Ne yazsak ki aq</span>
@@ -1455,31 +1472,26 @@
                       </span>
                     </div>
                   </div>
-                  <div class="mx-auto"
-                    style="display: flex; position: relative; flex-direction: row; align-items: center;">
-                    <div class="max-w-md">
-                      <span style="display: flow-root; position: relative; left: 95px;">
-                        <span style="flex-direction: row; position: relative;">
-                          <h1 id="roadmapHead" class="head"
-                            style="font-size: 36px; height: 40px; position: relative; margin-bottom: 35px; justify-content: left;">
-                            PHASE 1</h1>
+                  <div class="mx-auto">
+                    <div class="mx-auto" style="display: flex; position: relative; flex-direction: row; top: 99px;">
+                      <div class="max-w-md">
+                        <span style="display: flow-root; position: relative; left: 95px;">
+                          <span style="flex-direction: row; position: relative;">
+                            <h1 id="roadmapHead" class="head"
+                              style="font-size: 36px; height: 40px; position: relative; margin-bottom: 35px; justify-content: left;">
+                              PHASE 1</h1>
+                          </span>
+                          <span style="flex-direction: row; position: relative;">
+                            <span id="roadmapText1" class="storyText" style="height: 50px;">Game</span>
+                            <span id="roadmapText2" class="storyText" style="height: 50px;">Private mint -
+                              Airdrop</span>
+                            <span id="roadmapText3" class="storyText" style="height: 50px;">Story Season 1</span>
+                            <span id="roadmapText4" class="storyText" style="height: 50px;">Public mint</span>
+                          </span>
                         </span>
-                        <span style="flex-direction: row; position: relative;">
-                          <span id="roadmapText1" class="storyText" style="height: 50px;">Game</span>
-                          <span id="roadmapText2" class="storyText" style="height: 50px;">Private mint - Airdrop</span>
-                          <span id="roadmapText3" class="storyText" style="height: 50px;">Story Season 1</span>
-                          <span id="roadmapText4" class="storyText" style="height: 50px;">Public mint</span>
-                        </span>
-                        <div id="roadMapReadMore"
-                          style="flex-direction: row; display: flex; position: relative; margin-top: 20px;">
-                          <button class="readmore">
-                            <span class="readmoreText">READ MORE</span>
-                          </button>
-                        </div>
-                      </span>
+                      </div>
                     </div>
                   </div>
-
 
                 </div>
                 <div class="mx-auto"
@@ -1488,8 +1500,10 @@
                     <button id="roadmapLeftArrow" class="arrow left" s></button>
 
                     <span>
-                      <span class="roadmapSelector"><span class="roadmapSelectorComplate"></span><span
-                          class="roadmapSelectorUnComplate"></span></span>
+                      <span class="roadmapSelector">
+                        <span id="oyunBozanSpan" class="roadmapSelectorComplate"></span>
+                        <span class="roadmapSelectorUnComplate"></span>
+                      </span>
                       <button id="roadmapBtnOne" class="roadmapBtns" style="left: 187px; background: #21E786;"><span
                           class="roadmapBtnsS"></span></button>
                       <button id="roadmapBtnTwo" class="roadmapBtns" style="left: 625px;"><span
@@ -1513,8 +1527,8 @@
                 <div style="display: flex; position: relative; flex-direction: row; top: 100px">
                   <span class="creators" style="flex-direction: column;">
                     <img id="creator1" class="creatorPng">
-                    <span class="creatorsName">Ali Desidero</span>
-                    <span class="creatorSubTitle">Çuf Çuf master</span>
+                    <span class="creatorsName">FreyR</span>
+                    <span class="creatorSubTitle">Creator - Developer</span>
                     <span class="creatorSocialMedia">
                       <span style="padding: 10px;">
                         <a href="https://www.linkedin.com/in/ali-o%C4%9Fuzhan-y%C3%BCce-672759188" target="_blank"
@@ -1528,28 +1542,38 @@
                   </span>
                   <span class="creators" style="flex-direction: column;">
                     <img id="creator2" class="creatorPng">
-                    <span class="creatorsName">Berkay</span>
-                    <span class="creatorSubTitle">Çuf Çuf master</span>
+                    <span class="creatorsName">Bceby</span>
+                    <span class="creatorSubTitle">Creator</span>
                     <span class="creatorSocialMedia">
                       <span style="padding: 10px;">
                         <a href="https://www.linkedin.com/search/results/all/?heroEntityKey=urn%3Ali%3Afsd_profile%3AACoAACbNcU0BhfdVl8c-masEuwIRHp1W1aXMLvI&keywords=berkay%20%C3%A7ebi&origin=RICH_QUERY_SUGGESTION&position=0&searchId=c4a96b68-2396-4632-a335-55d667fd1752&sid=yq3"
                           target="_blank"><img id="linkedinSmall1"></a>
                       </span>
                       <span style="padding: 10px;">
-                        <a href="https://www.instagram.com/bceby/" target="_blank"><img
-                            id="instagramSmall1"></a>
+                        <a href="https://www.instagram.com/bceby/" target="_blank"><img id="instagramSmall1"></a>
                       </span>
                     </span>
                   </span>
                   <span class="creators" style="flex-direction: column;">
                     <img id="creator3" class="creatorPng">
                     <span class="creatorsName">Ahmet</span>
-                    <span class="creatorSubTitle">Çuf Çuf master</span>
+                    <span class="creatorSubTitle">Designer</span>
                     <span class="creatorSocialMedia">
                       <span style="padding: 10px;">
-                      <a href="https://www.linkedin.com/in/ahmtcnsz/" target="_blank" style="height: 20px;"><img
-                          id="linkedinSmall2"></a>
-                        </span>
+                        <a href="https://www.linkedin.com/in/ahmtcnsz/" target="_blank" style="height: 20px;"><img
+                            id="linkedinSmall2"></a>
+                      </span>
+                    </span>
+                  </span>
+                  <span class="creators" style="flex-direction: column;">
+                    <img id="creator3" class="creatorPng">
+                    <span class="creatorsName">Murat</span>
+                    <span class="creatorSubTitle">Designer</span>
+                    <span class="creatorSocialMedia">
+                      <span style="padding: 10px;">
+                        <a href="https://www.linkedin.com/in/ahmtcnsz/" target="_blank" style="height: 20px;"><img
+                            id="linkedinSmall2"></a>
+                      </span>
                     </span>
                   </span>
                 </div>
@@ -1565,18 +1589,18 @@
                 <div style="display: flex; position: relative; top: 100px; flex-direction: column;">
                   <span style="display: flex; position: relative; flex-direction: column; height: 120px;">
                     <span style="display: flex; position: relative; flex-direction: row;">
-                      <span class="partner padding">1 Partner</span>
-                      <span class="partnerGray padding">2 Partner</span>
-                      <span class="partner padding">3 Partner</span>
-                      <span class="partnerGray padding"> 4Partner</span>
-                      <span class="partner padding"> Partner</span>
+                      <span class="partner padding">Partner</span>
+                      <span class="partnerGray padding">Partner</span>
+                      <span class="partner padding">Partner</span>
+                      <span class="partnerGray padding">Partner</span>
+                      <span class="partner padding">Partner</span>
                       <span class="partnerGray padding">Partner</span>
                     </span>
                   </span>
                   <span style="display: flex; position: relative; flex-direction: column; height: 120px;">
                     <span style="display: flex; position: relative; flex-direction: row;">
                       <span class="partnerGray padding">Partner</span>
-                      <span class="partner padding"> Partner</span>
+                      <span class="partner padding">Partner</span>
                       <span class="partnerGray padding">Partner</span>
                       <span class="partner padding"> Easter Egg</span>
                       <span class="partnerGray padding">Partner</span>
@@ -1693,19 +1717,10 @@
                 </div>
 
                 <div class="mx-auto" style="display: flex; position: relative; flex-direction: row; top: 60px">
-                  <div style="display: flex; position: relative; flex-direction: row; text-align: left;">
+                  <div
+                    style="display: flex; position: relative; flex-direction: row; text-align: left; user-select: none;">
                     <div>
 
-                      <div class="item">
-                        <div class="accordion">
-                          <span class="title">How To Install ?</span>
-                          <span class="icon">+</span>
-                        </div>
-                        <div class="panel">
-                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem commodi provident modi
-                          eligendi consequuntur esse consequatur quis corrupti delectus quas.
-                        </div>
-                      </div>
                       <div class="item">
                         <div class="accordion">
                           <div class="title">Why Elephant?</div>
@@ -1715,7 +1730,9 @@
                           We aim to raise awareness about the "Elephant Tusks" genocide in today's conditions and
                           enable
                           more
-                          people to have information about it.
+                          people to have information about it. <p></p>
+
+
                         </div>
                       </div>
 
@@ -1730,7 +1747,7 @@
                               target="_blank">Discord</a></strong> channel to learn how to win these
                           giveaway
                           NFTs, which will
-                          be limited only.
+                          be limited only. <p></p>
                         </div>
                       </div>
 
@@ -1742,20 +1759,7 @@
                         <div class="panel">
                           Anyone who owns an NFT will be able to play, if you are not an NFT owner, you can play the
                           game
-                          by renting an NFT from any of the NFT owners.
-                        </div>
-                      </div>
-
-                      <div class="item">
-                        <div class="accordion">
-                          <div class="title">Will there be a pre-sale?</div>
-                          <div class="icon">+</div>
-                        </div>
-                        <div class="panel">
-                          The WhiteList sale will take place. You can find the details on our <strong
-                            class="font-bold"><a href="https://discord.gg/hUaHrSTZyj" class="dclink"
-                              target="_blank">Discord</a></strong>
-                          channel.
+                          by renting an NFT from any of the NFT owners. <p></p>
                         </div>
                       </div>
                     </div>
@@ -1768,7 +1772,7 @@
                         <div class="panel">
                           You can access the details on our <strong class="font-bold">
                             <a href="https://discord.gg/hUaHrSTZyj" class="dclink" target="_blank">Discord</a></strong>
-                          channel.
+                          channel. <p></p>
                         </div>
                       </div>
 
@@ -1778,22 +1782,12 @@
                           <div class="icon">+</div>
                         </div>
                         <div class="panel">
-                          Prices for WhiteList 0.11 ETH <br>
-                          Prices for public 0.55 ETH
+                          Prices for WhiteList 0.65 ETH <br>
+                          Prices for public 1 ETH <p></p>
                         </div>
                       </div>
 
-                      <div class="item">
-                        <div class="accordion">
-                          <div class="title">How will I know how rare my NFT is?</div>
-                          <div class="icon">+</div>
-                        </div>
-                        <div class="panel">
-                          NFT has special accessories. That's Dimond, Gold, Silver, and Bronze. We have a few surprises
-                          for
-                          rarity.
-                        </div>
-                      </div>
+
 
                       <div class="item">
                         <div class="accordion">
@@ -1801,7 +1795,7 @@
                           <div class="icon">+</div>
                         </div>
                         <div class="panel">
-                          With the leasing mechanics, you will be able to earn a side income from your NFTs.
+                          With the leasing mechanics, you will be able to earn a side income from your NFTs. <p></p>
                         </div>
                       </div>
                     </div>
@@ -1816,11 +1810,9 @@
                       COMMUNITY</span>
                   </div>
                   <div>
-                    <span class="poppins" style="top: 100px; left:360px; color: white;">Lorem Ipsum is simply dummy
-                      text
-                      of the printing and typesetting industry. </span>
+                    <span class="poppins" style="top: 100px; left:217px; color: white;">You can be aware of whitelists and airdrops by following us on social media and joining our discord channel.</span>
                   </div>
-                  <div style="width: 339px; height: 48px; position: relative; display: flex; left: -136px; top: 150px;">
+                  <div style="width: 339px; height: 48px; position: relative; display: flex; left: -453px; top: 150px;">
                     <a href="https://discord.gg/" target="_blank" class="topDiscord"
                       style="left: 0; flex-direction: row;"><img id="logo2" style="height: 20px;">DISCORD</a>
                     <button id="bottomWhiteList" class="whiteList" style="right: 0;">WHITELIST NOW</button>
@@ -1839,10 +1831,10 @@
       <div class="mx-auto" style="display: flex; position: relative; top: 196px;  flex-direction: row;">
         <div style="display: flex; position: relative; width: 324px; margin-right: 170px;">
           <span class="head">LOGO</span>
-          <span class="footerText">Bir elin neyi var??? Iki elin sesi var qarsim.</span>
+          <span class="footerText">NFT project at Opensea with ERC721A</span>
         </div>
         <div style="display: flex; position: relative; width: 83px; flex-direction: column; margin-right: 130px;">
-          <span class="footerHead">SUBSCRIBE</span>
+          <span class="footerHead">SITE MAP</span>
           <span class="footerLink"><a href="#home">Home</a></span>
           <span class="footerLink"><a href="#storyMain">Story</a></span>
           <span class="footerLink"><a href="#roadmap">Roadmap</a></span>
@@ -1853,7 +1845,7 @@
           <span class="footerHead">COMPANY</span>
           <span class="footerLink">Terms Canditions</span>
           <span class="footerLink">Privacy Policy</span>
-          <span class="footerLink">Whitepaper</span>
+          <span class="footerLink">Contact</span>
           <span class="footerLink">Help Center</span>
         </div>
         <div style="display: flex; position: relative; width: 324px; flex-direction: column;">

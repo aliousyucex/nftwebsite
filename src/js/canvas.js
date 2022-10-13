@@ -22,6 +22,7 @@ import Playerthreeright from '../IMG/playerthreeright.png';
 import Playerthreeleft from '../IMG/playerthreeleft.png';
 import creators from '../IMG/creators.png'
 import discord from '../IMG/discord.png';
+import walletIm from '../IMG/wallet.png';
 import twitter from '../IMG/twitter.png';
 import linkedins from '../IMG/linkedinSmall.png';
 import facebooks from '../IMG/facebookSmall.png';
@@ -50,14 +51,13 @@ const RoadmapImageOne = document.getElementById('roadmapImgOne');
 const RoadmapImageTwo = document.getElementById('roadmapImgTwo');
 const RoadmapImageThree = document.getElementById('roadmapImgThree');
 const rightImages = document.getElementById('rightImages');
-const roadMapReadMore = document.getElementById('roadMapReadMore');
 const roadmapBtnOne = document.getElementById('roadmapBtnOne');
 const roadmapBtnTwo = document.getElementById('roadmapBtnTwo');
 const roadmapBtnThree = document.getElementById('roadmapBtnThree');
 const playername = document.getElementById('playername');
 const discordNameError = document.getElementById('discordNameError');
 
-const subCount = document.getElementById('subCount');
+// const subCount = document.getElementById('subCount');
 
 const topSubBtn = document.getElementById('topSubBtn');
 const topSubMail = document.getElementById('topSubMail');
@@ -93,6 +93,8 @@ const pImg1 = document.getElementById('p1');
 const pImg2 = document.getElementById('p2');
 const pImg3 = document.getElementById('p3');
 const dc = document.getElementById('discord');
+const dcU = document.getElementById('discordUst');
+const walletImg = document.getElementById('walletImg');
 const tw = document.getElementById('twitter');
 const yt = document.getElementById('youtube');
 const tl = document.getElementById('telegram');
@@ -209,6 +211,8 @@ pImg1.src = Playeroneright;
 pImg2.src = Playertworight;
 pImg3.src = Playerthreeright;
 dc.src = discord;
+walletImg.src = walletIm;
+dcU.src = discord;
 tw.src = twitter;
 yt.src = youtube;
 tl.src = telegram;
@@ -522,15 +526,17 @@ startbutton.addEventListener('click', () => {
 
 const wallet = document.getElementById('wallet');
 
-wallet.onclick = () => {
-    getWallet();
+wallet.onclick = async () => {
+    await getWallet().then((at) => {
+        let writableAdress = at[0].slice(0, 9);
+    writableAdress += '...';
+    wallet.innerHTML = writableAdress;
+    });
+
+    
 }
 
-window.onload = () => {
-    getWallet();
-};
-
-const getWallet = () => {
+const getWallet = async () => {
     web3 = new Web3(window.ethereum);
     try {
         if (!window.ethereum) throw new Error('Metamask is not installed! Please install Metamask.');
@@ -538,11 +544,7 @@ const getWallet = () => {
         if ((web3.eth.getChainId()) != 1) {
             changeNetwork();
         }
-        web3.eth.requestAccounts().then((address) => {
-            let writableAdress = address[0].slice(0, 9);
-            writableAdress += '...';
-            wallet.innerHTML = writableAdress;
-        })
+        return web3.eth.requestAccounts();
     }
     catch (err) {
         console.log(err);
@@ -695,7 +697,6 @@ function roadmapChange(changeValue) {
             RoadmapImageThree.style.width = '225px';
             RoadmapImageTwo.style.height = '225px';
             rightImages.style.marginLeft = '0';
-            roadMapReadMore.style.display = 'block';
             break;
         case 1:
             RoadmapImageOne.style.display = 'none';
@@ -705,7 +706,6 @@ function roadmapChange(changeValue) {
             RoadmapImageThree.style.width = '717px';
             RoadmapImageTwo.style.height = '225px';
             rightImages.style.marginLeft = '48px';
-            roadMapReadMore.style.display = 'none';
             break;
         case 2:
             RoadmapImageOne.style.display = 'none';
@@ -714,7 +714,6 @@ function roadmapChange(changeValue) {
             RoadmapImageTwo.style.width = '717px';
             RoadmapImageTwo.style.height = '470px';
             rightImages.style.marginLeft = '48px';
-            roadMapReadMore.style.display = 'none';
             break;
     }
     roadmapHead.innerHTML = changeValue.head;
@@ -724,10 +723,23 @@ function roadmapChange(changeValue) {
     roadmapText4.innerHTML = changeValue.text4;
 };
 
+const oyunBozanSpan = document.getElementById('oyunBozanSpan');
+
 home.style.width = window.innerWidth;
+console.log(window.innerWidth)
+if (window.innerWidth < 1536) {
+    oyunBozanSpan.style.width = 190 + 'px';
+} else {
+    oyunBozanSpan.style.width = 190 + 'px';
+}
 
 window.addEventListener('resize', () => {
     home.style.width = window.innerWidth;
+    if (window.innerWidth < 1536) {
+        oyunBozanSpan.style.width = 190 + 'px';
+    } else {
+        oyunBozanSpan.style.width = 190 + 'px';
+    }
 });
 
 const onEmailSubmit = (element, returnData, color) => {
@@ -869,7 +881,7 @@ async function subCountHandler() {
     })
 }
 
-subCountHandler();
+// subCountHandler();
 
 let acc = document.getElementsByClassName('accordion');
 

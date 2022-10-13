@@ -1325,6 +1325,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/IMG/wallet.png":
+/*!****************************!*\
+  !*** ./src/IMG/wallet.png ***!
+  \****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "IMG/wallet.png");
+
+/***/ }),
+
 /***/ "./src/IMG/youtube.png":
 /*!*****************************!*\
   !*** ./src/IMG/youtube.png ***!
@@ -1387,21 +1400,22 @@ var _json_player_json__WEBPACK_IMPORTED_MODULE_4___namespace = /*#__PURE__*/__we
 /* harmony import */ var _IMG_playerthreeleft_png__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../IMG/playerthreeleft.png */ "./src/IMG/playerthreeleft.png");
 /* harmony import */ var _IMG_creators_png__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../IMG/creators.png */ "./src/IMG/creators.png");
 /* harmony import */ var _IMG_discord_png__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../IMG/discord.png */ "./src/IMG/discord.png");
-/* harmony import */ var _IMG_twitter_png__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../IMG/twitter.png */ "./src/IMG/twitter.png");
-/* harmony import */ var _IMG_linkedinSmall_png__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../IMG/linkedinSmall.png */ "./src/IMG/linkedinSmall.png");
-/* harmony import */ var _IMG_facebookSmall_png__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ../IMG/facebookSmall.png */ "./src/IMG/facebookSmall.png");
-/* harmony import */ var _IMG_instagramSmall_png__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ../IMG/instagramSmall.png */ "./src/IMG/instagramSmall.png");
-/* harmony import */ var _IMG_telegramSmall_png__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ../IMG/telegramSmall.png */ "./src/IMG/telegramSmall.png");
-/* harmony import */ var _IMG_youtube_png__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ../IMG/youtube.png */ "./src/IMG/youtube.png");
-/* harmony import */ var _IMG_telegram_png__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ../IMG/telegram.png */ "./src/IMG/telegram.png");
-/* harmony import */ var _IMG_facebook_png__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ../IMG/facebook.png */ "./src/IMG/facebook.png");
-/* harmony import */ var _IMG_tiktok_png__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ../IMG/tiktok.png */ "./src/IMG/tiktok.png");
-/* harmony import */ var _IMG_opensea_png__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ../IMG/opensea.png */ "./src/IMG/opensea.png");
-/* harmony import */ var _IMG_storyone_png__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ../IMG/storyone.png */ "./src/IMG/storyone.png");
-/* harmony import */ var _IMG_background_png__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ../IMG/background.png */ "./src/IMG/background.png");
-/* harmony import */ var _IMG_ali_png__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ../IMG/ali.png */ "./src/IMG/ali.png");
-/* harmony import */ var _IMG_berkay_jpg__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ../IMG/berkay.jpg */ "./src/IMG/berkay.jpg");
-/* harmony import */ var _IMG_ahmet_jpg__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ../IMG/ahmet.jpg */ "./src/IMG/ahmet.jpg");
+/* harmony import */ var _IMG_wallet_png__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../IMG/wallet.png */ "./src/IMG/wallet.png");
+/* harmony import */ var _IMG_twitter_png__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../IMG/twitter.png */ "./src/IMG/twitter.png");
+/* harmony import */ var _IMG_linkedinSmall_png__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ../IMG/linkedinSmall.png */ "./src/IMG/linkedinSmall.png");
+/* harmony import */ var _IMG_facebookSmall_png__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ../IMG/facebookSmall.png */ "./src/IMG/facebookSmall.png");
+/* harmony import */ var _IMG_instagramSmall_png__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ../IMG/instagramSmall.png */ "./src/IMG/instagramSmall.png");
+/* harmony import */ var _IMG_telegramSmall_png__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ../IMG/telegramSmall.png */ "./src/IMG/telegramSmall.png");
+/* harmony import */ var _IMG_youtube_png__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ../IMG/youtube.png */ "./src/IMG/youtube.png");
+/* harmony import */ var _IMG_telegram_png__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ../IMG/telegram.png */ "./src/IMG/telegram.png");
+/* harmony import */ var _IMG_facebook_png__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ../IMG/facebook.png */ "./src/IMG/facebook.png");
+/* harmony import */ var _IMG_tiktok_png__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ../IMG/tiktok.png */ "./src/IMG/tiktok.png");
+/* harmony import */ var _IMG_opensea_png__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ../IMG/opensea.png */ "./src/IMG/opensea.png");
+/* harmony import */ var _IMG_storyone_png__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ../IMG/storyone.png */ "./src/IMG/storyone.png");
+/* harmony import */ var _IMG_background_png__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ../IMG/background.png */ "./src/IMG/background.png");
+/* harmony import */ var _IMG_ali_png__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ../IMG/ali.png */ "./src/IMG/ali.png");
+/* harmony import */ var _IMG_berkay_jpg__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ../IMG/berkay.jpg */ "./src/IMG/berkay.jpg");
+/* harmony import */ var _IMG_ahmet_jpg__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ../IMG/ahmet.jpg */ "./src/IMG/ahmet.jpg");
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
@@ -1411,6 +1425,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
 
 
 
@@ -1462,13 +1477,12 @@ var RoadmapImageOne = document.getElementById('roadmapImgOne');
 var RoadmapImageTwo = document.getElementById('roadmapImgTwo');
 var RoadmapImageThree = document.getElementById('roadmapImgThree');
 var rightImages = document.getElementById('rightImages');
-var roadMapReadMore = document.getElementById('roadMapReadMore');
 var roadmapBtnOne = document.getElementById('roadmapBtnOne');
 var roadmapBtnTwo = document.getElementById('roadmapBtnTwo');
 var roadmapBtnThree = document.getElementById('roadmapBtnThree');
 var playername = document.getElementById('playername');
-var discordNameError = document.getElementById('discordNameError');
-var subCount = document.getElementById('subCount');
+var discordNameError = document.getElementById('discordNameError'); // const subCount = document.getElementById('subCount');
+
 var topSubBtn = document.getElementById('topSubBtn');
 var topSubMail = document.getElementById('topSubMail');
 var bottomSubBtn = document.getElementById('bottomSubBtn');
@@ -1498,6 +1512,8 @@ var pImg1 = document.getElementById('p1');
 var pImg2 = document.getElementById('p2');
 var pImg3 = document.getElementById('p3');
 var dc = document.getElementById('discord');
+var dcU = document.getElementById('discordUst');
+var walletImg = document.getElementById('walletImg');
 var tw = document.getElementById('twitter');
 var yt = document.getElementById('youtube');
 var tl = document.getElementById('telegram');
@@ -1590,40 +1606,42 @@ window.onclick = function (event) {
   }
 };
 
-creator1El.src = _IMG_ali_png__WEBPACK_IMPORTED_MODULE_34__["default"];
-creator2El.src = _IMG_berkay_jpg__WEBPACK_IMPORTED_MODULE_35__["default"];
-creator3El.src = _IMG_ahmet_jpg__WEBPACK_IMPORTED_MODULE_36__["default"];
+creator1El.src = _IMG_ali_png__WEBPACK_IMPORTED_MODULE_35__["default"];
+creator2El.src = _IMG_berkay_jpg__WEBPACK_IMPORTED_MODULE_36__["default"];
+creator3El.src = _IMG_ahmet_jpg__WEBPACK_IMPORTED_MODULE_37__["default"];
 faqs.forEach(function (faq) {
   faq.addEventListener('click', function () {
     faq.classList.toggle('active');
   });
 });
 var levelbgcolors = ['#383D7D', '#543F57', 'rgb(171, 163, 255)'];
-backgroundEl.style.backgroundImage = "url(".concat(_IMG_background_png__WEBPACK_IMPORTED_MODULE_33__["default"], ")");
+backgroundEl.style.backgroundImage = "url(".concat(_IMG_background_png__WEBPACK_IMPORTED_MODULE_34__["default"], ")");
 pImg1.src = _IMG_playeroneright_png__WEBPACK_IMPORTED_MODULE_14__["default"];
 pImg2.src = _IMG_playertworight_png__WEBPACK_IMPORTED_MODULE_16__["default"];
 pImg3.src = _IMG_playerthreeright_png__WEBPACK_IMPORTED_MODULE_18__["default"];
 dc.src = _IMG_discord_png__WEBPACK_IMPORTED_MODULE_21__["default"];
-tw.src = _IMG_twitter_png__WEBPACK_IMPORTED_MODULE_22__["default"];
-yt.src = _IMG_youtube_png__WEBPACK_IMPORTED_MODULE_27__["default"];
-tl.src = _IMG_telegram_png__WEBPACK_IMPORTED_MODULE_28__["default"];
-fb.src = _IMG_facebook_png__WEBPACK_IMPORTED_MODULE_29__["default"];
-tt.src = _IMG_tiktok_png__WEBPACK_IMPORTED_MODULE_30__["default"];
+walletImg.src = _IMG_wallet_png__WEBPACK_IMPORTED_MODULE_22__["default"];
+dcU.src = _IMG_discord_png__WEBPACK_IMPORTED_MODULE_21__["default"];
+tw.src = _IMG_twitter_png__WEBPACK_IMPORTED_MODULE_23__["default"];
+yt.src = _IMG_youtube_png__WEBPACK_IMPORTED_MODULE_28__["default"];
+tl.src = _IMG_telegram_png__WEBPACK_IMPORTED_MODULE_29__["default"];
+fb.src = _IMG_facebook_png__WEBPACK_IMPORTED_MODULE_30__["default"];
+tt.src = _IMG_tiktok_png__WEBPACK_IMPORTED_MODULE_31__["default"];
 logo.src = _IMG_discord_png__WEBPACK_IMPORTED_MODULE_21__["default"];
 logo2.src = _IMG_discord_png__WEBPACK_IMPORTED_MODULE_21__["default"];
 dcf.src = _IMG_discord_png__WEBPACK_IMPORTED_MODULE_21__["default"];
-twf.src = _IMG_twitter_png__WEBPACK_IMPORTED_MODULE_22__["default"];
-ytf.src = _IMG_youtube_png__WEBPACK_IMPORTED_MODULE_27__["default"];
-tlf.src = _IMG_telegram_png__WEBPACK_IMPORTED_MODULE_28__["default"];
-fbf.src = _IMG_facebook_png__WEBPACK_IMPORTED_MODULE_29__["default"];
-ttf.src = _IMG_tiktok_png__WEBPACK_IMPORTED_MODULE_30__["default"];
-ln.src = _IMG_linkedinSmall_png__WEBPACK_IMPORTED_MODULE_23__["default"];
-igs.src = _IMG_instagramSmall_png__WEBPACK_IMPORTED_MODULE_25__["default"];
-ln1.src = _IMG_linkedinSmall_png__WEBPACK_IMPORTED_MODULE_23__["default"]; // fbs1.src = facebooks;
+twf.src = _IMG_twitter_png__WEBPACK_IMPORTED_MODULE_23__["default"];
+ytf.src = _IMG_youtube_png__WEBPACK_IMPORTED_MODULE_28__["default"];
+tlf.src = _IMG_telegram_png__WEBPACK_IMPORTED_MODULE_29__["default"];
+fbf.src = _IMG_facebook_png__WEBPACK_IMPORTED_MODULE_30__["default"];
+ttf.src = _IMG_tiktok_png__WEBPACK_IMPORTED_MODULE_31__["default"];
+ln.src = _IMG_linkedinSmall_png__WEBPACK_IMPORTED_MODULE_24__["default"];
+igs.src = _IMG_instagramSmall_png__WEBPACK_IMPORTED_MODULE_26__["default"];
+ln1.src = _IMG_linkedinSmall_png__WEBPACK_IMPORTED_MODULE_24__["default"]; // fbs1.src = facebooks;
 
-igs1.src = _IMG_instagramSmall_png__WEBPACK_IMPORTED_MODULE_25__["default"]; // tls1.src = telegrams;
+igs1.src = _IMG_instagramSmall_png__WEBPACK_IMPORTED_MODULE_26__["default"]; // tls1.src = telegrams;
 
-ln2.src = _IMG_linkedinSmall_png__WEBPACK_IMPORTED_MODULE_23__["default"]; // fbs2.src = facebooks;
+ln2.src = _IMG_linkedinSmall_png__WEBPACK_IMPORTED_MODULE_24__["default"]; // fbs2.src = facebooks;
 // igs2.src = instagrams;
 // tls2.src = telegrams;
 // op.src = opensea;
@@ -1999,37 +2017,71 @@ startbutton.addEventListener('click', function () {
   }
 });
 var wallet = document.getElementById('wallet');
+wallet.onclick = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+  return regeneratorRuntime.wrap(function _callee$(_context) {
+    while (1) {
+      switch (_context.prev = _context.next) {
+        case 0:
+          _context.next = 2;
+          return getWallet().then(function (at) {
+            var writableAdress = at[0].slice(0, 9);
+            writableAdress += '...';
+            wallet.innerHTML = writableAdress;
+          });
 
-wallet.onclick = function () {
-  getWallet();
-};
-
-window.onload = function () {
-  getWallet();
-};
-
-var getWallet = function getWallet() {
-  web3 = new web3__WEBPACK_IMPORTED_MODULE_0___default.a(window.ethereum);
-
-  try {
-    if (!window.ethereum) throw new Error('Metamask is not installed! Please install Metamask.');
-    var adress = window.ethereum.request({
-      method: 'eth_requestAccounts'
-    });
-
-    if (web3.eth.getChainId() != 1) {
-      changeNetwork();
+        case 2:
+        case "end":
+          return _context.stop();
+      }
     }
+  }, _callee);
+}));
 
-    web3.eth.requestAccounts().then(function (address) {
-      var writableAdress = address[0].slice(0, 9);
-      writableAdress += '...';
-      wallet.innerHTML = writableAdress;
-    });
-  } catch (err) {
-    console.log(err);
-  }
-}; // const networkCheck = () => {
+var getWallet = /*#__PURE__*/function () {
+  var _ref8 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
+    var adress;
+    return regeneratorRuntime.wrap(function _callee2$(_context2) {
+      while (1) {
+        switch (_context2.prev = _context2.next) {
+          case 0:
+            web3 = new web3__WEBPACK_IMPORTED_MODULE_0___default.a(window.ethereum);
+            _context2.prev = 1;
+
+            if (window.ethereum) {
+              _context2.next = 4;
+              break;
+            }
+
+            throw new Error('Metamask is not installed! Please install Metamask.');
+
+          case 4:
+            adress = window.ethereum.request({
+              method: 'eth_requestAccounts'
+            });
+
+            if (web3.eth.getChainId() != 1) {
+              changeNetwork();
+            }
+
+            return _context2.abrupt("return", web3.eth.requestAccounts());
+
+          case 9:
+            _context2.prev = 9;
+            _context2.t0 = _context2["catch"](1);
+            console.log(_context2.t0);
+
+          case 12:
+          case "end":
+            return _context2.stop();
+        }
+      }
+    }, _callee2, null, [[1, 9]]);
+  }));
+
+  return function getWallet() {
+    return _ref8.apply(this, arguments);
+  };
+}(); // const networkCheck = () => {
 //     if ((web3.eth.getChainId()) != 1) {
 //         changeNetwork();
 //     }
@@ -2171,7 +2223,6 @@ function roadmapChange(changeValue) {
       RoadmapImageThree.style.width = '225px';
       RoadmapImageTwo.style.height = '225px';
       rightImages.style.marginLeft = '0';
-      roadMapReadMore.style.display = 'block';
       break;
 
     case 1:
@@ -2182,7 +2233,6 @@ function roadmapChange(changeValue) {
       RoadmapImageThree.style.width = '717px';
       RoadmapImageTwo.style.height = '225px';
       rightImages.style.marginLeft = '48px';
-      roadMapReadMore.style.display = 'none';
       break;
 
     case 2:
@@ -2192,7 +2242,6 @@ function roadmapChange(changeValue) {
       RoadmapImageTwo.style.width = '717px';
       RoadmapImageTwo.style.height = '470px';
       rightImages.style.marginLeft = '48px';
-      roadMapReadMore.style.display = 'none';
       break;
   }
 
@@ -2204,9 +2253,24 @@ function roadmapChange(changeValue) {
 }
 
 ;
+var oyunBozanSpan = document.getElementById('oyunBozanSpan');
 home.style.width = window.innerWidth;
+console.log(window.innerWidth);
+
+if (window.innerWidth < 1536) {
+  oyunBozanSpan.style.width = 190 + 'px';
+} else {
+  oyunBozanSpan.style.width = 190 + 'px';
+}
+
 window.addEventListener('resize', function () {
   home.style.width = window.innerWidth;
+
+  if (window.innerWidth < 1536) {
+    oyunBozanSpan.style.width = 190 + 'px';
+  } else {
+    oyunBozanSpan.style.width = 190 + 'px';
+  }
 });
 
 var onEmailSubmit = function onEmailSubmit(element, returnData, color) {
@@ -2251,13 +2315,13 @@ var isEmailValid = function isEmailValid(mail, element) {
 };
 
 var subscribeBtnClick = /*#__PURE__*/function () {
-  var _ref7 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(data, element) {
+  var _ref9 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3(data, element) {
     var response;
-    return regeneratorRuntime.wrap(function _callee$(_context) {
+    return regeneratorRuntime.wrap(function _callee3$(_context3) {
       while (1) {
-        switch (_context.prev = _context.next) {
+        switch (_context3.prev = _context3.next) {
           case 0:
-            _context.next = 2;
+            _context3.next = 2;
             return fetch('http://localhost:3003/subscribe', {
               method: 'POST',
               headers: {
@@ -2275,18 +2339,18 @@ var subscribeBtnClick = /*#__PURE__*/function () {
             });
 
           case 2:
-            response = _context.sent;
+            response = _context3.sent;
 
           case 3:
           case "end":
-            return _context.stop();
+            return _context3.stop();
         }
       }
-    }, _callee);
+    }, _callee3);
   }));
 
   return function subscribeBtnClick(_x, _x2) {
-    return _ref7.apply(this, arguments);
+    return _ref9.apply(this, arguments);
   };
 }();
 
@@ -2312,10 +2376,10 @@ function fetchText(_x3, _x4) {
 }
 
 function _fetchText() {
-  _fetchText = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3(i, j) {
-    return regeneratorRuntime.wrap(function _callee3$(_context3) {
+  _fetchText = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee5(i, j) {
+    return regeneratorRuntime.wrap(function _callee5$(_context5) {
       while (1) {
-        switch (_context3.prev = _context3.next) {
+        switch (_context5.prev = _context5.next) {
           case 0:
             fetch('http://localhost:3003/score').then(function (response) {
               return response.json();
@@ -2333,10 +2397,10 @@ function _fetchText() {
 
           case 1:
           case "end":
-            return _context3.stop();
+            return _context5.stop();
         }
       }
-    }, _callee3);
+    }, _callee5);
   }));
   return _fetchText.apply(this, arguments);
 }
@@ -2369,13 +2433,13 @@ function whoIsHaveBiggestScore() {
 }
 
 var addNewScore = /*#__PURE__*/function () {
-  var _ref8 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(data) {
+  var _ref10 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4(data) {
     var response;
-    return regeneratorRuntime.wrap(function _callee2$(_context2) {
+    return regeneratorRuntime.wrap(function _callee4$(_context4) {
       while (1) {
-        switch (_context2.prev = _context2.next) {
+        switch (_context4.prev = _context4.next) {
           case 0:
-            _context2.next = 2;
+            _context4.next = 2;
             return fetch('http://localhost:3003/score', {
               method: 'POST',
               headers: {
@@ -2391,18 +2455,18 @@ var addNewScore = /*#__PURE__*/function () {
             });
 
           case 2:
-            response = _context2.sent;
+            response = _context4.sent;
 
           case 3:
           case "end":
-            return _context2.stop();
+            return _context4.stop();
         }
       }
-    }, _callee2);
+    }, _callee4);
   }));
 
   return function addNewScore(_x5) {
-    return _ref8.apply(this, arguments);
+    return _ref10.apply(this, arguments);
   };
 }();
 
@@ -2410,13 +2474,14 @@ var detail = document.getElementById('faqWhiteList');
 
 function subCountHandler() {
   return _subCountHandler.apply(this, arguments);
-}
+} // subCountHandler();
+
 
 function _subCountHandler() {
-  _subCountHandler = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
-    return regeneratorRuntime.wrap(function _callee4$(_context4) {
+  _subCountHandler = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee6() {
+    return regeneratorRuntime.wrap(function _callee6$(_context6) {
       while (1) {
-        switch (_context4.prev = _context4.next) {
+        switch (_context6.prev = _context6.next) {
           case 0:
             fetch('http://localhost:3003/subscribe').then(function (response) {
               return response.json();
@@ -2426,15 +2491,14 @@ function _subCountHandler() {
 
           case 1:
           case "end":
-            return _context4.stop();
+            return _context6.stop();
         }
       }
-    }, _callee4);
+    }, _callee6);
   }));
   return _subCountHandler.apply(this, arguments);
 }
 
-subCountHandler();
 var acc = document.getElementsByClassName('accordion'); // Creating a loop to add eventListener to all .accordion classes
 
 for (var i = 0; i < acc.length; i++) {
