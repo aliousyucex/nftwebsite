@@ -1,10 +1,11 @@
 import Web3 from 'web3';
-import 'regenerator-runtime/runtime';
+import { ethers } from 'ethers';
+import Web3Modal from "web3modal";
+import WalletLink from "walletlink";
+import WalletConnectProvider from "@walletconnect/web3-provider";
 import PeanutPosition from '../json/peanutPositions.json';
 import positions from '../json/platforms.json';
 import playerConfig from '../json/player.json';
-
-import font from '../fonts/ocraext.ttf';
 import platformlv1 from '../IMG/platformlv1.png';
 import platformlv2 from '../IMG/platformlv1.png';
 import platformlv3 from '../IMG/platformlv3.png';
@@ -41,6 +42,9 @@ import bgElephant from '../IMG/background.png';
 import creator1 from '../IMG/ali.png';
 import creator2 from '../IMG/berkay.jpg';
 import creator3 from '../IMG/ahmet.jpg';
+import metamaskImg from '../IMG/metamask.png';
+import walletConnectImg from '../IMG/walletconnectImg.png';
+// import metamaskImg from '../IMG/metamask.png';
 
 ///  HTML ITEMS ///
 let web3;
@@ -101,6 +105,8 @@ const tl = document.getElementById('telegram');
 const fb = document.getElementById('facebook');
 const tt = document.getElementById('tiktok');
 
+const metamask = document.getElementById('metamask');
+const walletConnect = document.getElementById('walletConnect');
 const logo = document.getElementById('logo');
 const logo2 = document.getElementById('logo2');
 
@@ -137,6 +143,7 @@ const creator1El = document.getElementById('creator1');
 const creator2El = document.getElementById('creator2');
 const creator3El = document.getElementById('creator3');
 
+const walletConnectModal = document.getElementById("walletConnectModal");
 const storyModal = document.getElementById("storyModal");
 const manifestModal = document.getElementById("manifestModal");
 const whitelistModal = document.getElementById("whitelistModal");
@@ -146,52 +153,128 @@ const topMailError = document.getElementById("topMailError");
 const bottomMailError = document.getElementById("bottomMailError");
 
 const topMenuDiv = document.getElementById("topMenuDiv");
+const wallet = document.getElementById('wallet');
+const metamaskConnect = document.getElementById('metamaskConnect');
+const walletConnectBtn = document.getElementById('walletConnectBtn');
+const walletLinkBtn = document.getElementById('walletLinkBtn');
 
-topWhiteList.onclick = function() {
-    whitelistModal.style.display = "block";
+wallet.onclick = async () => {
+    if (wallet.innerHTML.includes("0x")) return;
+    modalOpen(walletConnectModal);
+}
+
+metamaskConnect.onclick = async () => {
+    await getWallet('metamask');
+}
+
+walletConnectBtn.onclick = async () => {
+    await getWallet('walletconnect');
+}
+
+walletLinkBtn.onclick = async () => {
+    await getWallet('walletlink');
+}
+
+let writableAdress = null;
+const getWallet = async (walletProvider) => {
+    console.log(walletProvider);
+    if (walletProvider === 'metamask') {
+        web3 = new Web3(window.ethereum);
+        window.ethereum.request({ method: 'eth_requestAccounts' }).then((at) => {
+            if ((window.ethereum.networkVersion) != 1) {
+                changeNetwork();
+            }
+            writableAdress = at[0].slice(0, 9);
+            writableAdress += '...';
+            wallet.innerHTML = writableAdress;
+
+        });
+        closeModals();
+        return;
+    }
+    const provider = await web3Modal.connectTo(walletProvider).then(async () => {
+        window.ethereum.request({ method: 'eth_requestAccounts' }).then((at) => {
+            if ((window.ethereum.networkVersion) != 1) {
+                changeNetwork();
+            }
+            writableAdress = at[0].slice(0, 9);
+            writableAdress += '...';
+            wallet.innerHTML = writableAdress;
+            
+        })
+    })
+    closeModals();
+}
+
+window.ethereum.on("chainChanged", () => {
+    changeNetwork();
+    window.location.reload();
+});
+
+function changeNetwork() {
+    window.ethereum.request({
+        method: 'wallet_switchEthereumChain',
+        params: [
+            {
+                chainId: '0x1',
+            }
+        ]
+    });
+    if ((web3.eth.getChainId()) == 1) {
+        window.location.reload();
+    }
+};
+
+const modalOpen = (modalName) => {
+    modalName.style.display = "block";
     home.style.overflowY = "hidden";
     topMenuDiv.style.paddingRight = "17px";
 }
 
-bottomWhiteList.onclick = function() {
-    whitelistModal.style.display = "block";
-    home.style.overflowY = "hidden";
-    topMenuDiv.style.paddingRight = "17px"
+
+
+topWhiteList.onclick = function () {
+    modalOpen(whitelistModal);
 }
 
-storyReadMore.onclick = function() {
-    storyModal.style.display = "block";
-    home.style.overflowY = "hidden";
-    topMenuDiv.style.paddingRight = "17px"
+bottomWhiteList.onclick = function () {
+    modalOpen(whitelistModal);
 }
 
-manifest.onclick = function() {
-    manifestModal.style.display = "block";
-    home.style.overflowY = "hidden";
-    topMenuDiv.style.paddingRight = "17px"
+storyReadMore.onclick = function () {
+    modalOpen(storyModal);
 }
 
-addEventListener('keydown' , ({keyCode}) => {
+manifest.onclick = function () {
+    modalOpen(manifestModal);
+}
+
+addEventListener('keydown', ({ keyCode }) => {
     if (keyCode == 27) {
-        home.style.overflow = "scroll";
-        home.style.overflowX = "hidden";
-        topMenuDiv.style.paddingRight = "0";
-        storyModal.style.display = "none";
-        manifestModal.style.display = "none";
-        whitelistModal.style.display = "none";
+        closeModals();
     }
 })
 
-window.onclick = function(event) {
-    if (event.target == storyModal || event.target == manifestModal || event.target == whitelistModal) {
-        home.style.overflow = "scroll";
-        home.style.overflowX = "hidden";
-        topMenuDiv.style.paddingRight = "0";
-        storyModal.style.display = "none";
-        manifestModal.style.display = "none";
-        whitelistModal.style.display = "none";
+const closeModals = () => {
+    home.style.overflow = "scroll";
+    home.style.overflowX = "hidden";
+    topMenuDiv.style.paddingRight = "0";
+    walletConnectModal.style.display = "none";
+    storyModal.style.display = "none";
+    manifestModal.style.display = "none";
+    whitelistModal.style.display = "none";
+}
+
+window.onclick = function (event) {
+    if (
+        event.target == storyModal ||
+        event.target == manifestModal ||
+        event.target == whitelistModal ||
+        event.target == walletConnectModal
+    ) {
+        closeModals();
     }
-  }
+}
 
 creator1El.src = creator1;
 creator2El.src = creator2;
@@ -219,6 +302,8 @@ tl.src = telegram;
 fb.src = facebook;
 tt.src = tiktok;
 
+metamask.src = metamaskImg;
+walletConnect.src = walletConnectImg;
 logo.src = discord;
 logo2.src = discord;
 
@@ -514,64 +599,14 @@ startbutton.addEventListener('click', () => {
             }
         }, 10)
         menu.style.display = 'none';
-    } else
-    {   
+    } else {
         discordNameError.style.opacity = 1;
         discordNameError.style.display = 'block';
         setTimeout(() => {
             fadeOut(discordNameError);
         }, 2000);
-    } 
+    }
 })
-
-const wallet = document.getElementById('wallet');
-
-wallet.onclick = async () => {
-    await getWallet().then((at) => {
-        let writableAdress = at[0].slice(0, 9);
-    writableAdress += '...';
-    wallet.innerHTML = writableAdress;
-    });
-
-    
-}
-
-const getWallet = async () => {
-    web3 = new Web3(window.ethereum);
-    try {
-        if (!window.ethereum) throw new Error('Metamask is not installed! Please install Metamask.');
-        let adress = window.ethereum.request({ method: 'eth_requestAccounts' });
-        if ((web3.eth.getChainId()) != 1) {
-            changeNetwork();
-        }
-        return web3.eth.requestAccounts();
-    }
-    catch (err) {
-        console.log(err);
-    }
-}
-
-// const networkCheck = () => {
-//     if ((web3.eth.getChainId()) != 1) {
-//         changeNetwork();
-//     }
-// }
-// setInterval(networkCheck, 5000);
-
-function changeNetwork() {
-    window.ethereum.request({
-        method: 'wallet_switchEthereumChain',
-        params: [
-            {
-                chainId: '0x1',
-            }
-        ]
-    });
-    if ((web3.eth.getChainId()) == 1) {
-        window.location.reload();
-    }
-};
-
 
 const daysEl = document.getElementById('days');
 const hoursEl = document.getElementById('hours');
@@ -689,7 +724,7 @@ function roadmapChange(changeValue) {
     RoadmapImageTwo.style.backgroundColor = changeValue.color;
     RoadmapImageThree.style.backgroundColor = changeValue.color;
     switch (changeValue.value) {
-        case 0: 
+        case 0:
             RoadmapImageOne.style.display = 'block';
             RoadmapImageTwo.style.display = 'block';
             RoadmapImageThree.style.display = 'block';
@@ -726,6 +761,7 @@ function roadmapChange(changeValue) {
 const oyunBozanSpan = document.getElementById('oyunBozanSpan');
 
 home.style.width = window.innerWidth;
+
 console.log(window.innerWidth)
 if (window.innerWidth < 1536) {
     oyunBozanSpan.style.width = 190 + 'px';
@@ -744,10 +780,10 @@ window.addEventListener('resize', () => {
 
 const onEmailSubmit = (element, returnData, color) => {
     element.value = '';
-    const subEl = element.id == 'topSubMail' ? topMailError : bottomMailError;    
+    const subEl = element.id == 'topSubMail' ? topMailError : bottomMailError;
     subEl.style.display = 'block';
     subEl.style.opacity = 1;
-    subEl.style.backgroundColor = color == 'error' ? 'rgb(233, 135, 135)' : 'rgb(91, 202, 110)'; 
+    subEl.style.backgroundColor = color == 'error' ? 'rgb(233, 135, 135)' : 'rgb(91, 202, 110)';
     subEl.innerHTML = `${returnData}`;
     element.focus();
     setTimeout(() => {
@@ -759,7 +795,7 @@ const onEmailSubmit = (element, returnData, color) => {
 function fadeOut(element) {
     var op = 1;  // initial opacity
     var timer = setInterval(function () {
-        if (op <= 0.1){
+        if (op <= 0.1) {
             element.style.opacity = 0;
             element.style.display = 'none';
             clearInterval(timer);
@@ -817,9 +853,9 @@ bottomSubBtn.addEventListener('click', () => {
 
 async function fetchText(i, j) {
     fetch('http://localhost:3003/score')
-    .then(response => {
-        return response.json();
-    })
+        .then(response => {
+            return response.json();
+        })
         .then(data => {
             if (data[i].userName.length > 14) {
                 let tempData = data[i].userName;
@@ -851,7 +887,7 @@ function whoIsHaveBiggestScore() {
             td[i + 2 + j].className = "pl-12 scoreTableUsers";
             td[i + 3 + j].className = "pl-12 scoreTableUsers";
         }
-        fetchText(i, j);    
+        fetchText(i, j);
         j += 3;
     }
 
@@ -860,25 +896,25 @@ function whoIsHaveBiggestScore() {
 
 const addNewScore = async (data) => {
     const response = await fetch('http://localhost:3003/score', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                userName: data.userName,
-                scoreText: data.scoreText,
-                scoreInt: data.scoreInt,
-            })
-        }).then(response => response.json());
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            userName: data.userName,
+            scoreText: data.scoreText,
+            scoreInt: data.scoreInt,
+        })
+    }).then(response => response.json());
 }
 const detail = document.getElementById('faqWhiteList');
 
 async function subCountHandler() {
     fetch('http://localhost:3003/subscribe')
-    .then(response => response.json())
+        .then(response => response.json())
         .then(data => {
-        subCount.innerHTML = data[0].subcount;
-    })
+            subCount.innerHTML = data[0].subcount;
+        })
 }
 
 // subCountHandler();
@@ -887,32 +923,58 @@ let acc = document.getElementsByClassName('accordion');
 
 // Creating a loop to add eventListener to all .accordion classes
 
-for(let i=0;i<acc.length;i++){
-  acc[i].addEventListener('click',function(){
+for (let i = 0; i < acc.length; i++) {
+    acc[i].addEventListener('click', function () {
 
-    let panel = this.nextElementSibling
-//if panel is open, then this block will close it on mouse click
-    if(panel.style.maxHeight){
-      panel.style.paddingBottom = 0 + 'px';
-      panel.style.maxHeight=null;
-      this.classList.remove('open')
-      this.getElementsByClassName('icon')[0].innerHTML ='+';
-      
-    }
- //if panel is closed, then this block will open it on mouse click
-    else{
-//Removes everthing on previous accordion on new mouse click
-//by this for loop
-      for(let x=0;x<acc.length; x++){
-        acc[x].classList.remove('open')
-        acc[x].nextElementSibling.style.maxHeight=null;
-        acc[x].getElementsByClassName('icon')[0].innerHTML ='+';
+        let panel = this.nextElementSibling
+        //if panel is open, then this block will close it on mouse click
+        if (panel.style.maxHeight) {
+            panel.style.paddingBottom = 0 + 'px';
+            panel.style.maxHeight = null;
+            this.classList.remove('open')
+            this.getElementsByClassName('icon')[0].innerHTML = '+';
 
-      }
- //if panel is closed, then these codes will open it on mouse click & set those specific rules mentioned below.
-      panel.style.maxHeight = panel.scrollHeight + 'px';
-      this.classList.toggle('open')
-      this.getElementsByClassName('icon')[0].innerHTML ='-'
-    }
-  })
+        }
+        //if panel is closed, then this block will open it on mouse click
+        else {
+            //Removes everthing on previous accordion on new mouse click
+            //by this for loop
+            for (let x = 0; x < acc.length; x++) {
+                acc[x].classList.remove('open')
+                acc[x].nextElementSibling.style.maxHeight = null;
+                acc[x].getElementsByClassName('icon')[0].innerHTML = '+';
+
+            }
+            //if panel is closed, then these codes will open it on mouse click & set those specific rules mentioned below.
+            panel.style.maxHeight = panel.scrollHeight + 'px';
+            this.classList.toggle('open')
+            this.getElementsByClassName('icon')[0].innerHTML = '-'
+        }
+    })
 }
+
+const providerOptions = {
+    walletconnect: {
+        package: WalletConnectProvider,
+        options: {
+            infuraId: "429845bc7d2f45ab9e2bf08230783036"
+        }
+    },
+    walletlink: {
+        package: WalletLink,
+        options: {
+            appName: "Elephant Yatch Club",
+            infuraId: "429845bc7d2f45ab9e2bf08230783036",
+            rpc: "",
+            chainId: 1,
+            appLogoUrl: null,
+            darkMode: true
+        }
+    }
+};
+
+const web3Modal = new Web3Modal({
+    network: "mainnet",
+    theme: "dark",
+    providerOptions
+});

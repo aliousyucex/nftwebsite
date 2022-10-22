@@ -1021,7 +1021,7 @@
     color: #C2C3C5;
   }
 
-  .footerLink:hover {
+  .hoverWhite:hover {
     color: white;
   }
 
@@ -1084,7 +1084,6 @@
     padding: 20px;
     color: white;
     font-family: 'Poppins';
-    border-radius: 1%;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -1131,10 +1130,121 @@
     color: white;
     width: 366px;
   }
+
+  .bakbak {
+    font-family: 'Bakbak One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+  }
+
+  .connectModal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 120px;
+    gap: 30px;
+    isolation: isolate;
+    background: #141B22;
+    position: relative;
+    width: 629px;
+    height: 662px;
+  }
+
+  .connectModalButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+
+    width: 509px;
+    height: 96px;
+
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .connectModalImg {
+    width: 56px;
+    height: 56px;
+  }
+
+  .connectModalHead {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 120%;
+    text-align: left;
+    color: #FFFFFF;
+  }
+
+  .connectModalSubtitle {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    text-align: left;
+    color: #888B8E;
+  }
+  .modalLink {
+    color: #0ABE66;
+  }
+
+  .modalLink:hover {
+    color: white;
+  }
 </style>
 
 <body style="width: 1920px; overflow-x: hidden;">
   <div id="home" style="background-color: #040B11; ">
+
+    <div id="walletConnectModal" class="modal"
+      style="width: 100%; height: 100%; justify-content: center; align-items: center;  display: none;">
+      <div class="modal-content connectModal">
+        <span class="bakbak">Connect Wallet</span>
+        <span class="poppins"
+          style="font-weight: 400; font-size: 18px; line-height: 28px;text-align: center; color: #C2C3C5;">
+          Select what network and wallet you want to connect below
+        </span>
+        <span>
+          <button id="metamaskConnect" class="connectModalButtons">
+            <span class="connectModalImg"><img id="metamask"></span>
+            <span style="display:flex; text-align: left; flex-direction: column; width:350px;">
+              <span class="connectModalHead">Metamask</span>
+              <span class="connectModalSubtitle">Conntect to you Metamask wallet</span>
+            </span>
+            <span class="roadmapRightArrow">></span>
+          </button>
+        </span>
+        <span>
+          <button id="walletConnectBtn" class="connectModalButtons">
+            <span class="connectModalImg"><img id="walletConnect"></span>
+            <span style="display:flex; text-align: left; flex-direction: column; width:350px;">
+              <span class="connectModalHead">WalletConnect</span>
+              <span class="connectModalSubtitle">Conntect to you WalletConnect</span>
+            </span>
+            <span class="roadmapRightArrow">></span>
+          </button>
+        </span>
+        <span>
+          <button id="walletLinkBtn" class="connectModalButtons">
+            <span class="connectModalImg"><img id="metamask"></span>
+            <span style="display:flex; text-align: left; flex-direction: column; width:350px;">
+              <span class="connectModalHead">CoinBase Wallet</span>
+              <span class="connectModalSubtitle">Conntect to you CoinBase Wallet</span>
+            </span>
+            <span class="roadmapRightArrow">></span>
+          </button>
+        </span>
+        <span style="text-align: center; width: 420px;">
+          By connecting your wallet, you agree to our 
+          <a href="" class="modalLink">Terms of Service</a> and our 
+          <a href="" class="modalLink">Privacy Policy</a>.
+        </span>
+      </div>
+    </div>
 
     <div id="storyModal" class="modal"
       style=" width: 100%; height: 100%; justify-content: center; align-items: center;  display: none;">
@@ -1327,7 +1437,7 @@
     </div>
 
 
-    <div style="background-color: #040B11;  position: relative;">
+    <div style="background-color: #040B11;  position: relative; width: 100%;">
       <div id="backgroundEl"
         style="background-position-y: bottom; box-shadow: rgb(4 11 17) 0px 140px 200px 130px inset; height: 820px;">
         <span class="countdownHead select-none" style="justify-content: center; text-align: center;">coming soon</span>
@@ -1810,7 +1920,8 @@
                       COMMUNITY</span>
                   </div>
                   <div>
-                    <span class="poppins" style="top: 100px; left:217px; color: white;">You can be aware of whitelists and airdrops by following us on social media and joining our discord channel.</span>
+                    <span class="poppins" style="top: 100px; left:217px; color: white;">You can be aware of whitelists
+                      and airdrops by following us on social media and joining our discord channel.</span>
                   </div>
                   <div style="width: 339px; height: 48px; position: relative; display: flex; left: -453px; top: 150px;">
                     <a href="https://discord.gg/" target="_blank" class="topDiscord"
@@ -1835,18 +1946,18 @@
         </div>
         <div style="display: flex; position: relative; width: 83px; flex-direction: column; margin-right: 130px;">
           <span class="footerHead">SITE MAP</span>
-          <span class="footerLink"><a href="#home">Home</a></span>
-          <span class="footerLink"><a href="#storyMain">Story</a></span>
-          <span class="footerLink"><a href="#roadmap">Roadmap</a></span>
-          <span class="footerLink"><a href="#ourteam">Our Team</a></span>
-          <span class="footerLink"><a href="#faqs">FAQs</a></span>
+          <span class="footerLink"><a class="hoverWhite" href="#home">Home</a></span>
+          <span class="footerLink"><a class="hoverWhite" href="#storyMain">Story</a></span>
+          <span class="footerLink"><a class="hoverWhite" href="#roadmap">Roadmap</a></span>
+          <span class="footerLink"><a class="hoverWhite" href="#ourteam">Our Team</a></span>
+          <span class="footerLink"><a class="hoverWhite" href="#faqs">FAQs</a></span>
         </div>
         <div style="display: flex; position: relative; width: 123px; flex-direction: column; margin-right: 130px;">
           <span class="footerHead">COMPANY</span>
-          <span class="footerLink">Terms Canditions</span>
-          <span class="footerLink">Privacy Policy</span>
-          <span class="footerLink">Contact</span>
-          <span class="footerLink">Help Center</span>
+          <span class="footerLink hoverWhite">Terms Canditions</span>
+          <span class="footerLink hoverWhite">Privacy Policy</span>
+          <span class="footerLink hoverWhite">Contact</span>
+          <span class="footerLink hoverWhite">Help Center</span>
         </div>
         <div style="display: flex; position: relative; width: 324px; flex-direction: column;">
           <span class="footerHead">SUBSCRIBE</span>
