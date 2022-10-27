@@ -1,9 +1,13 @@
 FROM node:16.13.2-alpine3.15
 
-WORKDIR /app
+WORKDIR /user/src/app
 
-ADD . .
+COPY package*.json ./
 
-RUN npm i
+RUN npm install
 
-CMD npm run start
+COPY . .
+
+EXPOSE 3000
+
+CMD ["npm", "start"]
