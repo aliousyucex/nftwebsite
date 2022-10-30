@@ -1,6 +1,7 @@
 <html>
 
 <head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/510/fabric.min.js"></script>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>Elephant Yacht Club</title>
   <script src="https://cdn.tailwindcss.com"></script>
@@ -28,8 +29,8 @@
 
   /* IMAGE STYLES */
   [type=radio]+img {
-    width: 50;
-    height: 50;
+    width: 80;
+    height: 80;
     cursor: pointer;
   }
 
@@ -1059,7 +1060,7 @@
     font-family: Poppins;
     font-weight: bold;
     font-size: 16px;
-    text-align: center;
+    text-align: left;
     color: white;
   }
 
@@ -1188,6 +1189,7 @@
     text-align: left;
     color: #888B8E;
   }
+
   .modalLink {
     color: #0ABE66;
   }
@@ -1239,8 +1241,8 @@
           </button>
         </span>
         <span style="text-align: center; width: 420px;">
-          By connecting your wallet, you agree to our 
-          <a href="" class="modalLink">Terms of Service</a> and our 
+          By connecting your wallet, you agree to our
+          <a href="" class="modalLink">Terms of Service</a> and our
           <a href="" class="modalLink">Privacy Policy</a>.
         </span>
       </div>
@@ -1740,77 +1742,77 @@
                 <div style="margin-top: 118px;">
                   <div id="game" class="relative  overflow-hidden" style="height: 900px; padding-bottom: 60rem;">
                     <div class="container mx-auto max-w-max" id="contain">
-                      <div class="bg-black mt-8 relative rounded" style="margin: auto;">
+                      <div class="bg-black mt-8 relative" style="margin: auto;">
                         <div class="absolute text-white text-sm ml-2 mt-1 select-none">
                           <label id="score" style="font-family: Poppins;">Skor: </label><label id="score"
                             style="font-family: Poppins;"></label>
                         </div>
                         <!-- Interactiv Menü Kısmı -->
-                        <div
-                          style="display: flex; position: relative; justify-content: center; margin: auto; top: 100px;">
-                          <div class="absolute text-white" style="width: 1200px;" id="menu">
-                            <div class="p-6 text-center"
-                              style="background-color: #141B22; border-radius: 4%; justify-content: center; align-items: center;">
-                              <!-- Score Kısmı -->
-                              <h1 class="text-4xl font-bold" style="font-family: Poppins;" id="goscore">0</h1>
-                              <p class="text-sm mb-1" style="font-family: Poppins;">Score</p>
-                              <!-- Radio button Table -->
-                              <div>
-                                <table class="flex items-center justify-center select-none">
-                                  <tr>
-                                    <td class="ml-5">
-                                      <label class="p-1">
-                                        <input type="radio" name="test" value="1" id="r1" checked>
-                                        <img id="p1" />
-                                      </label>
-                                    </td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>
-                                      <label class="p-1">
-                                        <input type="radio" name="test" value="2" id="r2">
-                                        <img id="p2" />
-                                      </label>
-                                    </td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>
-                                      <label class="p-1">
-                                        <input type="radio" name="test" value="3" id="r3">
-                                        <img id="p3" />
-                                      </label>
-                                    </td>
-                                  </tr>
-                                </table>
-                              </div>
-                              <!-- Start Butonu -->
-                              <div
-                                style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
-
-                                <input type="text" placeholder="Discord#TAG" class="topSignIn" id="playername"
-                                  style="position: relative; width: 250px; height: 40px; margin-bottom: 10px; padding: 10px;">
-                                <div id="discordNameError" class="mailError"
-                                  style="width: 250px; top: 225px; left: 477px;">
-                                  Please enter a Discord nickname
+                        <div id="menu" style="flex-direction: row; display: flex;">
+                            <div
+                              style="display: flex; position: absolute; top: 100; justify-content: space-between;">
+                              <span style="display: flex; position: absolute; background-color: #5033C3; left: 75px;">
+                                <div
+                                  style="width: 300; height: 500;  display: flex; position: relative; justify-content: center; top: 100;">
                                 </div>
-                                <button class="text-black text-2xl py-3 rounded-full select-none"
-                                  style="background-color: #21E786; font-family: Bakbak One; width: 250px;"
-                                  id="start">Start</button>
-                              </div>
-                              <!-- Tier List -->
-                              <div style="display: flex; position: relative; justify-content: center;">
-                                <table id="ScoreTable" class="select-none scoreTable">
-                                  <tr>
-                                    <td class="scoreTableHeaders">POS</td>
-                                    <td class="pl-12 scoreTableHeaders">NAME</td>
-                                    <td class="pl-12 scoreTableHeaders">SCORE</td>
-                                  </tr>
-                                </table>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+                              </span>
 
+                              <div class="absolute text-white" style="width: 300px; display: flex; left: 557px;">
+                                <div class="p-6 text-center"
+                                  style="background-color: #5033C3; justify-content: center; align-items: center; ">
+                                  <!-- Score Kısmı -->
+                                  <h1 class="text-4xl font-bold" style="font-family: Poppins;" id="goscore">0</h1>
+                                  <p class="text-sm mb-1" style="font-family: Poppins;">Score</p>
+                                  <!-- Radio button Table -->
+                                  <div
+                                    style="display: flex; width: 273px; flex-direction: row; justify-content: space-between; padding-bottom: 10;">
+                                    <label class="p-1" style="width: 80px;">
+                                      <input type="radio" name="test" value="1" id="r1">
+                                      <img id="p1" />
+                                    </label>
+                                    <label class="p-1">
+                                      <input type="radio" name="test" value="2" id="r2">
+                                      <img id="p2" />
+                                    </label>
+                                    <label class="p-1">
+                                      <input type="radio" name="test" value="3" id="r3">
+                                      <img id="p3" />
+                                    </label>
+                                  </div>
+                                  <!-- Start Butonu -->
+                                  <div
+                                    style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+
+                                    <input type="text" placeholder="Discord#TAG" class="topSignIn" id="playername"
+                                      style="position: relative; width: 270px; height: 48px; margin-bottom: 10px; padding: 10px;">
+                                    <div id="discordNameError" class="mailError"
+                                      style="width: 270px; top: 225px; left: 477px;">
+                                      Please enter a Discord nickname
+                                    </div>
+                                    <button class="text-black select-none"
+                                      style="background-color: #FF1616; font-family: Bakbak One; font-size: 16px; width: 270px; height: 48px; color: white;"
+                                      id="start">START GAME</button>
+                                  </div>
+                                  <!-- Tier List -->
+                                  <div style="display: flex; position: relative; justify-content: center;">
+                                    <table id="ScoreTable" class="select-none scoreTable">
+                                      <tr>
+                                        <td class="scoreTableHeaders">POS</td>
+                                        <td class="pl-12 scoreTableHeaders">NAME</td>
+                                        <td class="pl-12 scoreTableHeaders">SCORE</td>
+                                      </tr>
+                                    </table>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <span style="display: flex; position: absolute; background-color: #5033C3; left: 1050px;">
+                                <div
+                                  style="width: 300; height: 500;  display: flex; position: relative; justify-content: center;">
+                                </div>
+                              </span>
+                            </div>
+                        </div>
                         <canvas id="canvas"></canvas>
                       </div>
 

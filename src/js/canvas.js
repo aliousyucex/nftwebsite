@@ -6,22 +6,6 @@ import WalletConnectProvider from "@walletconnect/web3-provider";
 import PeanutPosition from '../json/peanutPositions.json';
 import positions from '../json/platforms.json';
 import playerConfig from '../json/player.json';
-import platformlv1 from '../IMG/platformlv1.png';
-import platformlv2 from '../IMG/platformlv1.png';
-import platformlv3 from '../IMG/platformlv3.png';
-import peanutIMG from '../IMG/peanut1.png';
-import Roadmap from '../IMG/Roadmap.png';
-import gfil1 from '../IMG/gizlifil1.png'
-import gfil2 from '../IMG/gizlifil2.png'
-import gfil3 from '../IMG/gizlifil3.png'
-import gfil4 from '../IMG/gizlifil4.png'
-import Playeroneright from '../IMG/playeroneright.png';
-import Playeroneleft from '../IMG/playeroneleft.png';
-import Playertworight from '../IMG/playertworight.png';
-import Playertwoleft from '../IMG/playertwoleft.png';
-import Playerthreeright from '../IMG/playerthreeright.png';
-import Playerthreeleft from '../IMG/playerthreeleft.png';
-import creators from '../IMG/creators.png'
 import discord from '../IMG/discord.png';
 import walletIm from '../IMG/wallet.png';
 import twitter from '../IMG/twitter.png';
@@ -45,6 +29,23 @@ import creator3 from '../IMG/ahmet.jpg';
 import metamaskImg from '../IMG/metamask.png';
 import walletConnectImg from '../IMG/walletconnectImg.png';
 import coinbaseImg from '../IMG/coinbase.png';
+
+/// GAME IMAGES IMPORT ///
+import platformlv1 from '../IMG/gameAssets/platformlv1.png';
+import platformlv2 from '../IMG/gameAssets/platformlv2.png';
+import platformlv3 from '../IMG/gameAssets/platformlv3.png';
+import groundlv1 from '../IMG/gameAssets/lv2ground.png';
+import groundlv2 from '../IMG/gameAssets/lv2ground.png';
+import groundlv3 from '../IMG/gameAssets/lvl3ground.png';
+import gameBackgroundlvl3 from '../IMG/gameAssets/lvl3background.png';
+import peanutIMG from '../IMG/gameAssets/peanut1.png';
+import Playeroneright from '../IMG/gameAssets/playeroneright.png';
+import Playeroneleft from '../IMG/gameAssets/playeroneleft.png';
+import Playertworight from '../IMG/gameAssets/playertworight.png';
+import Playertwoleft from '../IMG/gameAssets/playertwoleft.png';
+import Playerthreeright from '../IMG/gameAssets/playerthreeright.png';
+import Playerthreeleft from '../IMG/gameAssets/playerthreeleft.png';
+/// GAME IMAGES IMPORT ///
 
 ///  HTML ITEMS ///
 let web3;
@@ -132,10 +133,6 @@ const ln2 = document.getElementById('linkedinSmall2');
 // const tls2 = document.getElementById('telegramSmall2');
 
 const op = document.getElementById('opensea');
-const giFil1 = document.getElementById('gfil1');
-const giFil2 = document.getElementById('gfil2');
-const giFil3 = document.getElementById('gfil3');
-const giFil4 = document.getElementById('gfil4');
 const stroyOne = document.getElementById('stroyone');
 const stroyTwo = document.getElementById('stroytwo');
 const stroyThree = document.getElementById('stroythree');
@@ -201,7 +198,7 @@ const getWallet = async (walletProvider) => {
             writableAdress = at[0].slice(0, 9);
             writableAdress += '...';
             wallet.innerHTML = writableAdress;
-            
+
         })
     })
     closeModals();
@@ -343,6 +340,7 @@ let playerspeed = 5;
 /// LEVEL-PLAYER SETTİNGS ///
 
 let animationID;
+let animationx;
 let level = 0;
 let sayac = 0;
 let timeMin = 0, timeSec = 0, timeSal = 0, score, compaireablescore;
@@ -350,9 +348,8 @@ let peanut;
 let player;
 const platfroms = [];
 canvas.width = 1414;
-canvas.height = 700;
-c.fillStyle = 'black';
-c.fillRect(0, 0, canvas.width, canvas.height);
+canvas.height = 698;
+
 const data = {};
 let isTableCreated = 0;
 var td = [];
@@ -361,10 +358,11 @@ let playerImg = 0;
 
 let random = Math.floor(Math.random() * peanutPositions[level].length);
 let randomex = random;
-let platformImagelv1 = createImage(platformlv1);
-let platformImagelv2 = createImage(platformlv2);
-let platformImagelv3 = createImage(platformlv3);
-let platformImage = [platformImagelv1, platformImagelv2, platformImagelv3];
+
+const gameBgImages = [createImage(gameBackgroundlvl3), createImage(gameBackgroundlvl3), createImage(gameBackgroundlvl3)]
+const platformImages = [createImage(platformlv1), createImage(platformlv2), createImage(platformlv3)];
+const groundImages = [createImage(groundlv1), createImage(groundlv2), createImage(groundlv3)];
+c.drawImage(gameBgImages[level], 0, 0);
 let peanutImage = createImage(peanutIMG);
 
 const keys = { right: { pressed: false }, left: { pressed: false } };
@@ -373,9 +371,30 @@ sayacLabel.style.display = 'none';
 sayacLabel.innerHTML = "00:00";
 goscore.innerHTML = "00:00:00";
 whoIsHaveBiggestScore();
-radioBttn1.onchange = function chg() { player.currentsprite = player.sprites.run[0].right; playerImg = 0 };
-radioBttn2.onchange = function chg() { player.currentsprite = player.sprites.run[1].right; playerImg = 1 };
-radioBttn3.onchange = function chg() { player.currentsprite = player.sprites.run[2].right; playerImg = 2 };
+radioBttn1.onchange = function chg() {
+    player.currentsprite = player.sprites.run[0].right; playerImg = 0
+    initf();
+    animate();
+    setTimeout(() => {
+        cancelAnimationFrame(animationID);
+    }, 10);
+};
+radioBttn2.onchange = function chg() {
+    player.currentsprite = player.sprites.run[1].right; playerImg = 1
+    initf();
+    animate();
+    setTimeout(() => {
+        cancelAnimationFrame(animationID);
+    }, 10);
+};
+radioBttn3.onchange = function chg() {
+    player.currentsprite = player.sprites.run[2].right; playerImg = 2
+    initf();
+    animate();
+    setTimeout(() => {
+        cancelAnimationFrame(animationID);
+    }, 10);
+};
 
 class Player {
     constructor({ x, y }) {
@@ -389,8 +408,8 @@ class Player {
         }
         this.image = createImage(Playeroneleft);
         this.speed = playerspeed;
-        this.width = 50;
-        this.height = 50;
+        this.width = 100;
+        this.height = 100;
         this.sprites = {
             run: [
                 {
@@ -461,16 +480,27 @@ function createImage(imageSrc) {
     return image;
 }
 
+
+
+
 const initf = function init() {
-    PlatformsCreate();
+    levelChangeHandle();
     peanut = new Peanut({ x: peanutPositions[level][random].x, y: peanutPositions[level][random].y, image: peanutImage });
     player = new Player({ x: playerConfigs[level].playerx, y: playerConfigs[level].playery });
 }
 
+const beforeStart = () => {
+    initf()
+    animate();
+    setTimeout(() => {
+        cancelAnimationFrame(animationID);
+    }, 10);
+}
+beforeStart();
+
 function animate() {
     animationID = requestAnimationFrame(animate);
-    c.fillStyle = levelbgcolors[level];
-    c.fillRect(0, 0, canvas.width, canvas.height);
+    c.drawImage(gameBgImages[level], 0, 0);
     platfroms.forEach(platform => {
         platform.draw();
     })
@@ -489,23 +519,23 @@ function animate() {
     platfroms.forEach(platform => {
         if (player.position.y + player.height <= platform.position.y &&
             player.position.y + player.height + player.velocity.y >= platform.position.y &&
-            player.position.x + player.width >= platform.position.x &&
-            player.position.x <= platform.position.x + platform.width) {
+            player.position.x + player.width >= platform.position.x + 10 &&
+            player.position.x <= platform.position.x + platform.width - 10) {
             player.velocity.y = 0;
         }
 
-        if (player.position.x + player.width >= peanut.position.x + peanut.width - 25 &&
-            player.position.y + player.height >= peanut.position.y + peanut.height - 25 &&
-            player.position.x + player.width <= peanut.position.x + peanut.width + 25 &&
-            player.position.y + player.height <= peanut.position.y + peanut.height + 25) {
+        if (player.position.x + player.width >= peanut.position.x + peanut.width - 50 &&
+            player.position.y + player.height >= peanut.position.y + peanut.height - 50 &&
+            player.position.x + player.width <= peanut.position.x + peanut.width + 50 &&
+            player.position.y + player.height <= peanut.position.y + peanut.height + 50) {
             sayac++;
             // GameOver Check Point
             if (level == 3) {
                 peanut.position.x = -50;
                 peanut.position.y = -50;
-                cancelAnimationFrame(animationID);
                 menu.style.display = 'block';
                 sayacLabel.style.display = 'none';
+                cancelAnimationFrame(animationID);
 
                 data.userName = playername.value;
                 addNewScore(data);
@@ -516,7 +546,7 @@ function animate() {
                 level++;
                 if (level != 3) {
                     levelchechk = 1;
-                    PlatformsCreate();
+                    levelChangeHandle();
                 }
             }
             while (randomex == random && level != 3) {
@@ -536,6 +566,7 @@ function animate() {
     })
 }
 
+
 addEventListener('keydown', ({ keyCode }) => {
     switch (keyCode) {
         case 65:
@@ -547,7 +578,7 @@ addEventListener('keydown', ({ keyCode }) => {
             keys.right.pressed = true;
             break;
         case 87: if (player.velocity.y == 0) { player.velocity.y -= 14.5; }; break;
-        case 83: if (player.position.y <= 624) { player.velocity.y += 1; }; break;
+        case 83: if (player.position.y <= 556) { player.velocity.y += 1; }; break;
         default: break;
     }
 })
@@ -561,11 +592,14 @@ addEventListener('keyup', ({ keyCode }) => {
 })
 
 
-function PlatformsCreate() {
-
+function levelChangeHandle() {
+    // Create Platforms
+    platfroms[0] = new Platform({ x: 0, y: 657, image: groundImages[level] });
     for (var i = 0; i < Positions[level].length; i++) {
-        platfroms[i] = new Platform({ x: Positions[level][i]['platform-x'], y: Positions[level][i]['platform-y'], image: platformImage[level] });
+        platfroms[i + 1] = new Platform({ x: Positions[level][i]['platform-x'], y: Positions[level][i]['platform-y'], image: platformImages[level] });
     }
+    // Change Background
+    c.drawImage(gameBgImages[level], 0, 0);
 };
 
 startbutton.addEventListener('click', () => {

@@ -1,0 +1,25 @@
+sudo apt-get update
+sudo apt-get upgrade
+
+sudo apt install nodejs
+sudo apt install npm
+sudo apt install nvm
+npm i pm2 -g
+
+sudo apt install mysql-server
+burada `a` dosyasindaki islemler
+sudo systemctl start mysql.service
+
+pm2 start app.js (serveri kaldirmak icin)
+pm2 start npm --name "myApp" -- run "start"
+
+
+ufw settings;
+    sudo ufw allow 80/tcp
+    sudo ufw allow 443/tc
+    sudo ufw allow 3000:4000/tcp
+    sudo ufw allow 3000:4000/udp
+    sudo ufw allow 2222/tcp
+    sudo ufw allow 2323/tcp
+    sudo ufw allow ssh
+burada testler baslayacak.
