@@ -44,7 +44,7 @@ import creator2 from '../IMG/berkay.jpg';
 import creator3 from '../IMG/ahmet.jpg';
 import metamaskImg from '../IMG/metamask.png';
 import walletConnectImg from '../IMG/walletconnectImg.png';
-// import metamaskImg from '../IMG/metamask.png';
+import coinbaseImg from '../IMG/coinbase.png';
 
 ///  HTML ITEMS ///
 let web3;
@@ -107,6 +107,7 @@ const tt = document.getElementById('tiktok');
 
 const metamask = document.getElementById('metamask');
 const walletConnect = document.getElementById('walletConnect');
+const coinbase = document.getElementById('coinbase');
 const logo = document.getElementById('logo');
 const logo2 = document.getElementById('logo2');
 
@@ -304,6 +305,7 @@ tt.src = tiktok;
 
 metamask.src = metamaskImg;
 walletConnect.src = walletConnectImg;
+coinbase.src = coinbaseImg;
 logo.src = discord;
 logo2.src = discord;
 
@@ -783,7 +785,7 @@ const onEmailSubmit = (element, returnData, color) => {
     const subEl = element.id == 'topSubMail' ? topMailError : bottomMailError;
     subEl.style.display = 'block';
     subEl.style.opacity = 1;
-    subEl.style.backgroundColor = color == 'error' ? 'rgb(233, 135, 135)' : 'rgb(91, 202, 110)';
+    subEl.style.backgroundColor = color == 'error' ? '#FB550E' : 'rgb(91, 202, 110)';
     subEl.innerHTML = `${returnData}`;
     element.focus();
     setTimeout(() => {
