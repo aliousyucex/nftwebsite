@@ -869,7 +869,7 @@ const isEmailValid = (mail, element) => {
 }
 
 const subscribeBtnClick = async (data, element) => {
-    const response = await fetch('http://localhost:3003/subscribe', {
+    const response = await fetch('http://142.132.232.70:3003/subscribe', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -905,7 +905,7 @@ bottomSubBtn.addEventListener('click', () => {
 });
 
 async function fetchText(i, j) {
-    fetch('http://localhost:3003/score')
+    fetch('http://142.132.232.70:3003/score')
         .then(response => {
             return response.json();
         })
@@ -948,7 +948,7 @@ function whoIsHaveBiggestScore() {
 }
 
 const addNewScore = async (data) => {
-    const response = await fetch('http://localhost:3003/score', {
+    const response = await fetch('http://142.132.232.70:3003/score', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -963,7 +963,7 @@ const addNewScore = async (data) => {
 const detail = document.getElementById('faqWhiteList');
 
 async function subCountHandler() {
-    fetch('http://localhost:3003/subscribe')
+    fetch('http://142.132.232.70:3003/subscribe')
         .then(response => response.json())
         .then(data => {
             subCount.innerHTML = data[0].subcount;
