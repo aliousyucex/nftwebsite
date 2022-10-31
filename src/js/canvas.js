@@ -327,7 +327,16 @@ ln2.src = linkedins;
 // tls2.src = telegrams;
 // op.src = opensea;
 
-
+let scrollpos;
+window.addEventListener('scroll', function() { 
+    scrollpos = window.scrollY;
+    if (scrollpos >= 150) { 
+        topMenuDiv.style.borderBottom = '1px solid #21E786';
+     }
+     else {
+        topMenuDiv.style.borderBottom = 'none';
+     }
+  })
 
 let playerConfigs = playerConfig;
 let Positions = positions;
@@ -367,6 +376,14 @@ let peanutImage = createImage(peanutIMG);
 
 const keys = { right: { pressed: false }, left: { pressed: false } };
 
+window.onload = () => {
+    initf();
+    animate();
+    setTimeout(() => {
+        cancelAnimationFrame(animationID);
+    }, 10);
+}
+
 sayacLabel.style.display = 'none';
 sayacLabel.innerHTML = "00:00";
 goscore.innerHTML = "00:00:00";
@@ -377,7 +394,7 @@ radioBttn1.onchange = function chg() {
     animate();
     setTimeout(() => {
         cancelAnimationFrame(animationID);
-    }, 10);
+    }, 1);
 };
 radioBttn2.onchange = function chg() {
     player.currentsprite = player.sprites.run[1].right; playerImg = 1
@@ -385,7 +402,7 @@ radioBttn2.onchange = function chg() {
     animate();
     setTimeout(() => {
         cancelAnimationFrame(animationID);
-    }, 10);
+    }, 1);
 };
 radioBttn3.onchange = function chg() {
     player.currentsprite = player.sprites.run[2].right; playerImg = 2
@@ -393,7 +410,7 @@ radioBttn3.onchange = function chg() {
     animate();
     setTimeout(() => {
         cancelAnimationFrame(animationID);
-    }, 10);
+    }, 1);
 };
 
 class Player {
@@ -920,8 +937,8 @@ function whoIsHaveBiggestScore() {
             tr.appendChild(td[i + 3 + j]);
             tableEl.appendChild(tr);
             td[i + 1 + j].className = "scoreTableUsers";
-            td[i + 2 + j].className = "pl-12 scoreTableUsers";
-            td[i + 3 + j].className = "pl-12 scoreTableUsers";
+            td[i + 2 + j].className = "scoreTableUsers";
+            td[i + 3 + j].className = "scoreTableUsers";
         }
         fetchText(i, j);
         j += 3;
