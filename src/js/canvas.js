@@ -1,34 +1,25 @@
+/// WALLET ///
 import Web3 from 'web3';
 import { ethers } from 'ethers';
 import Web3Modal from "web3modal";
 import WalletLink from "walletlink";
 import WalletConnectProvider from "@walletconnect/web3-provider";
-import PeanutPosition from '../json/peanutPositions.json';
-import positions from '../json/platforms.json';
-import playerConfig from '../json/player.json';
-import discord from '../IMG/discord.png';
-import walletIm from '../IMG/wallet.png';
-import twitter from '../IMG/twitter.png';
-import linkedins from '../IMG/linkedinSmall.png';
-import facebooks from '../IMG/facebookSmall.png';
-import instagrams from '../IMG/instagramSmall.png';
-import telegrams from '../IMG/telegramSmall.png';
-import youtube from '../IMG/youtube.png';
-import telegram from '../IMG/telegram.png';
-import facebook from '../IMG/facebook.png';
-import tiktok from '../IMG/tiktok.png';
-import opensea from '../IMG/opensea.png';
-import storyone from '../IMG/storyone.png';
-import storytwo from '../IMG/storyone.png';
-import storythree from '../IMG/storyone.png';
-import storyfour from '../IMG/storyone.png';
-import bgElephant from '../IMG/background.png';
-import creator1 from '../IMG/ali.png';
-import creator2 from '../IMG/berkay.jpg';
-import creator3 from '../IMG/ahmet.jpg';
 import metamaskImg from '../IMG/metamask.png';
 import walletConnectImg from '../IMG/walletconnectImg.png';
 import coinbaseImg from '../IMG/coinbase.png';
+/// WALLET ///
+
+import PeanutPosition from '../json/peanutPositions.json';
+import positions from '../json/platforms.json';
+import playerConfig from '../json/player.json';
+
+import bgElephant from '../IMG/background.png';
+import companyLogo from '../IMG/logo.png';
+
+import creator1 from '../IMG/ali.png';
+import creator2 from '../IMG/berkay.jpg';
+import creator3 from '../IMG/ahmet.jpg';
+
 
 /// GAME IMAGES IMPORT ///
 import platformlv1 from '../IMG/gameAssets/platformlv1.png';
@@ -50,6 +41,23 @@ import Playerthreeright from '../IMG/gameAssets/playerthreeright.png';
 import Playerthreeleft from '../IMG/gameAssets/playerthreeleft.png';
 /// GAME IMAGES IMPORT ///
 
+/// SOCIAL MEDIA ///
+import discord from '../IMG/discord.png';
+import walletIm from '../IMG/wallet.png';
+import twitter from '../IMG/twitter.png';
+import linkedins from '../IMG/linkedinSmall.png';
+import facebooks from '../IMG/facebookSmall.png';
+import instagrams from '../IMG/instagramSmall.png';
+import telegrams from '../IMG/telegramSmall.png';
+import youtube from '../IMG/youtube.png';
+import telegram from '../IMG/telegram.png';
+import facebook from '../IMG/facebook.png';
+import tiktok from '../IMG/tiktok.png';
+import opensea from '../IMG/opensea.png';
+/// SOCIAL MEDIA ///
+
+
+
 ///  HTML ITEMS ///
 let web3;
 const backgroundEl = document.getElementById('backgroundEl');
@@ -64,6 +72,8 @@ const roadmapBtnTwo = document.getElementById('roadmapBtnTwo');
 const roadmapBtnThree = document.getElementById('roadmapBtnThree');
 const playername = document.getElementById('playername');
 const discordNameError = document.getElementById('discordNameError');
+const topMenuLogo = document.getElementById('topMenuLogo');
+const bottomMenuLogo = document.getElementById('bottomMenuLogo');
 
 // const subCount = document.getElementById('subCount');
 
@@ -302,6 +312,8 @@ yt.src = youtube;
 tl.src = telegram;
 fb.src = facebook;
 tt.src = tiktok;
+topMenuLogo.src = companyLogo;
+bottomMenuLogo.src = companyLogo;
 
 metamask.src = metamaskImg;
 walletConnect.src = walletConnectImg;
@@ -945,8 +957,8 @@ function whoIsHaveBiggestScore() {
             tr.appendChild(td[i + 3 + j]);
             tableEl.appendChild(tr);
             td[i + 1 + j].className = "scoreTableUsers";
-            td[i + 2 + j].className = "scoreTableUsers";
-            td[i + 3 + j].className = "scoreTableUsers";
+            td[i + 2 + j].className = "pl-12 scoreTableUsers";
+            td[i + 3 + j].className = "pl-12 scoreTableUsers";
         }
         fetchText(i, j);
         j += 3;

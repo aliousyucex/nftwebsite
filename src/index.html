@@ -957,7 +957,7 @@
   .joinCommunity {
     display: flex;
     position: absolute;
-    width: 1410px;
+    width: 1414px;
     height: 246px;
 
     background: linear-gradient(268.28deg, #2333DE -1.34%, #0ABE66 100%);
@@ -1051,7 +1051,7 @@
   .scoreTableHeaders {
     font-family: Poppins;
     font-weight: bold;
-    text-align: center;
+    text-align: left;
     font-size: 18px;
     color: white;
   }
@@ -1407,7 +1407,8 @@
       <div style="width: 1414px; flex-direction: row; margin: auto;">
 
         <div class="mx-auto" style="width: 1414px;">
-          <span class="head" style="display: flex; position: absolute; top: 22px; font-size: 32px;">LOGO</span>
+          <span class="head" style="display: flex; position: absolute; top: 36px;"><img id="topMenuLogo"
+              style="width: 150px"></span>
         </div>
 
 
@@ -1749,71 +1750,97 @@
                         </div>
                         <!-- Interactiv Menü Kısmı -->
                         <div id="menu" style="flex-direction: row; display: flex;">
-                            <div
-                              style="display: flex; position: absolute; top: 100; justify-content: space-between;">
-                              <span style="display: flex; position: absolute; background-color: #5033C3; left: 75px;">
+                          <div style="display: flex; position: absolute; top: 100; justify-content: space-between;">
+                            <span style="display: flex; position: absolute; background-color: #5033C3; left: 75px;">
+                              <div
+                                style="width: 300; height: 500;  display: flex; position: relative; justify-content: left; padding: 15px; flex-direction: column; text-align: left; color: white;">
+                                <h2 style="font-family: Bakbak One; font-weight: 400;
+                                font-size: 20px;
+                                line-height: 28px;">How To Win</h2>
+                                <br>
+                                <p style="font-family: 'Poppins';
+                                font-style: normal;
+                                font-weight: 400;
+                                font-size: 14px;
+                                line-height: 20px;">
+                                  We have a deal!
+                                  <br><br>
+                                  Play the game according to the instructions. Use all your strength to collect peanuts in the fastest time!
+                                  <br><br>If you're fast enough for that, you can write your name on the Leaderboard!
+                                  <br><br>? : Yes, if you write your name on SKORBOARD, you can win WHITELIST or AIRDROP from us!
+                                </p>
+                              </div>
+                            </span>
+
+                            <div class="absolute text-white" style="width: 300px; display: flex; left: 557px;">
+                              <div class="p-6 text-center"
+                                style="background-color: #5033C3; justify-content: center; align-items: center; ">
+                                <!-- Score Kısmı -->
+                                <h1 class="text-4xl font-bold" style="font-family: Poppins;" id="goscore">0</h1>
+                                <p class="text-sm mb-1" style="font-family: Poppins;">Score</p>
+                                <!-- Radio button Table -->
                                 <div
-                                  style="width: 300; height: 500;  display: flex; position: relative; justify-content: center; top: 100; color: white;">
-                                  bisiler bisiler
+                                  style="display: flex; width: 273px; flex-direction: row; justify-content: space-between; padding-bottom: 10;">
+                                  <label class="p-1" style="width: 80px;">
+                                    <input type="radio" name="test" value="1" id="r1">
+                                    <img id="p1" />
+                                  </label>
+                                  <label class="p-1">
+                                    <input type="radio" name="test" value="2" id="r2">
+                                    <img id="p2" />
+                                  </label>
+                                  <label class="p-1">
+                                    <input type="radio" name="test" value="3" id="r3">
+                                    <img id="p3" />
+                                  </label>
                                 </div>
-                              </span>
+                                <!-- Start Butonu -->
+                                <div
+                                  style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
 
-                              <div class="absolute text-white" style="width: 300px; display: flex; left: 557px;">
-                                <div class="p-6 text-center"
-                                  style="background-color: #5033C3; justify-content: center; align-items: center; ">
-                                  <!-- Score Kısmı -->
-                                  <h1 class="text-4xl font-bold" style="font-family: Poppins;" id="goscore">0</h1>
-                                  <p class="text-sm mb-1" style="font-family: Poppins;">Score</p>
-                                  <!-- Radio button Table -->
-                                  <div
-                                    style="display: flex; width: 273px; flex-direction: row; justify-content: space-between; padding-bottom: 10;">
-                                    <label class="p-1" style="width: 80px;">
-                                      <input type="radio" name="test" value="1" id="r1">
-                                      <img id="p1" />
-                                    </label>
-                                    <label class="p-1">
-                                      <input type="radio" name="test" value="2" id="r2">
-                                      <img id="p2" />
-                                    </label>
-                                    <label class="p-1">
-                                      <input type="radio" name="test" value="3" id="r3">
-                                      <img id="p3" />
-                                    </label>
+                                  <input type="text" placeholder="Discord#TAG" class="topSignIn" id="playername"
+                                    style="position: relative; width: 270px; height: 48px; margin-bottom: 10px; padding: 10px;">
+                                  <div id="discordNameError" class="mailError"
+                                    style="width: 270px; top: 152px; left: 26px;">
+                                    Please enter a Discord nickname
                                   </div>
-                                  <!-- Start Butonu -->
-                                  <div
-                                    style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
-
-                                    <input type="text" placeholder="Discord#TAG" class="topSignIn" id="playername"
-                                      style="position: relative; width: 270px; height: 48px; margin-bottom: 10px; padding: 10px;">
-                                    <div id="discordNameError" class="mailError"
-                                      style="width: 270px; top: 225px; left: 477px;">
-                                      Please enter a Discord nickname
-                                    </div>
-                                    <button class="text-black select-none"
-                                      style="background-color: #FF1616; font-family: Bakbak One; font-size: 16px; width: 270px; height: 48px; color: white;"
-                                      id="start">START GAME</button>
-                                  </div>
-                                  <!-- Tier List -->
-                                  <div style="display: flex; position: relative; justify-content: center;">
-                                    <table id="ScoreTable" class="select-none scoreTable">
-                                      <tr>
-                                        <td class="scoreTableHeaders">POS</td>
-                                        <td class="scoreTableHeaders">NAME</td>
-                                        <td class="scoreTableHeaders">SCORE</td>
-                                      </tr>
-                                    </table>
-                                  </div>
+                                  <button class="text-black select-none"
+                                    style="background-color: #FF1616; font-family: Bakbak One; font-size: 16px; width: 270px; height: 48px; color: white;"
+                                    id="start">START GAME</button>
+                                </div>
+                                <!-- Tier List -->
+                                <div style="display: flex; position: relative; justify-content: center;">
+                                  <table id="ScoreTable" class="select-none scoreTable">
+                                    <tr>
+                                      <td class="scoreTableHeaders">POS</td>
+                                      <td class="pl-12 scoreTableHeaders">NAME</td>
+                                      <td class="pl-12 scoreTableHeaders">SCORE</td>
+                                    </tr>
+                                  </table>
                                 </div>
                               </div>
-
-                              <span style="display: flex; position: absolute; background-color: #5033C3; left: 1050px;">
-                                <div
-                                  style="width: 300; height: 500;  display: flex; position: relative; justify-content: center; top: 100; color: white;">
-                                  bisiler bisiler
-                                </div>
-                              </span>
                             </div>
+
+                            <span style="display: flex; position: absolute; background-color: #5033C3; left: 1050px;">
+                              <div
+                                style="width: 300; height: 500;  display: flex; position: relative; justify-content: left; padding: 15px; flex-direction: column; text-align: left; color: white;">
+                                <h2 style="font-family: Bakbak One; font-weight: 400;
+                                font-size: 20px;
+                                line-height: 28px;">How To Play</h2>
+                                <br>
+                                <p style="font-family: 'Poppins';
+                                font-style: normal;
+                                font-weight: 400;
+                                font-size: 14px;
+                                line-height: 20px;">
+                                  Controls: WASD & Arrows
+                                  <br><br>
+                                  Enter your discord nickname and press START! When you press START the time is ticking and tocking...
+                                  <br><br> Try collect all peanuts in shortest time! We are believe you!
+                                </p>
+                              </div>
+                            </span>
+                          </div>
                         </div>
                         <canvas id="canvas"></canvas>
                       </div>
@@ -1945,7 +1972,7 @@
     <div class="mx-auto" style="height: 570px; width: 1414px;">
       <div class="mx-auto" style="display: flex; position: relative; top: 196px;  flex-direction: row;">
         <div style="display: flex; position: relative; width: 324px; margin-right: 170px;">
-          <span class="head">LOGO</span>
+          <span class="head"><img id="bottomMenuLogo" style="width: 200px;"></span>
           <span class="footerText">NFT project at Opensea with ERC721A</span>
         </div>
         <div style="display: flex; position: relative; width: 83px; flex-direction: column; margin-right: 130px;">
