@@ -1,200 +1,88 @@
 [
     [
         {
-            "platform-x": 13,
-            "platform-y": 572
+            "platform-x": 53,
+            "platform-y": 136
         },
         {
-            "platform-x": 362,
-            "platform-y": 480
+            "platform-x": 334,
+            "platform-y": 302
         },
         {
-            "platform-x": 490,
-            "platform-y": 385
+            "platform-x": 52,
+            "platform-y": 495
         },
         {
-            "platform-x": 362,
-            "platform-y": 270
+            "platform-x": 647,
+            "platform-y": 473
         },
         {
-            "platform-x": 13,
-            "platform-y": 167
+            "platform-x": 587,
+            "platform-y": 76
         },
         {
-            "platform-x": 950,
-            "platform-y": 207
+            "platform-x": 925,
+            "platform-y": 201
         },
         {
-            "platform-x": 567,
-            "platform-y": 117
-        },
-        {
-            "platform-x": 13,
-            "platform-y": 572
-        },
-        {
-            "platform-x": 362,
-            "platform-y": 480
-        },
-        {
-            "platform-x": 490,
-            "platform-y": 385
-        },
-        {
-            "platform-x": 362,
-            "platform-y": 270
-        },
-        {
-            "platform-x": 13,
-            "platform-y": 167
-        },
-        {
-            "platform-x": 950,
-            "platform-y": 207
-        },
-        {
-            "platform-x": 567,
-            "platform-y": 117
-        },
-        {
-            "platform-x": 567,
-            "platform-y": 117
-        },
-        {
-            "platform-x": 567,
-            "platform-y": 117
+            "platform-x": 1037,
+            "platform-y": 380
         }
     ],
     [
         {
-            "platform-x": 766,
-            "platform-y": 584
+            "platform-x": -158,
+            "platform-y": 279
         },
         {
-            "platform-x": 470,
-            "platform-y": 584
+            "platform-x": 132,
+            "platform-y": 120
         },
         {
-            "platform-x": 174,
-            "platform-y": 584
+            "platform-x": 37,
+            "platform-y": 462
         },
         {
-            "platform-x": -121,
-            "platform-y": 584
+            "platform-x": 407,
+            "platform-y": 357
         },
         {
-            "platform-x": 900,
-            "platform-y": 443
+            "platform-x": 730,
+            "platform-y": 245
         },
         {
-            "platform-x": 605,
-            "platform-y": 443
+            "platform-x": 1098,
+            "platform-y": 104
         },
         {
-            "platform-x": 310,
-            "platform-y": 443
-        },
-        {
-            "platform-x": 13,
-            "platform-y": 443
-        },
-        {
-            "platform-x": 766,
-            "platform-y": 300
-        },
-        {
-            "platform-x": 470,
-            "platform-y": 300
-        },
-        {
-            "platform-x": 174,
-            "platform-y": 300
-        },
-        {
-            "platform-x": -121,
-            "platform-y": 300
-        },
-        {
-            "platform-x": 900,
-            "platform-y": 135
-        },
-        {
-            "platform-x": 605,
-            "platform-y": 135
-        },
-        {
-            "platform-x": 310,
-            "platform-y": 135
-        },
-        {
-            "platform-x": 13,
-            "platform-y": 135
+            "platform-x": 1108,
+            "platform-y": 440
         }
     ],
     [
         {
-            "platform-x": 0,
-            "platform-y": 65
+            "platform-x": 92,
+            "platform-y": 210
         },
         {
-            "platform-x": 665,
-            "platform-y": 65
+            "platform-x": 541,
+            "platform-y": 210
         },
         {
-            "platform-x": -400,
-            "platform-y": 275
+            "platform-x": 990,
+            "platform-y": 210
         },
         {
-            "platform-x": 270,
-            "platform-y": 275
+            "platform-x": 92,
+            "platform-y": 425
         },
         {
-            "platform-x": 847,
-            "platform-y": 275
+            "platform-x": 541,
+            "platform-y": 425
         },
         {
-            "platform-x": -250,
-            "platform-y": 480
-        },
-        {
-            "platform-x": 420,
-            "platform-y": 480
-        },
-        {
-            "platform-x": 0,
-            "platform-y": 675
-        },
-        {
-            "platform-x": 577,
-            "platform-y": 675
-        },
-        {
-            "platform-x": -400,
-            "platform-y": 275
-        },
-        {
-            "platform-x": 270,
-            "platform-y": 275
-        },
-        {
-            "platform-x": 847,
-            "platform-y": 275
-        },
-        {
-            "platform-x": -250,
-            "platform-y": 480
-        },
-        {
-            "platform-x": 420,
-            "platform-y": 480
-        },
-        {
-            "platform-x": 0,
-            "platform-y": 675
-        },
-        {
-            "platform-x": 577,
-            "platform-y": 675
+            "platform-x": 987,
+            "platform-y": 425
         }
     ]
 ]

@@ -37,6 +37,9 @@ import platformlv3 from '../IMG/gameAssets/platformlv3.png';
 import groundlv1 from '../IMG/gameAssets/lv2ground.png';
 import groundlv2 from '../IMG/gameAssets/lv2ground.png';
 import groundlv3 from '../IMG/gameAssets/lvl3ground.png';
+import groundlv32 from '../IMG/gameAssets/lvl3ground2.png';
+import gameBackgroundlvl1 from '../IMG/gameAssets/lvl1background.png';
+import gameBackgroundlvl2 from '../IMG/gameAssets/lvl2background.png';
 import gameBackgroundlvl3 from '../IMG/gameAssets/lvl3background.png';
 import peanutIMG from '../IMG/gameAssets/peanut1.png';
 import Playeroneright from '../IMG/gameAssets/playeroneright.png';
@@ -356,7 +359,7 @@ let timeMin = 0, timeSec = 0, timeSal = 0, score, compaireablescore;
 let peanut;
 let player;
 const platfroms = [];
-canvas.width = 1414;
+canvas.width = 1411;
 canvas.height = 698;
 
 const data = {};
@@ -368,9 +371,9 @@ let playerImg = 0;
 let random = Math.floor(Math.random() * peanutPositions[level].length);
 let randomex = random;
 
-const gameBgImages = [createImage(gameBackgroundlvl3), createImage(gameBackgroundlvl3), createImage(gameBackgroundlvl3)]
+const gameBgImages = [createImage(gameBackgroundlvl1), createImage(gameBackgroundlvl2), createImage(gameBackgroundlvl3)]
 const platformImages = [createImage(platformlv1), createImage(platformlv2), createImage(platformlv3)];
-const groundImages = [createImage(groundlv1), createImage(groundlv2), createImage(groundlv3)];
+const groundImages = [createImage(groundlv1), createImage(groundlv2), createImage(groundlv3), createImage(groundlv32)];
 c.drawImage(gameBgImages[level], 0, 0);
 let peanutImage = createImage(peanutIMG);
 
@@ -425,8 +428,8 @@ class Player {
         }
         this.image = createImage(Playeroneleft);
         this.speed = playerspeed;
-        this.width = 100;
-        this.height = 100;
+        this.width = 80;
+        this.height = 80;
         this.sprites = {
             run: [
                 {
@@ -517,7 +520,7 @@ beforeStart();
 
 function animate() {
     animationID = requestAnimationFrame(animate);
-    c.drawImage(gameBgImages[level], 0, 0);
+    c.drawImage(gameBgImages[level], 0, -3);
     platfroms.forEach(platform => {
         platform.draw();
     })
@@ -553,7 +556,7 @@ function animate() {
                 menu.style.display = 'block';
                 sayacLabel.style.display = 'none';
                 cancelAnimationFrame(animationID);
-
+                c.fillStyle = 'rgb(0, 0, 0, 0.8)';
                 data.userName = playername.value;
                 addNewScore(data);
                 whoIsHaveBiggestScore();
@@ -595,7 +598,7 @@ addEventListener('keydown', ({ keyCode }) => {
             keys.right.pressed = true;
             break;
         case 87: if (player.velocity.y == 0) { player.velocity.y -= 14.5; }; break;
-        case 83: if (player.position.y <= 556) { player.velocity.y += 1; }; break;
+        case 83: if ((level != 2 && player.position.y <= 556) || (level == 2 && player.position.y <= 519) ) { player.velocity.y += 1; }; break;
         default: break;
     }
 })
@@ -611,7 +614,12 @@ addEventListener('keyup', ({ keyCode }) => {
 
 function levelChangeHandle() {
     // Create Platforms
-    platfroms[0] = new Platform({ x: 0, y: 657, image: groundImages[level] });
+    let platformy = 657;
+    if (level == 2) {
+        platformy = 620;
+        platfroms[7] = new Platform({ x: 750, y: platformy, image: groundImages[level+1] });
+    }
+    platfroms[0] = new Platform({ x: 0, y: platformy, image: groundImages[level] });
     for (var i = 0; i < Positions[level].length; i++) {
         platfroms[i + 1] = new Platform({ x: Positions[level][i]['platform-x'], y: Positions[level][i]['platform-y'], image: platformImages[level] });
     }
