@@ -67,6 +67,7 @@ let web3;
 const backgroundEl = document.getElementById('backgroundEl');
 const faqs = document.querySelectorAll('.faq');
 const home = document.querySelector('body');
+const mainDiv = document.getElementById('home');
 const RoadmapImageOne = document.getElementById('roadmapImgOne');
 const RoadmapImageTwo = document.getElementById('roadmapImgTwo');
 const RoadmapImageThree = document.getElementById('roadmapImgThree');
@@ -847,9 +848,6 @@ function roadmapChange(changeValue) {
 
 const oyunBozanSpan = document.getElementById('oyunBozanSpan');
 
-home.style.width = window.innerWidth;
-
-console.log(window.innerWidth)
 if (window.innerWidth < 1536) {
     oyunBozanSpan.style.width = 190 + 'px';
 } else {
@@ -857,7 +855,7 @@ if (window.innerWidth < 1536) {
 }
 
 window.addEventListener('resize', () => {
-    home.style.width = window.innerWidth;
+    mainDiv.style.width = window.innerWidth;
     if (window.innerWidth < 1536) {
         oyunBozanSpan.style.width = 190 + 'px';
     } else {
@@ -1065,3 +1063,18 @@ const web3Modal = new Web3Modal({
     theme: "dark",
     providerOptions
 });
+
+window.onload = () => {
+        mainDiv.style.width = window.innerWidth + 'px';
+        mainDiv.style.width = window.innerWidth + 'px';
+        mainDiv.style.width = window.innerWidth + 'px';
+        mainDiv.style.width = window.innerWidth + 'px';
+        mainDiv.style.width = window.innerWidth + 'px';
+        mainDiv.style.width = window.innerWidth + 'px';
+        mainDiv.style.width = window.innerWidth + 'px';
+        mainDiv.style.width = window.innerWidth + 'px';
+        mainDiv.style.width = window.innerWidth + 'px';
+        mainDiv.style.width = window.innerWidth + 'px';
+        mainDiv.style.width = window.innerWidth + 'px';
+        mainDiv.style.width = window.innerWidth + 'px';
+}

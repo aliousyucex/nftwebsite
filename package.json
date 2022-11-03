@@ -1,5 +1,5 @@
 {
-  "name": "canvas-template",
+  "name": "eyc",
   "version": "2.0.0",
   "description": "Canvas Boilerplate is the go-to solution for quickly creating modern canvas pieces using ES6 and webpack.",
   "main": "webpack.config.js",
