@@ -391,13 +391,6 @@ let peanutImage = createImage(peanutIMG);
 
 const keys = { right: { pressed: false }, left: { pressed: false } };
 
-window.onload = () => {
-    initf();
-    animate();
-    setTimeout(() => {
-        cancelAnimationFrame(animationID);
-    }, 10);
-}
 
 sayacLabel.style.display = 'none';
 sayacLabel.innerHTML = "00:00";
@@ -1077,4 +1070,9 @@ window.onload = () => {
         mainDiv.style.width = window.innerWidth + 'px';
         mainDiv.style.width = window.innerWidth + 'px';
         mainDiv.style.width = window.innerWidth + 'px';
+        initf();
+        animate();
+        setTimeout(() => {
+        cancelAnimationFrame(animationID);
+    }, 10);
 }
