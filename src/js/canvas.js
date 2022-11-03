@@ -1,6 +1,5 @@
 /// WALLET ///
 import Web3 from 'web3';
-import { ethers } from 'ethers';
 import Web3Modal from "web3modal";
 import WalletLink from "walletlink";
 import WalletConnectProvider from "@walletconnect/web3-provider";
@@ -8,6 +7,11 @@ import metamaskImg from '../IMG/metamask.png';
 import walletConnectImg from '../IMG/walletconnectImg.png';
 import coinbaseImg from '../IMG/coinbase.png';
 /// WALLET ///
+
+/// MAKYAJ ///
+import bakbak from '../fonts/BakbakOneRegular.woff'
+import poppins from '../fonts/Poppins.ttf'
+///
 
 import PeanutPosition from '../json/peanutPositions.json';
 import positions from '../json/platforms.json';
@@ -217,11 +221,6 @@ const getWallet = async (walletProvider) => {
     closeModals();
 }
 
-window.ethereum.on("chainChanged", () => {
-    changeNetwork();
-    window.location.reload();
-});
-
 function changeNetwork() {
     window.ethereum.request({
         method: 'wallet_switchEthereumChain',
@@ -371,7 +370,7 @@ let timeMin = 0, timeSec = 0, timeSal = 0, score, compaireablescore;
 let peanut;
 let player;
 const platfroms = [];
-canvas.width = 1411;
+canvas.width = 1410;
 canvas.height = 698;
 
 const data = {};
@@ -491,6 +490,7 @@ class Platform {
         c.drawImage(this.image, this.position.x, this.position.y)
     }
 }
+
 class Peanut {
     constructor({ x, y, image }) {
         this.position = {
@@ -568,7 +568,6 @@ function animate() {
                 menu.style.display = 'block';
                 sayacLabel.style.display = 'none';
                 cancelAnimationFrame(animationID);
-                c.fillStyle = 'rgb(0, 0, 0, 0.8)';
                 data.userName = playername.value;
                 addNewScore(data);
                 whoIsHaveBiggestScore();
@@ -577,8 +576,9 @@ function animate() {
             if (sayac % levelup == 0 && sayac != 0) {
                 level++;
                 if (level != 3) {
-                    levelchechk = 1;
                     levelChangeHandle();
+                    player.position.y = playerConfigs[level].playery;
+                    player.position.x = playerConfigs[level].playerx;
                 }
             }
             while (randomex == random && level != 3) {
@@ -590,11 +590,10 @@ function animate() {
             }
             randomex = random;
         }
-        if ((sayac % levelup == 0) && levelchechk == 1) {
-            levelchechk = 0;
-            player.position.y = playerConfigs[level].playery;
-            player.position.x = playerConfigs[level].playerx;
-        }
+        // if ((sayac % levelup == 0) && levelchechk == 1) {
+        //     levelchechk = 0;
+            
+        // }
     })
 }
 
@@ -605,37 +604,52 @@ addEventListener('keydown', ({ keyCode }) => {
             player.currentsprite = player.sprites.run[playerImg].left;
             keys.left.pressed = true;
             break;
+        case 37:
+            player.currentsprite = player.sprites.run[playerImg].left;
+            keys.left.pressed = true;
+            break;
         case 68:
             player.currentsprite = player.sprites.run[playerImg].right;
             keys.right.pressed = true;
             break;
+        case 39:
+            player.currentsprite = player.sprites.run[playerImg].right;
+            keys.right.pressed = true;
+            break;
         case 87: if (player.velocity.y == 0) { player.velocity.y -= 14.5; }; break;
+        case 38: if (player.velocity.y == 0) { player.velocity.y -= 14.5; }; break;
+        case 32: if (player.velocity.y == 0) { player.velocity.y -= 14.5; e.preventDefault();}; break;
         case 83: if ((level != 2 && player.position.y <= 556) || (level == 2 && player.position.y <= 519) ) { player.velocity.y += 1; }; break;
+        case 40: if ((level != 2 && player.position.y <= 556) || (level == 2 && player.position.y <= 519) ) { player.velocity.y += 1; }; break;
         default: break;
+
     }
-})
+});
+
 addEventListener('keyup', ({ keyCode }) => {
     switch (keyCode) {
         case 65: keys.left.pressed = false; break;
+        case 37: keys.left.pressed = false; break;
         case 68: keys.right.pressed = false; break;
+        case 39: keys.right.pressed = false; break;
         case 87: player.velocity.y -= 0.1; break;
+        case 38: player.velocity.y -= 0.1; break;
+        case 32: player.velocity.y -= 0.1; break;
         default: break;
     }
 })
 
 
 function levelChangeHandle() {
-    // Create Platforms
     let platformy = 657;
     if (level == 2) {
         platformy = 620;
-        platfroms[7] = new Platform({ x: 750, y: platformy, image: groundImages[level+1] });
+        platfroms[7] = new Platform({x: 750, y: platformy, image: groundImages[level+1]});
     }
-    platfroms[0] = new Platform({ x: 0, y: platformy, image: groundImages[level] });
+    platfroms[0] = new Platform({x: 0, y: platformy, image: groundImages[level]});
     for (var i = 0; i < Positions[level].length; i++) {
-        platfroms[i + 1] = new Platform({ x: Positions[level][i]['platform-x'], y: Positions[level][i]['platform-y'], image: platformImages[level] });
+        platfroms[i + 1] = new Platform({x: Positions[level][i]['platform-x'], y: Positions[level][i]['platform-y'], image: platformImages[level]});
     }
-    // Change Background
     c.drawImage(gameBgImages[level], 0, 0);
 };
 
@@ -755,7 +769,7 @@ const decideRoadmapLevel = (level) => {
             roadmapChange(changeValue.btn1);
             break;
         case 1:
-            roadmapBtnOne.style.display = '#888B8E';
+            roadmapBtnOne.style.background = '#888B8E';
             roadmapBtnTwo.style.background = '#21E786';
             roadmapBtnThree.style.background = '#888B8E';
             roadmapChange(changeValue.btn2);
