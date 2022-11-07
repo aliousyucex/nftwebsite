@@ -1,0 +1,44 @@
+;;
+;; Domain:     elephantyachtclub.com.
+;; Exported:   2022-11-07 01:35:34
+;;
+;; This file is intended for use for informational and archival
+;; purposes ONLY and MUST be edited before use on a production
+;; DNS server.  In particular, you must:
+;;   -- update the SOA record with the correct authoritative name server
+;;   -- update the SOA record with the contact e-mail address information
+;;   -- update the NS record(s) with the authoritative name servers for this domain.
+;;
+;; For further information, please consult the BIND documentation
+;; located on the following website:
+;;
+;; http://www.isc.org/
+;;
+;; And RFC 1035:
+;;
+;; http://www.ietf.org/rfc/rfc1035.txt
+;;
+;; Please note that we do NOT offer technical support for any use
+;; of this zone data, the BIND name server, or any other third-party
+;; DNS software.
+;;
+;; Use at your own risk.
+;; SOA Record
+elephantyachtclub.com	3600	IN	SOA	elephantyachtclub.com root.elephantyachtclub.com 2041945153 7200 3600 86400 3600
+
+;; A Records
+elephantyachtclub.com.	1	IN	A	142.132.232.70
+
+;; CNAME Records
+29339485.elephantyachtclub.com.	1	IN	CNAME	sendgrid.net.
+url8988.elephantyachtclub.com.	1	IN	CNAME	sendgrid.net.
+www.elephantyachtclub.com.	1	IN	CNAME	elephantyachtclub.com.
+
+;; MX Records
+em6168.elephantyachtclub.com.	1	IN	MX	1 mx.sendgrid.net.
+
+;; TXT Records
+em6168.elephantyachtclub.com.	1	IN	TXT	"v=spf1 include:sendgrid.net ~all"
+em6168.elephantyachtclub.com.elephantyachtclub.com.	1	IN	TXT	"v=spf1 include:sendgrid.net ~all"
+m1._domainkey.elephantyachtclub.com.	1	IN	TXT	"k=rsa; t=s; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCjtM+dwiD9bA2o3Bo+1O4sRkJvbpjcSNbbrKx0PWUuxG8NMM9vFEorVIypDwLKW31F2yMl5+zIGMVuSkKDDRJKv/ZYy5ISgvyrCmgjWK+jLd4vsZLcHOLAZ/Dv06fKpV+O/KHX6ALvqP2e+Y/7nx3puLZxqsSNkqlRlWP2oHT1lwIDAQAB"
+m1._domainkey.elephantyachtclub.com.elephantyachtclub.com.	1	IN	TXT	"k=rsa; t=s; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCjtM+dwiD9bA2o3Bo+1O4sRkJvbpjcSNbbrKx0PWUuxG8NMM9vFEorVIypDwLKW31F2yMl5+zIGMVuSkKDDRJKv/ZYy5ISgvyrCmgjWK+jLd4vsZLcHOLAZ/Dv06fKpV+O/KHX6ALvqP2e+Y/7nx3puLZxqsSNkqlRlWP2oHT1lwIDAQAB"

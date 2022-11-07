@@ -20,10 +20,6 @@ import playerConfig from '../json/player.json';
 import bgElephant from '../IMG/background.png';
 import companyLogo from '../IMG/logo.png';
 
-import creator1 from '../IMG/ali.png';
-import creator2 from '../IMG/berkay.jpg';
-import creator3 from '../IMG/ahmet.jpg';
-
 
 /// GAME IMAGES IMPORT ///
 import platformlv1 from '../IMG/gameAssets/platformlv1.png';
@@ -43,6 +39,15 @@ import Playertworight from '../IMG/gameAssets/playertworight.png';
 import Playertwoleft from '../IMG/gameAssets/playertwoleft.png';
 import Playerthreeright from '../IMG/gameAssets/playerthreeright.png';
 import Playerthreeleft from '../IMG/gameAssets/playerthreeleft.png';
+import wImg from '../IMG/gameAssets/keys/w.png';
+import aImg from '../IMG/gameAssets/keys/a.png';
+import sImg from '../IMG/gameAssets/keys/s.png';
+import dImg from '../IMG/gameAssets/keys/d.png';
+import warrowImg from '../IMG/gameAssets/keys/warrow.png';
+import aarrowImg from '../IMG/gameAssets/keys/aarrow.png';
+import sarrowImg from '../IMG/gameAssets/keys/sarrow.png';
+import darrowImg from '../IMG/gameAssets/keys/darrow.png';
+import spaceImg from '../IMG/gameAssets/keys/space.png';
 /// GAME IMAGES IMPORT ///
 
 /// SOCIAL MEDIA ///
@@ -130,6 +135,16 @@ const coinbase = document.getElementById('coinbase');
 const logo = document.getElementById('logo');
 const logo2 = document.getElementById('logo2');
 
+const w = document.getElementById('w');
+const a = document.getElementById('a');
+const s = document.getElementById('s');
+const d = document.getElementById('d');
+const warrow = document.getElementById('warrow');
+const aarrow = document.getElementById('aarrow');
+const sarrow = document.getElementById('sarrow');
+const darrow = document.getElementById('darrow');
+const space = document.getElementById('space');
+
 const twf = document.getElementById('twitterfooter');
 const fbf = document.getElementById('facebookfooter');
 const tlf = document.getElementById('telegramfooter');
@@ -155,9 +170,6 @@ const stroyOne = document.getElementById('stroyone');
 const stroyTwo = document.getElementById('stroytwo');
 const stroyThree = document.getElementById('stroythree');
 const stroyFour = document.getElementById('stroyfour');
-const creator1El = document.getElementById('creator1');
-const creator2El = document.getElementById('creator2');
-const creator3El = document.getElementById('creator3');
 
 const walletConnectModal = document.getElementById("walletConnectModal");
 const storyModal = document.getElementById("storyModal");
@@ -287,9 +299,6 @@ window.onclick = function (event) {
     }
 }
 
-creator1El.src = creator1;
-creator2El.src = creator2;
-creator3El.src = creator3;
 
 faqs.forEach(faq => {
     faq.addEventListener('click', () => {
@@ -314,6 +323,15 @@ fb.src = facebook;
 tt.src = tiktok;
 topMenuLogo.src = companyLogo;
 bottomMenuLogo.src = companyLogo;
+w.src = wImg;
+a.src = aImg;
+s.src = sImg;
+d.src = dImg;
+warrow.src = warrowImg;
+aarrow.src = aarrowImg;
+sarrow.src = sarrowImg;
+darrow.src = darrowImg;
+space.src = spaceImg;
 
 metamask.src = metamaskImg;
 walletConnect.src = walletConnectImg;
@@ -571,8 +589,8 @@ function animate() {
                 level++;
                 if (level != 3) {
                     levelChangeHandle();
-                    player.position.y = playerConfigs[level].playery;
                     player.position.x = playerConfigs[level].playerx;
+                    player.position.y = playerConfigs[level].playery;
                 }
             }
             while (randomex == random && level != 3) {
@@ -612,7 +630,7 @@ addEventListener('keydown', ({ keyCode }) => {
             break;
         case 87: if (player.velocity.y == 0) { player.velocity.y -= 14.5; }; break;
         case 38: if (player.velocity.y == 0) { player.velocity.y -= 14.5; }; break;
-        case 32: if (player.velocity.y == 0) { player.velocity.y -= 14.5; e.preventDefault();}; break;
+        case 32: if (player.velocity.y == 0) { player.velocity.y -= 14.5; }; break;
         case 83: if ((level != 2 && player.position.y <= 556) || (level == 2 && player.position.y <= 519) ) { player.velocity.y += 1; }; break;
         case 40: if ((level != 2 && player.position.y <= 556) || (level == 2 && player.position.y <= 519) ) { player.velocity.y += 1; }; break;
         default: break;
@@ -647,7 +665,10 @@ function levelChangeHandle() {
     c.drawImage(gameBgImages[level], 0, 0);
 };
 
+const gameFocus = document.getElementById('gameFocus');
+canvas.addEventListener('click', function() { gameFocus.focus(); });
 startbutton.addEventListener('click', () => {
+    gameFocus.focus();
     const discordValidation = /^((?!(discordtag|everyone|here)#)((?!@|#|:|```).{2,32})#\d{4})/;
     if (playername.value != '' && discordValidation.test(playername.value)) {
         timeMin = 0;
@@ -714,17 +735,17 @@ const changeValue = {
         value: 0,
         color: 'black',
         head: 'PHASE 1',
-        text1: 'Game demo version',
-        text2: 'Private mint - Airdrop',
-        text3: 'Story Season 1',
-        text4: 'Public mint'
+        text1: 'Story Season 1',
+        text2: 'Game Alpha Version',
+        text3: 'Private Mint - Airdrop',
+        text4: 'Public Mint'
     },
     btn2: {
         value: 1,
         color: 'green',
         head: 'PHASE 2',
-        text1: 'Game beta',
-        text2: 'Story season 2',
+        text1: 'Story Season 2',
+        text2: 'Game Open Beta',
         text3: 'New NFT Mechanics',
         text4: 'World Wide Party Details'
     },
@@ -732,10 +753,10 @@ const changeValue = {
         value: 2,
         color: 'gray',
         head: 'PHASE 3',
-        text1: 'Game full version - With tournaments',
-        text2: 'Story season 3',
-        text3: 'Creating third generating coffe shop',
-        text4: 'Worl Wide Party'
+        text1: 'Story Season 3',
+        text2: 'Game Full Version',
+        text3: 'Worl Wide Party',
+        text4: `3'th Generating Coffe Shop`
     }
 }
 let roadmapLevel = 0;
