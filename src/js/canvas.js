@@ -915,7 +915,7 @@ const isEmailValid = (mail, element) => {
 }
 
 const subscribeBtnClick = async (data, element) => {
-    const response = await fetch('http://142.132.232.70:3003/subscribe', {
+    const response = await fetch('https://api.elephantyachtclub.com/subscribe', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -938,7 +938,6 @@ topSubBtn.addEventListener('click', () => {
     const valid = isEmailValid(topSubMail.value, topSubMail);
     if (valid) {
         subscribeBtnClick(topSubMail.value, topSubMail);
-        subCountHandler();
     }
 });
 
@@ -946,16 +945,15 @@ bottomSubBtn.addEventListener('click', () => {
     const valid = isEmailValid(bottomSubMail.value, bottomSubMail);
     if (valid) {
         subscribeBtnClick(bottomSubMail.value, bottomSubMail);
-        subCountHandler();
     }
 });
 
 async function fetchText(i, j) {
-    fetch('http://142.132.232.70:3003/score')
-        .then(response => {
+    fetch('https://api.elephantyachtclub.com/score')
+        .then((response) => {
             return response.json();
         })
-        .then(data => {
+        .then((data) => {
             if (data[i].userName.length > 14) {
                 let tempData = data[i].userName;
                 tempData = tempData.slice(0, 14);
@@ -964,8 +962,7 @@ async function fetchText(i, j) {
             }
             td[i + 2 + j].innerHTML = data[i].userName;
             td[i + 3 + j].innerHTML = data[i].scoreText;
-        })
-        ;
+        });
 }
 
 function whoIsHaveBiggestScore() {
@@ -994,7 +991,7 @@ function whoIsHaveBiggestScore() {
 }
 
 const addNewScore = async (data) => {
-    const response = await fetch('http://142.132.232.70:3003/score', {
+    const response = await fetch('https://api.elephantyachtclub.com/score', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -1008,15 +1005,6 @@ const addNewScore = async (data) => {
 }
 const detail = document.getElementById('faqWhiteList');
 
-async function subCountHandler() {
-    fetch('http://142.132.232.70:3003/subscribe')
-        .then(response => response.json())
-        .then(data => {
-            subCount.innerHTML = data[0].subcount;
-        })
-}
-
-// subCountHandler();
 
 let acc = document.getElementsByClassName('accordion');
 

@@ -144,19 +144,19 @@
   }
 
   .dclink {
-    color: #5964F2;
+    color: #C2C3C5;
   }
 
   .dclink:hover {
-    color: white;
+    color: #5964F2;
   }
 
   .twlink {
-    color: #3FA9F5;
+    color: #C2C3C5;
   }
 
   .twlink:hover {
-    color: white;
+    color: #3FA9F5;
   }
 
   @font-face {
@@ -250,10 +250,6 @@
     color: #C2C3C5;
   }
 
-  .topSignIn:after {
-    border: solid blue;
-  }
-
   .singInBtn {
     display: flex;
     position: relative;
@@ -272,6 +268,10 @@
 
     /* Primary */
     background: #21E786;
+  }
+
+  .singInBtn:hover {
+    background: #07bd65;
   }
 
   .topDiscord {
@@ -399,12 +399,11 @@
   }
 
   .manifest {
-    border: 1px solid #21E786
+    background: #1e252e;
   }
 
   .manifest:hover {
-    border: 1px solid white;
-    background: #1c232b;
+    background: #141B22;
   }
 
 
@@ -1088,7 +1087,7 @@
   }
 
   .modal-content {
-    background: linear-gradient(268.28deg, #2333DE -1.34%, #0ABE66 100%);
+    background: #11121e;
     margin: auto;
     padding: 20px;
     color: white;
@@ -1205,6 +1204,20 @@
   .modalLink:hover {
     color: white;
   }
+
+  .startbtn {
+    background-color: #FF1616;
+    font-family: Bakbak One;
+    font-size: 16px;
+    width: 270px;
+    height: 48px;
+    color: white;
+  }
+
+  .startbtn:hover {
+    background-color: #f35959;
+    color: black;
+  }
 </style>
 
 <body style="overflow-x: hidden;">
@@ -1250,7 +1263,7 @@
         </span>
         <span style="text-align: center; width: 350px;">
           By connecting your wallet, you agree to our
-          <a href="./conditions.html" class="modalLink">Terms of Service & Privacy Policy</a>.
+          <a href="./conditions.html" class="modalLink" target="_blank">Terms of Service & Privacy Policy</a>.
         </span>
       </div>
     </div>
@@ -1525,7 +1538,7 @@
                     </div>
                     <div style="flex-direction: column; margin-left: 78px;">
                       <h3 class="itemHead">Price</h3>
-                      <h2 class="count" id="subCount">1 ETH</h2>
+                      <h2 class="count">1 ETH</h2>
                     </div>
                   </div>
                   <div style="flex-direction: row; display: flex; position: relative; margin-top: 58px;">
@@ -1770,22 +1783,21 @@
                           <div style="display: flex; position: absolute; top: 100; justify-content: space-between;">
                             <span style="display: flex; position: absolute; background-color: #5033C3; left: 75px;">
                               <div
-                                style="width: 300; height: 500;  display: flex; position: relative; justify-content: left; padding: 15px; flex-direction: column; text-align: left; color: white;">
+                                style="width: 300; height: 500;  display: flex; position: relative; justify-content: left; padding: 30px 30px 0px 30px; flex-direction: column; text-align: center; color: white;">
                                 <h2 style="font-family: Bakbak One; font-weight: 400;
                                 font-size: 20px;
-                                line-height: 28px;">How To Win</h2>
+                                line-height: 28px; padding-bottom: 20px;">How To Win</h2>
                                 <br>
                                 <p style="font-family: 'Poppins';
                                 font-style: normal;
                                 font-weight: 400;
-                                font-size: 14px;
+                                font-size: 16px;
                                 line-height: 20px;">
-                                  Be sure to you entered your correct discord name for collect gifts!
+                                  Make sure you enter your discord name correctly to collect gifts!
                                   <br><br>
-                                  Play the game according to the instructions. Use all your strength to collect peanuts
-                                  in the fastest time!
+                                  Use all your strength to collect the peanuts as soon as possible!
                                   <br><br>If you're fast enough for that, you can write your name on the Leaderboard!
-                                  <br><br>? : Yes, if you write your name on SKORBOARD, you can win WHITELIST or AIRDROP
+                                  <br><br>If you write your name on Leaderboard, you can win WhiteList or Airdrop
                                   from us!
                                 </p>
                               </div>
@@ -1823,8 +1835,7 @@
                                     style="width: 270px; top: 152px; left: 26px;">
                                     Please enter a Discord nickname
                                   </div>
-                                  <button class="text-black select-none"
-                                    style="background-color: #FF1616; font-family: Bakbak One; font-size: 16px; width: 270px; height: 48px; color: white;"
+                                  <button class="select-none startbtn"
                                     id="start">START GAME</button>
                                 </div>
                                 <!-- Tier List -->
@@ -1842,7 +1853,7 @@
 
                             <span style="display: flex; position: absolute; background-color: #5033C3; left: 1050px;">
                               <div
-                                style="width: 300; height: 500;  display: flex; position: relative; justify-content: left; padding: 15px; flex-direction: column; text-align: left; color: white;">
+                                style="width: 300; height: 500;  display: flex; position: relative; justify-content: left; padding: 30px 30px 0px 30px; flex-direction: column; text-align: center; color: white;">
                                 <h2 style="font-family: Bakbak One; font-weight: 400;
                                 font-size: 20px;
                                 line-height: 28px;">How To Play</h2>
@@ -1850,11 +1861,11 @@
                                 <p style="font-family: 'Poppins';
                                 font-style: normal;
                                 font-weight: 400;
-                                font-size: 14px;
+                                font-size: 16px;
                                 line-height: 20px;">
                                 <div>
                                   <span
-                                    style="display: flex; flex-direction: row; justify-content: space-between;">
+                                    style="display: flex; flex-direction: row; justify-content: space-between; user-select: none; padding-bottom: 30px;">
                                     <span>
                                       <img id="w" style="height: 40px;"> <img id="warrow" style="height: 40px;"> 
                                       <img id="space" style="height: 40px;"> Jump
@@ -1866,18 +1877,18 @@
                                     </span>
                                     <span>
                                       <img id="s" style="height: 40px;"> <img id="sarrow" style="height: 40px;"> <img style="height: 40px;">
-                                      Right
+                                      Down
                                     </span>
                                     <span>
                                       <img id="d" style="height: 40px;"> <img id="darrow" style="height: 40px;"> <img style="height: 40px;">
-                                      Down
+                                      Right
                                     </span>
                                   </span>
                                 </div>
-                                <br>
-                                Enter your discord nickname and press START! When you press START the time is ticking
-                                and tocking...
-                                <br><br> Try collect all peanuts in shortest time! We are believe you!
+                                <div style="font-family: 'Poppins'; font-size: 16px;">
+                                <p style="padding-bottom: 20px;">Enter your discord nickname and press START!</p>
+                                <p>Try collect all peanuts in shortest time! We are believe you!</p>
+                              </div>
                                 </p>
                               </div>
                             </span>
@@ -2037,7 +2048,7 @@
           </div>
           <div style="display: flex; position: relative; width: 140px; flex-direction: column; margin-right: 117px;">
             <span class="footerHead">COMPANY</span>
-            <span class="footerLink hoverWhite"><a href="./conditions.html">Terms of Service & Privacy Policy</a></span>
+            <span class="footerLink hoverWhite"><a href="./conditions.html" target="_blank">Terms of Service & Privacy Policy</a></span>
             <span class="footerLink hoverWhite">Contact Us</span>
             <span class="footerLink hoverWhite">Help Center</span>
           </div>
