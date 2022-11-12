@@ -3,9 +3,9 @@ import Web3 from 'web3';
 import Web3Modal from "web3modal";
 import WalletLink from "walletlink";
 import WalletConnectProvider from "@walletconnect/web3-provider";
-import metamaskImg from '../IMG/metamask.png';
-import walletConnectImg from '../IMG/walletconnectImg.png';
-import coinbaseImg from '../IMG/coinbase.png';
+import metamaskImg from '../IMG/web3Icons/metamask.png';
+import walletConnectImg from '../IMG/web3Icons/walletconnectImg.png';
+import coinbaseImg from '../IMG/web3Icons/coinbase.png';
 /// WALLET ///
 
 /// MAKYAJ ///
@@ -50,22 +50,47 @@ import darrowImg from '../IMG/gameAssets/keys/darrow.png';
 import spaceImg from '../IMG/gameAssets/keys/space.png';
 /// GAME IMAGES IMPORT ///
 
-/// SOCIAL MEDIA ///
-import discord from '../IMG/discord.png';
-import walletIm from '../IMG/wallet.png';
-import twitter from '../IMG/twitter.png';
-import linkedins from '../IMG/linkedinSmall.png';
-import facebooks from '../IMG/facebookSmall.png';
-import instagrams from '../IMG/instagramSmall.png';
-import telegrams from '../IMG/telegramSmall.png';
-import youtube from '../IMG/youtube.png';
-import telegram from '../IMG/telegram.png';
-import facebook from '../IMG/facebook.png';
-import tiktok from '../IMG/tiktok.png';
 import opensea from '../IMG/opensea.png';
+import walletIm from '../IMG/wallet.png';
 /// SOCIAL MEDIA ///
+import discordImg  from '../IMG/socialMediaIcons/discord.png';
+import twitterImg  from '../IMG/socialMediaIcons/twitter.png';
+import mediumImg   from '../IMG/socialMediaIcons/medium.png';
+import redditImg   from '../IMG/socialMediaIcons/reddit.png';
+import linkedinImg from '../IMG/socialMediaIcons/linkedin.png';
 
+import twitterFooterImg  from '../IMG/socialMediaIcons/twitterSmall.png';
+import redditFooterImg   from '../IMG/socialMediaIcons/redditSmall.png';
+import linkedinFooterImg from '../IMG/socialMediaIcons/linkedinSmall.png';
+import mediumFooterImg   from '../IMG/socialMediaIcons/mediumSmall.png';
+import discordFooterImg  from '../IMG/socialMediaIcons/discordSmall.png';
 
+import instagrams from '../IMG/socialMediaIcons/instagramSmall.png';
+import linkedins from '../IMG/socialMediaIcons/linkedinSmall.png';
+/// SOCIAL MEDIA ///
+const twitter   = document.getElementById('twitter');
+const reddit    = document.getElementById('reddit');
+const linkedin  = document.getElementById('linkedin');
+const medium    = document.getElementById('medium');
+const discord   = document.getElementById('discord');
+
+const twitterFooter = document.getElementById('twitterFooter');
+const redditFooter = document.getElementById('redditFooter');
+const linkedinFooter = document.getElementById('linkedinFooter');
+const mediumFooter = document.getElementById('mediumFooter');
+const discordFooter = document.getElementById('discordFooter');
+
+twitter.src  = twitterImg; 
+reddit.src   = redditImg;
+linkedin.src = linkedinImg;
+medium.src   = mediumImg;  
+discord.src  = discordImg;  
+
+twitterFooter.src =  twitterFooterImg;
+redditFooter.src =   redditFooterImg;
+linkedinFooter.src = linkedinFooterImg;
+mediumFooter.src =   mediumFooterImg;
+discordFooter.src =  discordFooterImg;
 
 ///  HTML ITEMS ///
 let web3;
@@ -120,14 +145,8 @@ const radioBttn3 = document.getElementById('r3');
 const pImg1 = document.getElementById('p1');
 const pImg2 = document.getElementById('p2');
 const pImg3 = document.getElementById('p3');
-const dc = document.getElementById('discord');
 const dcU = document.getElementById('discordUst');
 const walletImg = document.getElementById('walletImg');
-const tw = document.getElementById('twitter');
-const yt = document.getElementById('youtube');
-const tl = document.getElementById('telegram');
-const fb = document.getElementById('facebook');
-const tt = document.getElementById('tiktok');
 
 const metamask = document.getElementById('metamask');
 const walletConnect = document.getElementById('walletConnect');
@@ -145,25 +164,14 @@ const sarrow = document.getElementById('sarrow');
 const darrow = document.getElementById('darrow');
 const space = document.getElementById('space');
 
-const twf = document.getElementById('twitterfooter');
-const fbf = document.getElementById('facebookfooter');
-const tlf = document.getElementById('telegramfooter');
-const ytf = document.getElementById('youtubefooter');
-const ttf = document.getElementById('tiktokfooter');
-const dcf = document.getElementById('discordfooter');
-
 const ln = document.getElementById('linkedinSmall');
 const igs = document.getElementById('instagramSmall');
 
 const ln1 = document.getElementById('linkedinSmall1');
-// const fbs1 = document.getElementById('facebookSmall1');
 const igs1 = document.getElementById('instagramSmall1');
-// const tls1 = document.getElementById('telegramSmall1');
 
 const ln2 = document.getElementById('linkedinSmall2');
-// const fbs2 = document.getElementById('facebookSmall2');
 // const igs2 = document.getElementById('instagramSmall2');
-// const tls2 = document.getElementById('telegramSmall2');
 
 const op = document.getElementById('opensea');
 const stroyOne = document.getElementById('stroyone');
@@ -171,6 +179,9 @@ const stroyTwo = document.getElementById('stroytwo');
 const stroyThree = document.getElementById('stroythree');
 const stroyFour = document.getElementById('stroyfour');
 
+
+const contactUs = document.getElementById("contactUs");
+const contactUsModal = document.getElementById("contactUsModal");
 const walletConnectModal = document.getElementById("walletConnectModal");
 const storyModal = document.getElementById("storyModal");
 const manifestModal = document.getElementById("manifestModal");
@@ -254,7 +265,9 @@ const modalOpen = (modalName) => {
     topMenuDiv.style.paddingRight = "17px";
 }
 
-
+contactUs.onclick = function () {
+    modalOpen(contactUsModal);
+}
 
 topWhiteList.onclick = function () {
     modalOpen(whitelistModal);
@@ -286,6 +299,8 @@ const closeModals = () => {
     storyModal.style.display = "none";
     manifestModal.style.display = "none";
     whitelistModal.style.display = "none";
+    contactUsModal.style.display = "none";
+    
 }
 
 window.onclick = function (event) {
@@ -293,7 +308,8 @@ window.onclick = function (event) {
         event.target == storyModal ||
         event.target == manifestModal ||
         event.target == whitelistModal ||
-        event.target == walletConnectModal
+        event.target == walletConnectModal ||
+        event.target == contactUsModal
     ) {
         closeModals();
     }
@@ -313,14 +329,10 @@ backgroundEl.style.backgroundImage = `url(${bgElephant})`;
 pImg1.src = Playeroneright;
 pImg2.src = Playertworight;
 pImg3.src = Playerthreeright;
-dc.src = discord;
+
 walletImg.src = walletIm;
-dcU.src = discord;
-tw.src = twitter;
-yt.src = youtube;
-tl.src = telegram;
-fb.src = facebook;
-tt.src = tiktok;
+dcU.src = discordImg;
+
 topMenuLogo.src = companyLogo;
 bottomMenuLogo.src = companyLogo;
 w.src = wImg;
@@ -336,28 +348,17 @@ space.src = spaceImg;
 metamask.src = metamaskImg;
 walletConnect.src = walletConnectImg;
 coinbase.src = coinbaseImg;
-logo.src = discord;
-logo2.src = discord;
-
-dcf.src = discord;
-twf.src = twitter;
-ytf.src = youtube;
-tlf.src = telegram;
-fbf.src = facebook;
-ttf.src = tiktok;
+logo.src = discordImg;
+logo2.src = discordImg;
 
 ln.src = linkedins;
 igs.src = instagrams;
 
 ln1.src = linkedins;
-// fbs1.src = facebooks;
 igs1.src = instagrams;
-// tls1.src = telegrams;
 
 ln2.src = linkedins;
-// fbs2.src = facebooks;
 // igs2.src = instagrams;
-// tls2.src = telegrams;
 // op.src = opensea;
 
 let scrollpos;
@@ -716,7 +717,7 @@ const minutesEl = document.getElementById('minutes');
 const secondsEl = document.getElementById('seconds');
 
 const countDownFunction = () => {
-    const countDownEnd = new Date('11 Dec 2022');
+    const countDownEnd = new Date('24 Dec 2022');
     const currentDate = new Date();
 
     const totalSeconds = (countDownEnd - currentDate) / 1000;
@@ -1085,3 +1086,5 @@ window.onload = () => {
         cancelAnimationFrame(animationID);
     }, 10);
 }
+
+window.addEventListener("hashchange", () => window.history.pushState({}, "", '/'), {});

@@ -7,6 +7,18 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <style>
+  img {
+    user-select: none;
+  }
+
+  button {
+    user-select: none;
+  }
+
+  a {
+    user-select: none;
+  }
+
   html {
     scroll-behavior: smooth;
   }
@@ -125,10 +137,6 @@
   .faq.active .answer {
     max-height: 500;
 
-  }
-
-  strong {
-    color: white;
   }
 
   @keyframes fade {
@@ -295,7 +303,7 @@
   }
 
   .topDiscord:hover {
-    background: #5370f1;
+    background: #3841aa;
   }
 
   .whiteList {
@@ -986,6 +994,7 @@
   }
 
   .footerHead {
+    user-select: none;
     font-family: 'Bakbak One';
     font-style: normal;
     font-weight: 400;
@@ -1215,8 +1224,20 @@
   }
 
   .startbtn:hover {
-    background-color: #f35959;
+    background-color: #FF1616;
     color: black;
+  }
+
+  .modalDcLink:hover {
+    color: #5033C3;
+  }
+
+  .modalTwLink:hover {
+    color: #3FA9F5;
+  }
+
+  .mailadress:hover {
+    color: #FF1616;
   }
 </style>
 
@@ -1263,7 +1284,7 @@
         </span>
         <span style="text-align: center; width: 350px;">
           By connecting your wallet, you agree to our
-          <a href="./conditions.html" class="modalLink" target="_blank">Terms of Service & Privacy Policy</a>.
+          <a href="./conditions" class="modalLink" target="_blank">Terms of Service & Privacy Policy</a>.
         </span>
       </div>
     </div>
@@ -1359,22 +1380,22 @@
     </div>
 
     <div id="manifestModal" class="modal"
-      style="width: 100%; height: 100%; justify-content: center; align-items: center;  display: none; overflow: hidden;">
+      style="width: 100%; height: 100%; justify-content: center; align-items: center;  display: none; overflow: hidden; padding-top: 170px;">
       <div class="modal-content force-overflow">
         <div>
-          <h1>Hi there!</h1>
-          <p><br>
+          <h1 style="padding-bottom: 20px;">Hi there!</h1>
+          <p style="padding-bottom: 15px;">
             First of all, we are here with the joy and excitement of bringing you a new NFT collection. We need to
             inform you about the foundations of this NFT collection.
           </p>
-          <p><br>
+          <p style="padding-bottom: 15px;">
 
             Although we are not an aid campaign, we aim to raise awareness about the "Elephant Tusks" genocide in
             today's conditions and enable more people to have information about it. To show that there are many ways to
             spread this awareness and be a source of inspiration for many different projects, we decided to branch this
             project into different directions.
           </p>
-          <p><br>
+          <p style="padding-bottom: 15px;">
             The first of these branches begins with a 3-season story that we have written for you. This story serves as
             a building block in raising the awareness needed for both our NFTs and elephants. Another of these branches
             is the game we developed, PeanutRush. Based on platform game PeanutRush, the main character is an elephant,
@@ -1382,22 +1403,22 @@
             and renting their collection pieces (with certain collection pieces in the Demo version) to our collectors
             and collector candidates.
           </p>
-          <p><br>
+          <p style="padding-bottom: 15px;">
             Hiring: We aim to create a sustainable ecosystem with a game mechanic that allows our collectors to earn an
             income other than NFT trading.
           </p>
-          <p><br>
+          <p style="padding-bottom: 15px;">
 
             NFT Collectors: We strive to provide the right to participate in special events and tournaments (in our
             game) that we will organize for those who have any item from the EYC collection in their wallet.
           </p>
-          <p><br>
+          <p style="padding-bottom: 20px;">
 
             In addition, we aim to define the right to 1 complimentary drink per week from our shop in the future. In
             the Metaverse universe that will be created, it is aimed that the wallets with this collection will have
             different rights from other projects.
           </p>
-          <p style="color: red; font-size: 14px;"><br>
+          <p style="color: red; font-size: 14px;">
 
             "Hiring doesn't make you an NFT collector. For this reason, it is not possible to participate in these
             events by renting."</p>
@@ -1409,13 +1430,31 @@
       style="width: 100%; height: 100%; justify-content: center; align-items: center;  display: none;">
       <div class="modal-content" style="width: 700px; margin-top: 200px;">
         <div>
-          You can join our <strong class="font-bold">
-            <a href="https://discord.gg/StThqXNfAe" class="dclink" target="_blank">Discord</a></strong>
-          channel and other social media accounts. We will post all kind of offers on social media.
-          <br><br>
-          But we have a secret path for this...
-          <br><br>
+          <p style="padding-bottom: 10px;"> You can join our
+            <a href="https://discord.gg/StThqXNfAe" class="modalDcLink" style="user-select: unset;"
+              target="_blank">Discord</a>
+            channel and other social media accounts. We will post all kind of offers on social media.
+          </p>
+          <p style="padding-bottom: 10px;">
+            But we have a secret path for this...
+          </p>
           If you play our game and write your name on the best scoreboard, you can win Whitelist or Airdrop from us.
+        </div>
+      </div>
+    </div>
+
+    <div id="contactUsModal" class="modal"
+      style="width: 100%; height: 100%; justify-content: center; align-items: center;  display: none;">
+      <div class="modal-content" style="width: 700px; margin-top: 300px;">
+        <div>
+          You can communicate with on <span class="mailadress">info@elephantyachtclub.com</span> or you can contact us
+          on
+          <a href="https://discord.gg/StThqXNfAe" class="modalDcLink" style="user-select: unset;"
+            target="_blank">Discord</a>
+          and
+          <a href="https://twitter.com/ElephantYClub" class="modalTwLink" style="user-select: unset;"
+            target="_blank">Twitter</a>
+          accounst!
         </div>
       </div>
     </div>
@@ -1427,8 +1466,8 @@
       <div style="width: 1414px; flex-direction: row; margin: auto;">
 
         <div class="mx-auto" style="width: 1414px;">
-          <span class="head" style="display: flex; padding-left: 2px; position: absolute; top: 36px;"><img
-              id="topMenuLogo" style="width: 150px"></span>
+          <span class="head" style="display: flex; padding-left: 2px; position: absolute; top: 36px;"><a
+              href="#home"><img id="topMenuLogo" style="width: 150px"></a></span>
         </div>
 
 
@@ -1501,18 +1540,41 @@
         </div>
         <div style="display: flex; justify-content: center; position: relative; ">
 
-          <span style="margin: 0px 12px 40px 12px;"><a href="" target="_blank"><span class="socialMedia"><img
-                  id="twitter"></span></a></span>
-          <span style="margin: 0px 12px 40px 12px;"><a href="" target="_blank"><span class="socialMedia"><img
-                  id="facebook"></span></a></span>
-          <span style="margin: 0px 12px 40px 12px;"><a href="" target="_blank"><span class="socialMedia"><img
-                  id="telegram"></span></a></span>
-          <span style="margin: 0px 12px 40px 12px;"><a href="" target="_blank"><span class="socialMedia"><img
-                  id="youtube"></span></a></span>
-          <span style="margin: 0px 12px 40px 12px;"><a href="" target="_blank"><span class="socialMedia"><img
-                  id="tiktok"></span></a></span>
-          <span style="margin: 0px 12px 40px 12px;"><a href="https://discord.gg/StThqXNfAe" target="_blank"><span
-                class="socialMedia"><img id="discord"></span></a></span>
+          <span style="margin: 0px 12px 40px 12px;">
+            <a href="https://twitter.com/ElephantYClub" target="_blank">
+              <span class="socialMedia">
+                <img id="twitter">
+              </span>
+            </a>
+          </span>
+          <span style="margin: 0px 12px 40px 12px;">
+            <a href="https://www.reddit.com/user/ElephantYachtClub" target="_blank">
+              <span class="socialMedia">
+                <img id="reddit">
+                </span>
+              </a>
+            </span>
+          <span style="margin: 0px 12px 40px 12px;">
+            <a href="https://www.linkedin.com/in/elephantyachtclub/" target="_blank">
+              <span class="socialMedia">
+                <img id="linkedin" style="width: 28px;">
+              </span>
+            </a>
+          </span>
+          <span style="margin: 0px 12px 40px 12px;">
+            <a href="https://medium.com/@ElephantYachtClub" target="_blank">
+              <span class="socialMedia">
+                <img id="medium">
+                </span>
+              </a>
+            </span>
+          <span style="margin: 0px 12px 40px 12px;">
+            <a href="https://discord.gg/HU4tGjJzJb" target="_blank">
+              <span class="socialMedia">
+                <img id="discord">
+              </span>
+            </a>
+          </span>
         </div>
       </div>
       <div style="width: 1414px; background: linear-gradient(356.98deg, #040B11 25.85%, rgba(4, 11, 17, 0) 54.01%);"
@@ -1520,9 +1582,8 @@
         <div>
           <div class="justify-center text-center">
             <div class="container mx-auto" style="justify-content: center; background-color: #040B11;">
-              <div id="storyMain"><br><br><br><br></div>
-              <div class="mx-auto"
-                style=" justify-content: center; position: relative; display: flex; padding-bottom: 60px;">
+              <div id="storyMain" style="padding-top: 100px;"></div>
+              <div class="mx-auto" style=" justify-content: center; position: relative; display: flex;">
                 <div style="display: flex; position: relative; flex-direction: column;">
                   <div class="starOne"></div>
                   <div>
@@ -1553,12 +1614,10 @@
                       <span class="modalHead">Explore the NFTs</span>
                       <span class="modalText">
                         <span style="width: 286px; margin-right: auto; margin-left: auto;">
-                          If wanna see our collection, you should be chech our Opensea link below. <br class="pt-2">
-                          Don't forget to fallow us on <strong class="font-bold"><a
-                              href="https://twitter.com/ElephantYClub" class="twlink"
-                              target="_blank">Twitter</a></strong> and join to
-                          <strong class="font-bold"><a href="https://discord.gg/hUaHrSTZyj" class="dclink"
-                              target="_blank">Discord.</a></strong></span>
+                          If wanna see our collection, you should be chech our Opensea link below.
+                          Don't forget to fallow us on <a href="https://twitter.com/ElephantYClub" class="twlink"
+                            target="_blank">Twitter</a> and join to
+                          <a href="https://discord.gg/hUaHrSTZyj" class="dclink" target="_blank">Discord.</a></span>
                       </span>
                     </span>
                     <span class="stroyModals ">
@@ -1587,7 +1646,7 @@
 
                 </div>
               </div>
-              <div id="roadmap" style="margin-top: -85px;"><br><br><br><br></div>
+              <div id="roadmap" style="padding-top: 100px;"></div>
               <div class="mx-auto" style="display: flex; position: relative; height: 800px; justify-content: center;">
                 <div class="head mx-auto">
                   <h1>roadmap</h1>
@@ -1658,7 +1717,7 @@
                   </span>
                 </div>
               </div>
-              <div id="ourteam"><br><br><br><br></div>
+              <div id="ourteam" style="padding-top: 100px;"></div>
               <div class="mx-auto"
                 style="display: flex; position: relative; height: 520px; justify-content: center; margin-top: 40px;">
                 <div class="head mx-auto">
@@ -1675,10 +1734,10 @@
                     <span class="creatorSocialMedia">
                       <span style="padding: 10px;">
                         <a href="https://www.linkedin.com/in/ali-o%C4%9Fuzhan-y%C3%BCce-672759188" target="_blank"
-                          style="height: 20;"><img id="linkedinSmall"></a>
+                          style="height: 24;"><img id="linkedinSmall"></a>
                       </span>
                       <span style="padding: 10px;">
-                        <a href="https://www.instagram.com/aliousyuce/" target="_blank" style="height: 20;"><img
+                        <a href="https://www.instagram.com/aliousyuce/" target="_blank"><img
                             id="instagramSmall"></a>
                       </span>
                     </span>
@@ -1703,7 +1762,7 @@
                     <span class="creatorSubTitle">Designer</span>
                     <span class="creatorSocialMedia">
                       <span style="padding: 10px;">
-                        <a href="https://www.linkedin.com/in/ahmtcnsz/" target="_blank" style="height: 20px;"><img
+                        <a href="https://www.linkedin.com/in/ahmtcnsz/" target="_blank"><img
                             id="linkedinSmall2"></a>
                       </span>
                     </span>
@@ -1721,9 +1780,9 @@
                   </span>
                 </div>
               </div>
-              <div id="partner" style="margin-top: -100px;"><br><br></div>
+              <div id="partner" style="padding-top: 45px;"></div>
               <div class="mx-auto"
-                style="display: flex; position: relative; height: 550px; justify-content: center; margin-top: 70px;">
+                style="display: flex; position: relative; height: 350px; justify-content: center; margin-top: 70px;">
                 <div class="head mx-auto">
                   <span>
                     Partner
@@ -1762,15 +1821,15 @@
                   </span>
                 </div>
               </div>
-              <div id="gamearea" style="margin-top: -100px;"><br></div>
+              <div id="gamearea" style="padding-top: 45px;"></div>
               <div class="mx-auto"
-                style="display: flex; position: relative; height: 1000px; justify-content: center; margin-top: 70px;">
+                style="display: flex; position: relative; height: 800px; justify-content: center; margin-top: 70px;">
                 <div class="head mx-auto">
                   <span>
                     PEANUT RUSH!
                   </span>
                 </div>
-                <div style="margin-top: 118px;">
+                <div style="margin-top: 70px;">
                   <div id="game" class="relative  overflow-hidden" style="height: 900px; padding-bottom: 60rem;">
                     <div class="container mx-auto max-w-max" id="contain">
                       <div class="bg-black mt-8 relative" style="margin: auto;">
@@ -1786,20 +1845,24 @@
                                 style="width: 300; height: 500;  display: flex; position: relative; justify-content: left; padding: 30px 30px 0px 30px; flex-direction: column; text-align: center; color: white;">
                                 <h2 style="font-family: Bakbak One; font-weight: 400;
                                 font-size: 20px;
-                                line-height: 28px; padding-bottom: 20px;">How To Win</h2>
-                                <br>
-                                <p style="font-family: 'Poppins';
+                                line-height: 28px; padding-bottom: 50px;">How To Win</h2>
+                                <div style="font-family: 'Poppins';
                                 font-style: normal;
                                 font-weight: 400;
                                 font-size: 16px;
                                 line-height: 20px;">
-                                  Make sure you enter your discord name correctly to collect gifts!
-                                  <br><br>
-                                  Use all your strength to collect the peanuts as soon as possible!
-                                  <br><br>If you're fast enough for that, you can write your name on the Leaderboard!
-                                  <br><br>If you write your name on Leaderboard, you can win WhiteList or Airdrop
-                                  from us!
-                                </p>
+                                  <p style="padding-bottom: 15px;">
+                                    Make sure you enter your discord name correctly to collect gifts!
+                                  </p>
+
+                                  <p style="padding-bottom: 15px;">Use all your strength to collect the peanuts as soon
+                                    as possible!</p>
+                                  <p style="padding-bottom: 15px;">If you're fast enough for that, you can write your
+                                    name on the Leaderboard!</p>
+                                  <p style="padding-bottom: 15px;">If you write your name on Leaderboard, you can win
+                                    WhiteList or Airdrop
+                                    from us!</p>
+                                </div>
                               </div>
                             </span>
 
@@ -1835,8 +1898,7 @@
                                     style="width: 270px; top: 152px; left: 26px;">
                                     Please enter a Discord nickname
                                   </div>
-                                  <button class="select-none startbtn"
-                                    id="start">START GAME</button>
+                                  <button class="select-none startbtn" id="start">START GAME</button>
                                 </div>
                                 <!-- Tier List -->
                                 <div style="display: flex; position: relative; justify-content: center;">
@@ -1856,8 +1918,7 @@
                                 style="width: 300; height: 500;  display: flex; position: relative; justify-content: left; padding: 30px 30px 0px 30px; flex-direction: column; text-align: center; color: white;">
                                 <h2 style="font-family: Bakbak One; font-weight: 400;
                                 font-size: 20px;
-                                line-height: 28px;">How To Play</h2>
-                                <br>
+                                line-height: 28px; padding-bottom: 20px;">How To Play</h2>
                                 <p style="font-family: 'Poppins';
                                 font-style: normal;
                                 font-weight: 400;
@@ -1867,7 +1928,7 @@
                                   <span
                                     style="display: flex; flex-direction: row; justify-content: space-between; user-select: none; padding-bottom: 30px;">
                                     <span>
-                                      <img id="w" style="height: 40px;"> <img id="warrow" style="height: 40px;"> 
+                                      <img id="w" style="height: 40px;"> <img id="warrow" style="height: 40px;">
                                       <img id="space" style="height: 40px;"> Jump
                                     </span>
                                     <span>
@@ -1876,19 +1937,21 @@
                                       Left
                                     </span>
                                     <span>
-                                      <img id="s" style="height: 40px;"> <img id="sarrow" style="height: 40px;"> <img style="height: 40px;">
+                                      <img id="s" style="height: 40px;"> <img id="sarrow" style="height: 40px;"> <img
+                                        style="height: 40px;">
                                       Down
                                     </span>
                                     <span>
-                                      <img id="d" style="height: 40px;"> <img id="darrow" style="height: 40px;"> <img style="height: 40px;">
+                                      <img id="d" style="height: 40px;"> <img id="darrow" style="height: 40px;"> <img
+                                        style="height: 40px;">
                                       Right
                                     </span>
                                   </span>
                                 </div>
                                 <div style="font-family: 'Poppins'; font-size: 16px;">
-                                <p style="padding-bottom: 20px;">Enter your discord nickname and press START!</p>
-                                <p>Try collect all peanuts in shortest time! We are believe you!</p>
-                              </div>
+                                  <p style="padding-bottom: 20px;">Enter your discord nickname and press START!</p>
+                                  <p>Try collect all peanuts in shortest time! We are believe you!</p>
+                                </div>
                                 </p>
                               </div>
                             </span>
@@ -1904,9 +1967,9 @@
                 </div>
               </div>
               <div></div>
-              <div id="faqs" style="margin-top: -190px;"><br><br><br><br></div>
-              <div class="mx-auto" style="display: flex; position: relative; justify-content: center;  min-height: 730px;
-                    max-height: 925px; margin-bottom: 100px;">
+              <div id="faqs" style="padding-top: 115px;"></div>
+              <div class="mx-auto"
+                style="display: flex; position: relative; justify-content: center;  min-height: 540px; margin-bottom: 100px;">
                 <div class="head mx-auto">
                   <span>FAQS
                 </div>
@@ -1926,8 +1989,6 @@
                           enable
                           more
                           people to have information about it. <p></p>
-
-
                         </div>
                       </div>
                       <div class="item">
@@ -1946,36 +2007,24 @@
                           <div class="icon">+</div>
                         </div>
                         <div class="panel">
-                          NFT will be given as a gift in the DEMO version of the game. You can join our <strong
-                            class="font-bold"><a href="https://discord.gg/StThqXNfAe" class="dclink"
-                              target="_blank">Discord</a></strong> channel to learn how to win these
+                          NFT will be given as a gift in the DEMO version of the game. You can join our <a
+                            href="https://discord.gg/StThqXNfAe" class="dclink" target="_blank">Discord</a> channel to
+                          learn how to win these
                           giveaway
                           NFTs, which will
                           be limited only. <p></p>
-                        </div>
-                      </div>
-
-                      <div class="item">
-                        <div class="accordion">
-                          <div class="title">Will everyone be able to play the game?</div>
-                          <div class="icon">+</div>
-                        </div>
-                        <div class="panel">
-                          Anyone who owns an NFT will be able to play, if you are not an NFT owner, you can play the
-                          game
-                          by renting an NFT from any of the NFT owners. <p></p>
                         </div>
                       </div>
                     </div>
                     <div>
                       <div class="item">
                         <div class="accordion">
-                          <div class="title">How can I get whitelisted?</div>
+                          <div class="title">How can I get Whitelist?</div>
                           <div class="icon">+</div>
                         </div>
                         <div class="panel">
-                          You can access the details on our <strong class="font-bold">
-                            <a href="https://discord.gg/StThqXNfAe" class="dclink" target="_blank">Discord</a></strong>
+                          You can access the details on our
+                          <a href="https://discord.gg/StThqXNfAe" class="dclink" target="_blank">Discord</a>
                           channel. <p></p>
                         </div>
                       </div>
@@ -2048,9 +2097,10 @@
           </div>
           <div style="display: flex; position: relative; width: 140px; flex-direction: column; margin-right: 117px;">
             <span class="footerHead">COMPANY</span>
-            <span class="footerLink hoverWhite"><a href="./conditions.html" target="_blank">Terms of Service & Privacy Policy</a></span>
-            <span class="footerLink hoverWhite">Contact Us</span>
-            <span class="footerLink hoverWhite">Help Center</span>
+            <span class="footerLink hoverWhite"><a href="./conditions" target="_blank">Terms of Service & Privacy
+                Policy</a></span>
+            <span class="footerLink hoverWhite" style="width: fit-content;"><button id="contactUs">Contact
+                Us</button></span>
           </div>
           <div style="display: flex; position: relative; width: 324px; flex-direction: column;">
             <span class="footerHead">SUBSCRIBE</span>
@@ -2078,18 +2128,31 @@
         <span style="display: flex; position: relative;">
           <div style="display: flex; justify-content: center; position: relative;">
 
-            <span class="socialMediaFooter"><a href="https://twitter.com/ElephantYClub" target="_blank"><img
-                  style="height: 20px;" id="twitterfooter"></a></span>
-            <span class="socialMediaFooter"><a href="" target="_blank"><img style="height: 20px;"
-                  id="facebookfooter"></a></span>
-            <span class="socialMediaFooter"><a href="" target="_blank"><img style="height: 20px;"
-                  id="telegramfooter"></a></span>
-            <span class="socialMediaFooter"><a href="" target="_blank"><img style="height: 20px;"
-                  id="youtubefooter"></a></span>
-            <span class="socialMediaFooter"><a href="" target="_blank"><img style="height: 20px;"
-                  id="tiktokfooter"></a></span>
-            <span class="socialMediaFooter"><a href="https://discord.gg/StThqXNfAe" target="_blank"><img
-                  style="height: 20px;" id="discordfooter"></a></span>
+            <span class="socialMediaFooter">
+              <a href="https://twitter.com/ElephantYClub" target="_blank">
+                <img id="twitterFooter">
+              </a>
+            </span>
+            <span class="socialMediaFooter">
+              <a href="https://www.reddit.com/user/ElephantYachtClub" target="_blank">
+                <img id="redditFooter">
+              </a>
+            </span>
+            <span class="socialMediaFooter">
+              <a href="https://www.linkedin.com/in/elephantyachtclub/" target="_blank">
+                <img id="linkedinFooter">
+                </a>
+              </span>
+            <span class="socialMediaFooter">
+              <a href="https://medium.com/@ElephantYachtClub" target="_blank">
+                <img id="mediumFooter">
+                </a>
+              </span>
+            <span class="socialMediaFooter">
+              <a href="https://discord.gg/HU4tGjJzJb" target="_blank">
+                <img id="discordFooter">
+                </a>
+              </span>
           </div>
         </span>
       </div>
