@@ -6,12 +6,22 @@ import WalletConnectProvider from "@walletconnect/web3-provider";
 import metamaskImg from '../IMG/web3Icons/metamask.png';
 import walletConnectImg from '../IMG/web3Icons/walletconnectImg.png';
 import coinbaseImg from '../IMG/web3Icons/coinbase.png';
+import opensea from '../IMG/opensea.png';
+import walletIm from '../IMG/wallet.png';
 /// WALLET ///
 
+/// muzuk
+import jumpSound from '../soundEffects/jump.mp3';
+import eatSound from '../soundEffects/eat.mp3';
+let mute = true;
+const jumpeffect = new Audio(jumpSound);
+jumpeffect.volume = 0.3;
+const eateffect = new Audio(eatSound);
+eateffect.volume = 0.6;
 /// MAKYAJ ///
 import bakbak from '../fonts/BakbakOneRegular.woff'
 import poppins from '../fonts/Poppins.ttf'
-///
+/// MAKYAJ ///
 
 import PeanutPosition from '../json/peanutPositions.json';
 import positions from '../json/platforms.json';
@@ -22,6 +32,8 @@ import companyLogo from '../IMG/logo.png';
 
 
 /// GAME IMAGES IMPORT ///
+import muteGame from '../IMG/gameAssets/mute.png';
+import unmuteGame from '../IMG/gameAssets/unmute.png';
 import platformlv1 from '../IMG/gameAssets/platformlv1.png';
 import platformlv2 from '../IMG/gameAssets/platformlv2.png';
 import platformlv3 from '../IMG/gameAssets/platformlv3.png';
@@ -50,47 +62,57 @@ import darrowImg from '../IMG/gameAssets/keys/darrow.png';
 import spaceImg from '../IMG/gameAssets/keys/space.png';
 /// GAME IMAGES IMPORT ///
 
-import opensea from '../IMG/opensea.png';
-import walletIm from '../IMG/wallet.png';
+/// ROADMAP IMAGES ///
+import roadmap3 from '../IMG/Roadmap/roadmap3.jpg';
+import roadmap22 from '../IMG/Roadmap/wwp.png';
+import roadmap21 from '../IMG/Roadmap/roadmap21.png';
+import roadmap13 from '../IMG/Roadmap/nft2.png';
+import roadmap12 from '../IMG/Roadmap/nft1.png';
+import roadmap11 from '../IMG/Roadmap/gameImg.png';
+/// ROADMAP IMAGES ///
+
+import manifestBg from '../IMG/manifestBg.png';
+import storyImgOne from '../IMG/story/storyOne.png';
+import storyImgTwo from '../IMG/story/storyTwo.png';
+import storyImgThree from '../IMG/story/storyThree.png';
+import storyImgFour from '../IMG/story/storyFour.png';
+
+
+
 /// SOCIAL MEDIA ///
 import discordImg  from '../IMG/socialMediaIcons/discord.png';
 import twitterImg  from '../IMG/socialMediaIcons/twitter.png';
 import mediumImg   from '../IMG/socialMediaIcons/medium.png';
 import redditImg   from '../IMG/socialMediaIcons/reddit.png';
 import linkedinImg from '../IMG/socialMediaIcons/linkedin.png';
-
 import twitterFooterImg  from '../IMG/socialMediaIcons/twitterSmall.png';
 import redditFooterImg   from '../IMG/socialMediaIcons/redditSmall.png';
 import linkedinFooterImg from '../IMG/socialMediaIcons/linkedinSmall.png';
 import mediumFooterImg   from '../IMG/socialMediaIcons/mediumSmall.png';
 import discordFooterImg  from '../IMG/socialMediaIcons/discordSmall.png';
-
 import instagrams from '../IMG/socialMediaIcons/instagramSmall.png';
 import linkedins from '../IMG/socialMediaIcons/linkedinSmall.png';
-/// SOCIAL MEDIA ///
 const twitter   = document.getElementById('twitter');
 const reddit    = document.getElementById('reddit');
 const linkedin  = document.getElementById('linkedin');
 const medium    = document.getElementById('medium');
 const discord   = document.getElementById('discord');
-
 const twitterFooter = document.getElementById('twitterFooter');
 const redditFooter = document.getElementById('redditFooter');
 const linkedinFooter = document.getElementById('linkedinFooter');
 const mediumFooter = document.getElementById('mediumFooter');
 const discordFooter = document.getElementById('discordFooter');
-
 twitter.src  = twitterImg; 
 reddit.src   = redditImg;
 linkedin.src = linkedinImg;
 medium.src   = mediumImg;  
 discord.src  = discordImg;  
-
 twitterFooter.src =  twitterFooterImg;
 redditFooter.src =   redditFooterImg;
 linkedinFooter.src = linkedinFooterImg;
 mediumFooter.src =   mediumFooterImg;
 discordFooter.src =  discordFooterImg;
+/// SOCIAL MEDIA ///
 
 ///  HTML ITEMS ///
 let web3;
@@ -141,6 +163,20 @@ const startbutton = document.getElementById('start');
 const radioBttn1 = document.getElementById('r1');
 const radioBttn2 = document.getElementById('r2');
 const radioBttn3 = document.getElementById('r3');
+const muteBtn = document.getElementById('muteBtn');
+const muteImg = document.getElementById('muteImg');
+
+muteBtn.onclick = () => {
+    if (mute == true) {
+        muteImg.src = unmuteGame;
+        mute = false;
+    } else {
+        muteImg.src = muteGame;
+        mute = true;
+    }
+    gameFocus.focus();
+};
+
 /// IMAGES ///
 const pImg1 = document.getElementById('p1');
 const pImg2 = document.getElementById('p2');
@@ -180,6 +216,8 @@ const stroyThree = document.getElementById('stroythree');
 const stroyFour = document.getElementById('stroyfour');
 
 
+const BePartnerModal = document.getElementById("bePartnerModal");
+const BePartner = document.getElementById("bePartner");
 const contactUs = document.getElementById("contactUs");
 const contactUsModal = document.getElementById("contactUsModal");
 const walletConnectModal = document.getElementById("walletConnectModal");
@@ -265,6 +303,11 @@ const modalOpen = (modalName) => {
     topMenuDiv.style.paddingRight = "17px";
 }
 
+
+BePartner.onclick = function () {
+    modalOpen(BePartnerModal);
+}
+
 contactUs.onclick = function () {
     modalOpen(contactUsModal);
 }
@@ -300,7 +343,7 @@ const closeModals = () => {
     manifestModal.style.display = "none";
     whitelistModal.style.display = "none";
     contactUsModal.style.display = "none";
-    
+    BePartnerModal.style.display = "none";
 }
 
 window.onclick = function (event) {
@@ -309,7 +352,9 @@ window.onclick = function (event) {
         event.target == manifestModal ||
         event.target == whitelistModal ||
         event.target == walletConnectModal ||
-        event.target == contactUsModal
+        event.target == contactUsModal ||
+        event.target == BePartnerModal
+
     ) {
         closeModals();
     }
@@ -377,9 +422,9 @@ let Positions = positions;
 let peanutPositions = PeanutPosition;
 
 /// LEVEL-PLAYER SETTİNGS ///
-let levelup = 3;
+let levelup = 10;
 const gravity = .5;
-let playerspeed = 5;
+let playerspeed = 8;
 /// LEVEL-PLAYER SETTİNGS ///
 
 let animationID;
@@ -574,6 +619,9 @@ function animate() {
             player.position.x + player.width <= peanut.position.x + peanut.width + 50 &&
             player.position.y + player.height <= peanut.position.y + peanut.height + 50) {
             sayac++;
+            if (mute == false) {
+                eateffect.play(); 
+            } 
             // GameOver Check Point
             if (level == 3) {
                 peanut.position.x = -50;
@@ -629,9 +677,28 @@ addEventListener('keydown', ({ keyCode }) => {
             player.currentsprite = player.sprites.run[playerImg].right;
             keys.right.pressed = true;
             break;
-        case 87: if (player.velocity.y == 0) { player.velocity.y -= 14.5; }; break;
-        case 38: if (player.velocity.y == 0) { player.velocity.y -= 14.5; }; break;
-        case 32: if (player.velocity.y == 0) { player.velocity.y -= 14.5; }; break;
+        case 87: if (player.velocity.y == 0) {
+            player.velocity.y -= 14.5;
+            if (mute == false) {
+                jumpeffect.pause();
+                jumpeffect.currentTime = 0;
+                jumpeffect.play(); 
+            }
+        }; break;
+        case 38: if (player.velocity.y == 0) { player.velocity.y -= 14.5; 
+            if (mute == false) {
+                jumpeffect.pause();
+                jumpeffect.currentTime = 0;
+                jumpeffect.play(); 
+            }}; 
+            break;
+        case 32: if (player.velocity.y == 0) { player.velocity.y -= 14.5; 
+            if (mute == false) {
+                jumpeffect.pause();
+                jumpeffect.currentTime = 0;
+                jumpeffect.play(); 
+            }}; 
+            break;
         case 83: if ((level != 2 && player.position.y <= 556) || (level == 2 && player.position.y <= 519) ) { player.velocity.y += 1; }; break;
         case 40: if ((level != 2 && player.position.y <= 556) || (level == 2 && player.position.y <= 519) ) { player.velocity.y += 1; }; break;
         default: break;
@@ -680,6 +747,7 @@ startbutton.addEventListener('click', () => {
         sayacLabel.innerHTML = "00:00";
         goscore.innerHTML = sayacLabel.innerHTML;
         sayacLabel.style.display = 'flex';
+        random = Math.floor(Math.random() * peanutPositions[level].length);
         initf();
         animate();
         var myfunc = setInterval(function Gametime() {
@@ -717,7 +785,7 @@ const minutesEl = document.getElementById('minutes');
 const secondsEl = document.getElementById('seconds');
 
 const countDownFunction = () => {
-    const countDownEnd = new Date('24 Dec 2022');
+    const countDownEnd = new Date('23 Dec 2022');
     const currentDate = new Date();
 
     const totalSeconds = (countDownEnd - currentDate) / 1000;
@@ -831,26 +899,41 @@ function roadmapChange(changeValue) {
             RoadmapImageOne.style.display = 'block';
             RoadmapImageTwo.style.display = 'block';
             RoadmapImageThree.style.display = 'block';
+
             RoadmapImageTwo.style.width = '225px';
-            RoadmapImageThree.style.width = '225px';
             RoadmapImageTwo.style.height = '225px';
+            RoadmapImageThree.style.width = '225px';
+
+            RoadmapImageOne.src = roadmap11;
+            RoadmapImageTwo.src = roadmap12;
+            RoadmapImageThree.src = roadmap13;
+
             rightImages.style.marginLeft = '0';
             break;
         case 1:
             RoadmapImageOne.style.display = 'none';
             RoadmapImageTwo.style.display = 'block';
             RoadmapImageThree.style.display = 'block';
+
             RoadmapImageTwo.style.width = '717px';
-            RoadmapImageThree.style.width = '717px';
             RoadmapImageTwo.style.height = '225px';
+            RoadmapImageTwo.src = roadmap21;
+
+
+            RoadmapImageThree.style.width = '717px';
+            RoadmapImageThree.src = roadmap22;
+
             rightImages.style.marginLeft = '48px';
             break;
         case 2:
             RoadmapImageOne.style.display = 'none';
             RoadmapImageTwo.style.display = 'block';
             RoadmapImageThree.style.display = 'none';
+
             RoadmapImageTwo.style.width = '717px';
             RoadmapImageTwo.style.height = '470px';
+            RoadmapImageTwo.src = roadmap3;
+
             rightImages.style.marginLeft = '48px';
             break;
     }
@@ -883,7 +966,7 @@ const onEmailSubmit = (element, returnData, color) => {
     const subEl = element.id == 'topSubMail' ? topMailError : bottomMailError;
     subEl.style.display = 'block';
     subEl.style.opacity = 1;
-    subEl.style.backgroundColor = color == 'error' ? '#FB550E' : 'rgb(91, 202, 110)';
+    subEl.style.color = color == 'error' ? '#eb5252' : 'rgb(91, 202, 110)';
     subEl.innerHTML = `${returnData}`;
     element.focus();
     setTimeout(() => {
@@ -909,7 +992,7 @@ function fadeOut(element) {
 const isEmailValid = (mail, element) => {
     var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     if (!filter.test(mail)) {
-        onEmailSubmit(element, 'Please enter valid email adress!', 'error');
+        onEmailSubmit(element, '* Please enter valid email adress!', 'error');
         return false;
     }
     return true;
@@ -957,7 +1040,7 @@ async function fetchText(i, j) {
         .then((data) => {
             if (data[i].userName.length > 14) {
                 let tempData = data[i].userName;
-                tempData = tempData.slice(0, 14);
+                tempData = tempData.slice(0, 10);
                 tempData += '...';
                 data[i].userName = tempData;
             }
