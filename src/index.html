@@ -716,19 +716,16 @@
   }
 
   .creatorPng {
-    height: 120px;
-    width: 120px;
+    height: 180px;
+    width: 180px;
     position: absolute;
-    border-radius: 50%;
     justify-content: center;
-    left: 106px;
-    top: 39px;
-
-    background-color: #C2C3C5;
+    left: 90px;
+    top: 20px;
   }
 
   .creatorsName {
-    top: 190px;
+    top: 215px;
     display: flex;
     position: relative;
     justify-content: center;
@@ -748,7 +745,7 @@
   }
 
   .creatorSubTitle {
-    top: 197px;
+    top: 220px;
     display: flex;
     position: relative;
     justify-content: center;
@@ -767,7 +764,7 @@
   }
 
   .creatorSocialMedia {
-    top: 200px;
+    top: 225px;
     display: flex;
     position: relative;
     justify-content: center;
@@ -1232,10 +1229,57 @@
   .manifest:hover {
     border: 3px solid #07bd65;
   }
+
+  .loader {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #21E786;
+    position: relative;
+  }
+
+  .loader:before,
+  .loader:after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    inset: 0;
+    background: #fff;
+    transform: rotate(0deg) translate(30px);
+    animation: rotate 1s ease infinite;
+  }
+
+  .loader:after {
+    animation-delay: 0.5s
+  }
+
+  @keyframes rotate {
+    100% {
+      transform: rotate(360deg) translate(30px);
+    }
+  } 
+
+    .load-wrapper {
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: #040B11;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 </style>
 
 <body style="overflow-x: hidden;">
-  <div id="home">
+
+  <div id="loader" class="load-wrapper">
+    <span class="loader"><span class="loader-inner"></span></span>
+  </div>
+
+  <div id="home" style="display: none;">
 
     <div id="walletConnectModal" class="modal"
       style="width: 100%; height: 100%; justify-content: center; align-items: center;  display: none;">
@@ -1627,7 +1671,8 @@
                         in the last century, are facing extinction. We want to say something about this.</span>
                     </span>
 
-                    <button id="manifest" class="manifest stroyModals" style="background-repeat: no-repeat; background-position: center; background-size: contain;background-image: url(./IMG/manifestBg.png);">
+                    <button id="manifest" class="manifest stroyModals"
+                      style="background-repeat: no-repeat; background-position: center; background-size: contain;background-image: url(./IMG/manifestBg.png);">
                       <span class="modalHead">Manifest</span>
                       <span class="modalText">First of all, we are here with the joy and excitement of bringing you a
                         new NFT collection. We need to inform you about the foundations of this NFT collection...
@@ -1662,7 +1707,7 @@
                           </button>
                         </div>
                         <div id="menu" style="flex-direction: row; display: flex;">
-                          
+
                           <div style="display: flex; position: absolute; top: 100; justify-content: space-between;">
                             <span style="display: flex; position: absolute; background-color: #5033C3; left: 75px;">
                               <div
@@ -1873,7 +1918,7 @@
 
                 <div style="display: flex; position: relative; flex-direction: row; top: 100px">
                   <span class="creators" style="flex-direction: column;">
-                    <img id="creator1" class="creatorPng">
+                    <img id="creator1" class="creatorPng" src="./IMG/freyr.png">
                     <span class="creatorsName">FreyR</span>
                     <span class="creatorSubTitle">Creator - Developer</span>
                     <span class="creatorSocialMedia">
@@ -1887,7 +1932,7 @@
                     </span>
                   </span>
                   <span class="creators" style="flex-direction: column;">
-                    <img id="creator2" class="creatorPng">
+                    <img id="creator2" class="creatorPng" src="./IMG/bceby.png">
                     <span class="creatorsName">Bceby</span>
                     <span class="creatorSubTitle">Creator - Busines Manager</span>
                     <span class="creatorSocialMedia">
@@ -1901,7 +1946,7 @@
                     </span>
                   </span>
                   <span class="creators" style="flex-direction: column;">
-                    <img id="creator3" class="creatorPng">
+                    <img id="creator3" class="creatorPng" src="./IMG/ahmet.png">
                     <span class="creatorsName">Ahmet</span>
                     <span class="creatorSubTitle">Designer</span>
                     <span class="creatorSocialMedia">
@@ -1911,8 +1956,8 @@
                     </span>
                   </span>
                   <span class="creators" style="flex-direction: column;">
-                    <img id="creator3" class="creatorPng">
-                    <span class="creatorsName">Murat</span>
+                    <img id="creator3" class="creatorPng" src="./IMG/kekiks.png">
+                    <span class="creatorsName">Kekiks</span>
                     <span class="creatorSubTitle">Designer</span>
                     <span class="creatorSocialMedia">
                       <span style="padding: 10px;">
@@ -2007,7 +2052,8 @@
                         </div>
                         <div class="panel">
                           NFT will be given as a gift in the DEMO version of the game. You can join our <a
-                            href="https://discord.com/invite/HU4tGjJzJb" class="dclink" target="_blank">Discord</a> channel to
+                            href="https://discord.com/invite/HU4tGjJzJb" class="dclink" target="_blank">Discord</a>
+                          channel to
                           learn how to win these
                           giveaway
                           NFTs, which will
@@ -2100,7 +2146,8 @@
                 Policy</a></span>
             <span class="footerLink hoverWhite" style="width: fit-content;"><button id="contactUs">Contact
                 Us</button></span>
-            <span class="footerLink hoverWhite" style="width: fit-content;"><button id="bePartner">Partner</button></span>
+            <span class="footerLink hoverWhite" style="width: fit-content;"><button
+                id="bePartner">Partner</button></span>
           </div>
           <div style="display: flex; position: relative; width: 324px; flex-direction: column;">
             <span class="footerHead">SUBSCRIBE</span>
