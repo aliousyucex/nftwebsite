@@ -63,7 +63,7 @@ import spaceImg from '../IMG/gameAssets/keys/space.png';
 /// GAME IMAGES IMPORT ///
 
 /// ROADMAP IMAGES ///
-import roadmap3 from '../IMG/Roadmap/roadmap3.jpg';
+import roadmap3 from '../IMG/Roadmap/3.jpg';
 import roadmap22 from '../IMG/Roadmap/wwp.png';
 import roadmap21 from '../IMG/Roadmap/roadmap21.png';
 import roadmap13 from '../IMG/Roadmap/nft2.png';
@@ -77,6 +77,13 @@ import storyImgTwo from '../IMG/story/storyTwo.png';
 import storyImgThree from '../IMG/story/storyThree.png';
 import storyImgFour from '../IMG/story/storyFour.png';
 
+
+// OURTEAM ///
+import ourteam1 from '../IMG/OurTeam/bceby.png';
+import ourteam2 from '../IMG/OurTeam/freyr.png';
+import ourteam3 from '../IMG/OurTeam/ahmet.png';
+import ourteam4 from '../IMG/OurTeam/kekiks.png';
+// OURTEAM ///
 
 
 /// SOCIAL MEDIA ///
@@ -1171,3 +1178,10 @@ window.onload = () => {
 }
 
 window.addEventListener("hashchange", () => window.history.pushState({}, "", '/'), {});
+
+const loader = document.getElementById("loader");
+
+window.addEventListener("load", () => {
+    loader.style.display = 'none';
+    mainDiv.style.display = 'block';
+})
