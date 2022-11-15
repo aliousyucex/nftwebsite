@@ -1178,10 +1178,3 @@ window.onload = () => {
 }
 
 window.addEventListener("hashchange", () => window.history.pushState({}, "", '/'), {});
-
-const loader = document.getElementById("loader");
-
-window.addEventListener("load", () => {
-    loader.style.display = 'none';
-    mainDiv.style.display = 'block';
-})
