@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Presentation</title>
+</head>
+
+<body>
+    <div id="projectModal" class="modal"
+        style="width: 100%; height: 100%; justify-content: center; align-items: center; display: none;">
+        <div class="modal-content">
+        </div>
+    </div>
+    <div id="roadmapModal" class="modal"
+        style="width: 100%; height: 100%; justify-content: center; align-items: center; display: none;">
+        <div class="modal-content">
+            <div id="roadmapModalContent" class="mx-auto"
+                style="display: flex; position: relative; width: 1414px; height: 570px; justify-content: center;">
+                <button id="roadmapLeftArrow" class="arrow left"></button>
+                <div id="roadmapModal" class="roadmapModal">
+                    <!--PHASE 1-->
+                    <div id="roadmapPhase1"
+                        style="user-select: none; display: flex; position: relative; flex-direction: row;">
+
+                        <div style="display: flex; position: relative; flex-direction: row;">
+                            <span>
+                                <img id="roadmapImgOne" class="roadmapImgOne" style="width: 670px; height: 470px;"
+                                    src="../IMG/gameImg.png">
+                            </span>
+                        </div>
+
+                        <div style="display: flex; position: relative; flex-direction: column;">
+                            <span>
+                                <img id="roadmapImgTwo" class="roadmapImgTwo" style="width: 225px; height: 225px;"
+                                    src="../IMG/nft1.png">
+                            </span>
+                            <span>
+
+                                <img id="roadmapImgThree" class="stroyModaTwo" style="width: 225px; height: 225px;"
+                                    src="../IMG/nft2.png">
+                            </span>
+                        </div>
+                    </div>
+                    <!--PHASE 2-->
+                    <div id="roadmapPhase2"
+                        style="user-select: none; display: none; position: relative; flex-direction: row;">
+                        <div style="display: flex; position: relative; flex-direction: column; margin-left: 48px;">
+                            <span>
+                                <img id="roadmap2One" class="roadmapImgTwo" style="width: 717px; height: 225px;"
+                                    src="../IMG/roadmap21.png">
+                            </span>
+                            <span>
+                                <img id="roadmap2Two" class="stroyModaTwo" style="width: 717px; height: 225px;"
+                                    src="../IMG/wwp.png">
+                            </span>
+                        </div>
+                    </div>
+                    <!--PHASE 3-->
+                    <div id="roadmapPhase3"
+                        style="user-select: none; display: none; position: relative; flex-direction: row;">
+                        <div style="display: flex; position: relative; flex-direction: row;">
+                            <span>
+                                <img id="roadmap3One" class="roadmapImgOne"
+                                    style="width: 717px; height: 470px; margin: 48px 0px 48px 48px;" src="../IMG/3.jpg">
+                            </span>
+                        </div>
+                    </div>
+                    <div class="mx-auto">
+                        <div class="mx-auto" style="display: flex; position: relative; flex-direction: row; top: 99px;">
+                            <div class="max-w-md">
+                                <span style="display: flow-root; position: relative; left: 95px;">
+                                    <span style="flex-direction: row; position: relative;">
+                                        <h1 id="roadmapHead" class="head"
+                                            style="font-size: 36px; height: 40px; position: relative; margin-bottom: 35px; justify-content: left;">
+                                            PHASE 1</h1>
+                                    </span>
+                                    <span style="flex-direction: row; position: relative;">
+                                        <span id="roadmapText1" class="storyText" style="height: 50px;">Story Season
+                                            1</span>
+                                        <span id="roadmapText2" class="storyText" style="height: 50px;">Game Alpha
+                                            Version</span>
+                                        <span id="roadmapText3" class="storyText" style="height: 50px;">Private Mint -
+                                            Airdrop</span>
+                                        <span id="roadmapText4" class="storyText" style="height: 50px;">Public
+                                            mint</span>
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button id="roadmapRightArrow" class="arrow right"></button>
+            </div>
+        </div>
+    </div>
+    <div id="nftsModal" class="modal" style="width: 100%; height: 100%; justify-content: center;  display: none;">
+        <div class="modal-content" style="display: flex; position: relative; flex-direction: row;">
+            <div
+                style="width: 400px; display: flex; height: 700px; padding: 35px 20px 35px 20px; align-items: center; flex-direction: column;">
+                <img src="../IMG/azuki.jpg" style="width: 250px; height: 250px; border-radius: 50%;">
+                <div style="padding: 75px 20px 75px 20px; font-size: 40px; font-weight: bold;">
+                    <p>ERC721A</p>
+                </div>
+                <div style="text-align: center; font-size: 25px; padding: auto;">
+                    <p style="padding: 5px 5px 30px 5px; ">Requirement Qualification</p>
+                    <p style="padding: 5px 5px 30px 5px;">Lower Multiminting Fee</p>
+                    <p style="padding: 5px 5px 10px 5px;">Current Audience</p>
+                </div>
+            </div>
+            <div
+                style="display: flex; padding: 35px 20px 35px 20px; width: 1000px; height: 700px; border-radius: 50px; background-color: #EBE7E0; flex-direction: column; align-items: center; color: #11121e">
+                <div style="font-size: 38px; font-weight: bold; padding-bottom: 15px;">
+                    <p>RARITY</p>
+                </div>
+                <div style="display: flex; flex-direction: column;">
+                    <div style="display: flex; flex-direction: row; align-items: center;">
+                        <div class="rarityDivsText">
+                            IVORY
+                        </div>
+                        <div class="rarityDivs">
+                            <img src="../IMG/diamond.png" class="nftsImgIvory">
+                            <img src="../IMG/fullgold.png" class="nftsImgIvory">
+                            <img src="../IMG/fullgold.png" class="nftsImgIvory">
+                            <img src="../IMG/fullgold.png" class="nftsImgIvory">
+                        </div>
+                    </div>
+                    <div style="display: flex; flex-direction: row; align-items: center;">
+                        <div class="rarityDivsText">
+                            CULTURE
+                        </div>
+                        <div class="rarityDivs">
+                            <img src="../IMG/diamond.png" class="nftsImg">
+                            <img src="../IMG/fullgold.png" class="nftsImg">
+                            <img src="../IMG/fullgold.png" class="nftsImg">
+                        </div>
+                    </div>
+                    <div style="display: flex; flex-direction: row; align-items: center;">
+                        <div class="rarityDivsText">
+                            ELEPHANTS
+                        </div>
+                        <div class="rarityDivs">
+                            <img src="../IMG/diamond.png" class="nftsImg">
+                            <img src="../IMG/fullgold.png" class="nftsImg">
+                            <img src="../IMG/fullgold.png" class="nftsImg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="gameModal" class="modal"
+        style="width: 100%; height: 100%; justify-content: center; align-items: center; display: block;">
+        <div class="modal-content" style="display: flex; flex-direction: row;">
+            <div style="width: 400px; display: flex; height: 700px; padding: 35px 24px 35px 0px; justify-content: center; align-items: center; flex-direction: column;">
+                <div style="text-align: center; font-size: 28px; padding-top: 100px; font-weight: bold;">
+                    <p style="padding: 5px 5px 55px 5px; ">Collect Peanuts</p>
+                    <p style="padding: 5px 5px 55px 5px;">Finish Fastest Time</p>
+                    <p style="padding: 5px 5px 55px 5px;">Whitelist & Airdrop</p>
+                    <p style="padding: 5px 5px 55px 5px;">Alpha Version is Published</p>
+                </div>
+            </div>
+            <div style="width: 1000px; display: flex; height: 750px; padding: 60px 20px 35px 20px; align-items: center; flex-direction: column;">
+                <div style="text-align: center; font-size: 73px; font-weight: bold;">
+                    <p style="padding-bottom: 80px; font-family: Bakbak One;">PEANUT RUSH!</p>
+                    <img src="../IMG/gamegif.png" style="width: 980px; height: 500px;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="storyModal" class="modal"
+        style="width: 100%; height: 100%; justify-content: center; align-items: center; display: none;">
+        <div class="modal-content">
+        </div>
+    </div>
+    <div id="marketingModal" class="modal"
+        style="width: 100%; height: 100%; justify-content: center; align-items: center; display: none;">
+        <div class="modal-content">
+        </div>
+    </div>
+    <div id="offerModal" class="modal"
+        style="width: 100%; height: 100%; justify-content: center; align-items: center; display: none;">
+        <div class="modal-content">
+        </div>
+    </div>
+
+
+
+
+    <div id="project" style="display: flex; position: relative; left: 85px; top: 375px;">
+        <a>
+            <span>Project</span>
+            <div class="liquid"></div>
+        </a>
+    </div>
+    <div id="roadmap" style="display: flex; position: relative; left: 106px; top: 140px;">
+        <a>
+            <span>Roadmap</span>
+            <div class="liquid"></div>
+        </a>
+    </div>
+    <div id="offer" style="display: flex; position: relative; left: -34px; top: 614px;">
+        <a>
+            <span>offer</span>
+            <div class="liquid"></div>
+        </a>
+    </div>
+    <div id="story" style="display: flex; position: relative; left: 17px; top: 100px;">
+        <a>
+            <span>The Story</span>
+            <div class="liquid"></div>
+        </a>
+    </div>
+    <div id="game" style="display: flex; position: relative; left: 135px; top: 162px;">
+        <a>
+            <span>Game</span>
+            <div class="liquid"></div>
+        </a>
+    </div>
+    <div id="marketing" style="display: flex; position: relative; left: -270px; top: 615px;">
+        <a>
+            <span>Marketing</span>
+            <div class="liquid"></div>
+        </a>
+    </div>
+    <div id="nfts" style="display: flex; position: relative; left: -162px; top: 459px;">
+        <a>
+            <span>NFTs</span>
+            <div class="liquid"></div>
+        </a>
+    </div>
+    <script type="text/javascript" src="index.js"></script>
+</body>
+
+</html>

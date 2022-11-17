@@ -10,6 +10,14 @@ import opensea from '../IMG/opensea.png';
 import walletIm from '../IMG/wallet.png';
 /// WALLET ///
 
+/// PRESENTATION IMG ///
+import azuki from '../IMG/presentation/azuki.jpg';
+import fullgold from '../IMG/presentation/fullgold.png';
+import diamond from '../IMG/presentation/diamond.png';
+import gamegif from '../IMG/presentation/gamegif.png';
+/// PRESENTATION IMG ///
+
+
 /// muzuk
 import jumpSound from '../soundEffects/jump.mp3';
 import eatSound from '../soundEffects/eat.mp3';
@@ -127,10 +135,9 @@ const backgroundEl = document.getElementById('backgroundEl');
 const faqs = document.querySelectorAll('.faq');
 const home = document.querySelector('body');
 const mainDiv = document.getElementById('home');
-const RoadmapImageOne = document.getElementById('roadmapImgOne');
-const RoadmapImageTwo = document.getElementById('roadmapImgTwo');
-const RoadmapImageThree = document.getElementById('roadmapImgThree');
-const rightImages = document.getElementById('rightImages');
+const roadmapPhase1 = document.getElementById('roadmapPhase1');
+const roadmapPhase2 = document.getElementById('roadmapPhase2');
+const roadmapPhase3 = document.getElementById('roadmapPhase3');
 const roadmapBtnOne = document.getElementById('roadmapBtnOne');
 const roadmapBtnTwo = document.getElementById('roadmapBtnTwo');
 const roadmapBtnThree = document.getElementById('roadmapBtnThree');
@@ -378,9 +385,9 @@ const levelbgcolors = ['#383D7D', '#543F57', 'rgb(171, 163, 255)'];
 
 
 backgroundEl.style.backgroundImage = `url(${bgElephant})`;
-pImg1.src = Playeroneright;
-pImg2.src = Playertworight;
-pImg3.src = Playerthreeright;
+pImg1.src = Playeroneleft;
+pImg2.src = Playertwoleft;
+pImg3.src = Playerthreeleft;
 
 walletImg.src = walletIm;
 dcU.src = discordImg;
@@ -809,7 +816,6 @@ setInterval(countDownFunction, 1000);
 const changeValue = {
     btn1: {
         value: 0,
-        color: 'black',
         head: 'PHASE 1',
         text1: 'Story Season 1',
         text2: 'Game Alpha Version',
@@ -818,7 +824,6 @@ const changeValue = {
     },
     btn2: {
         value: 1,
-        color: 'green',
         head: 'PHASE 2',
         text1: 'Story Season 2',
         text2: 'Game Open Beta',
@@ -827,7 +832,6 @@ const changeValue = {
     },
     btn3: {
         value: 2,
-        color: 'gray',
         head: 'PHASE 3',
         text1: 'Story Season 3',
         text2: 'Game Full Version',
@@ -898,50 +902,21 @@ roadmapBtnThree.addEventListener('click', () => {
 });
 
 function roadmapChange(changeValue) {
-    RoadmapImageOne.style.backgroundColor = changeValue.color;
-    RoadmapImageTwo.style.backgroundColor = changeValue.color;
-    RoadmapImageThree.style.backgroundColor = changeValue.color;
     switch (changeValue.value) {
         case 0:
-            RoadmapImageOne.style.display = 'block';
-            RoadmapImageTwo.style.display = 'block';
-            RoadmapImageThree.style.display = 'block';
-
-            RoadmapImageTwo.style.width = '225px';
-            RoadmapImageTwo.style.height = '225px';
-            RoadmapImageThree.style.width = '225px';
-
-            RoadmapImageOne.src = roadmap11;
-            RoadmapImageTwo.src = roadmap12;
-            RoadmapImageThree.src = roadmap13;
-
-            rightImages.style.marginLeft = '0';
+            roadmapPhase1.style.display = 'flex';
+            roadmapPhase2.style.display = 'none';
+            roadmapPhase3.style.display = 'none';
             break;
         case 1:
-            RoadmapImageOne.style.display = 'none';
-            RoadmapImageTwo.style.display = 'block';
-            RoadmapImageThree.style.display = 'block';
-
-            RoadmapImageTwo.style.width = '717px';
-            RoadmapImageTwo.style.height = '225px';
-            RoadmapImageTwo.src = roadmap21;
-
-
-            RoadmapImageThree.style.width = '717px';
-            RoadmapImageThree.src = roadmap22;
-
-            rightImages.style.marginLeft = '48px';
+            roadmapPhase1.style.display = 'none';
+            roadmapPhase2.style.display = 'flex';
+            roadmapPhase3.style.display = 'none';
             break;
         case 2:
-            RoadmapImageOne.style.display = 'none';
-            RoadmapImageTwo.style.display = 'block';
-            RoadmapImageThree.style.display = 'none';
-
-            RoadmapImageTwo.style.width = '717px';
-            RoadmapImageTwo.style.height = '470px';
-            RoadmapImageTwo.src = roadmap3;
-
-            rightImages.style.marginLeft = '48px';
+            roadmapPhase1.style.display = 'none';
+            roadmapPhase2.style.display = 'none';
+            roadmapPhase3.style.display = 'flex';
             break;
     }
     roadmapHead.innerHTML = changeValue.head;
