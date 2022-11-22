@@ -11,10 +11,22 @@ import walletIm from '../IMG/wallet.png';
 /// WALLET ///
 
 /// PRESENTATION IMG ///
-import azuki from '../IMG/presentation/azuki.jpg';
+import azuki from '../IMG/presentation/azuki.avif';
+import moonbirds from '../IMG/presentation/moonbirds.png';
+import Pudgypenguins from '../IMG/presentation/Pudgypenguins.avif';
+import Meebits from '../IMG/presentation/Meebits.png';
 import fullgold from '../IMG/presentation/fullgold.png';
-import diamond from '../IMG/presentation/diamond.png';
+import goldivorygray from '../IMG/presentation/goldivorygray.png';
+import diamonivorygray from '../IMG/presentation/diamonivorygray.png';
 import gamegif from '../IMG/presentation/gamegif.png';
+import halfivory from '../IMG/presentation/halfivory.png';
+import hallivory from '../IMG/presentation/hallivory.png';
+import ivoryless from '../IMG/presentation/ivoryless.png';
+import bronzivorygray from '../IMG/presentation/bronzivorygray.png';
+import silverivorygray from '../IMG/presentation/silverivorygray.png';
+import grayWithEye from '../IMG/presentation/grayWithEye.png';
+import hasirsapka from '../IMG/presentation/hasirsapka.png';
+import yingyang from '../IMG/presentation/yingyang.png';
 /// PRESENTATION IMG ///
 
 

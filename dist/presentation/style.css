@@ -31,7 +31,7 @@
     cursor: pointer;
     text-align: center;
     position: relative;
-    padding: 80px 0px 0px 5px;
+    padding: 80px 0px 0px 0px;
     display: block;
     text-decoration: none;
     text-transform: uppercase;
@@ -78,7 +78,7 @@
     
     border-radius: 45%;
     background: rgba(20, 20, 20, 1);
-    animation: animate 5s linear infinite;
+    animation: animate 10s linear infinite;
   }
   
   a .liquid::after {
@@ -252,4 +252,11 @@
     padding: 20px 0px 0px 0px;
     font-size: 22px;
     font-weight: bold;
+  }
+
+  .nftsCenteredIvory {
+    background-size: 261px; 
+    background-repeat: no-repeat; 
+    background-position-x: -7px; 
+    background-position-y: -109px;
   }

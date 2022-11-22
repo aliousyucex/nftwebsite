@@ -9,14 +9,60 @@ const offer = document.getElementById('offer');
 /// Main Buttons ///
 
 /// Modals ///
-const roadmapModal = document.getElementById('roadmapModal');
 const projectModal = document.getElementById('projectModal');
-const nftsModal = document.getElementById('nftsModal');
-const gameModal = document.getElementById('gameModal');
+const roadmapModal = document.getElementById('roadmapModal');
 const storyModal = document.getElementById('storyModal');
+const gameModal = document.getElementById('gameModal');
+const nftsModal = document.getElementById('nftsModal');
 const marketingModal = document.getElementById('marketingModal');
 const offerModal = document.getElementById('offerModal');
+
+const modalChanger = document.getElementById('modalChanger');
+const modalChangerLeft = document.getElementById('modalChangerLeft');
+const modalChangerRight = document.getElementById('modalChangerRight');
 /// Modals ///
+
+modalChangerLeft.addEventListener('click', () => {
+    if (modalLevel == 0) return;
+    modalLevel--;
+    changeModal(modalLevel);
+});
+
+modalChangerRight.addEventListener('click', () => {
+    if (modalLevel == 6) return;
+    modalLevel++;
+    changeModal(modalLevel);
+});
+
+
+const changeModal = (modalLevel) => {
+    switch (modalLevel) {
+        case 0:
+            closeModals();
+            modalOpen(projectModal);
+            break;
+        case 1: closeModals();
+            modalOpen(roadmapModal);
+            break;
+        case 2: closeModals();
+            modalOpen(storyModal);
+            break;
+        case 3: closeModals();
+            modalOpen(gameModal);
+            break;
+        case 4: closeModals();
+            modalOpen(nftsModal);
+            break;
+        case 5: closeModals();
+            modalOpen(marketingModal);
+            break;
+        case 6: closeModals();
+            modalOpen(offerModal);
+            break;
+    }
+}
+
+
 
 /// Inner Buttons ///
 const roadmapRightButton = document.getElementById('roadmapRightArrow');
@@ -52,6 +98,7 @@ const changeValue = {
     }
 }
 let roadmapLevel = 0;
+let modalLevel = 0;
 
 roadmapLeftButton.addEventListener('click', () => {
     if (roadmapLevel === 0) return;
@@ -111,28 +158,47 @@ function roadmapChange(changeValue) {
 
 /// Modal Open ///
 const modalOpen = (modalName) => {
-    modalName.style.display = "block";}
-roadmap.onclick = () => {
-    modalOpen(roadmapModal);}
+    modalName.style.display = "block";
+    modalChanger.style.display = "block";
+
+}
 project.onclick = () => {
-    modalOpen(projectModal);}
-nfts.onclick = () => {
-    modalOpen(nftsModal);}
-game.onclick = () => {
-    modalOpen(gameModal);}
+    modalOpen(projectModal);
+    modalLevel = 0;
+}
+roadmap.onclick = () => {
+    modalOpen(roadmapModal);
+    modalLevel = 1;
+}
 story.onclick = () => {
-    modalOpen(storyModal);}
+    modalOpen(storyModal);
+    modalLevel = 2;
+}
+game.onclick = () => {
+    modalOpen(gameModal);
+    modalLevel = 3;
+}
+nfts.onclick = () => {
+    modalOpen(nftsModal);
+    modalLevel = 4;
+}
+
 marketing.onclick = () => {
-    modalOpen(marketingModal);}
+    modalOpen(marketingModal);
+    modalLevel = 5;
+}
 offer.onclick = () => {
-    modalOpen(offerModal);}
+    modalOpen(offerModal);
+    modalLevel = 6;
+}
 /// Modal Open ///
 
 /// Modal Close ///
 addEventListener('keydown', ({ keyCode }) => {
     if (keyCode == 27) {
         closeModals();
-}})
+    }
+})
 window.onclick = function (event) {
     if (
         event.target == roadmapModal ||
@@ -141,10 +207,11 @@ window.onclick = function (event) {
         event.target == gameModal ||
         event.target == storyModal ||
         event.target == marketingModal ||
-        event.target == offerModal
-        ) {
-            closeModals();
-        }
+        event.target == offerModal ||
+        event.target == modalChanger
+    ) {
+        closeModals();
+    }
 }
 const closeModals = () => {
     roadmapModal.style.display = "none";
@@ -154,6 +221,8 @@ const closeModals = () => {
     storyModal.style.display = "none";
     marketingModal.style.display = "none";
     offerModal.style.display = "none";
+    modalChanger.style.display = "none";
+
 
 }
 /// Modal Close ///

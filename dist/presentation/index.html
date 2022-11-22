@@ -10,9 +10,23 @@
 </head>
 
 <body>
+    <div id="modalChanger" style="display: none;">
+        <button id="modalChangerLeft" class="arrow left" style="z-index: 3; left:50px; top:450px; background-color: rgba(0, 0, 0, 0.4);"></button>
+        <button id="modalChangerRight" class="arrow right" style="z-index: 3;right:50px; top:450px; background-color: rgba(0, 0, 0, 0.4);"></button>
+    </div>
     <div id="projectModal" class="modal"
         style="width: 100%; height: 100%; justify-content: center; align-items: center; display: none;">
         <div class="modal-content">
+            <div
+                style="line-height: 50px; font-size: 35px; font-weight: bold; flex-direction: column; width: 1200px; text-align: center; ">
+                <p>We are an NFT project that will be implemented
+                    to raise awareness about cruelty to animals.</p>
+                <p style="padding-top: 100px;">We focus on a single animal species in our project to
+                    fully realize the pain experienced by elephants
+                    and raise questions about what other animal species may experience.</p>
+                <p style="padding-top: 100px;">We want to make our voices heard worldwide with digital platforms.
+                    To do this, we use the high potential and power of NFT in our project.</p>
+            </div>
         </div>
     </div>
     <div id="roadmapModal" class="modal"
@@ -101,7 +115,7 @@
         <div class="modal-content" style="display: flex; position: relative; flex-direction: row;">
             <div
                 style="width: 400px; display: flex; height: 700px; padding: 35px 20px 35px 20px; align-items: center; flex-direction: column;">
-                <img src="../IMG/azuki.jpg" style="width: 250px; height: 250px; border-radius: 50%;">
+                <img src="../IMG/azuki.avif" style="width: 250px; height: 250px; border-radius: 50%;">
                 <div style="padding: 75px 20px 75px 20px; font-size: 40px; font-weight: bold;">
                     <p>ERC721A</p>
                 </div>
@@ -114,7 +128,7 @@
             <div
                 style="display: flex; padding: 35px 20px 35px 20px; width: 1000px; height: 700px; border-radius: 50px; background-color: #EBE7E0; flex-direction: column; align-items: center; color: #11121e">
                 <div style="font-size: 38px; font-weight: bold; padding-bottom: 15px;">
-                    <p>RARITY</p>
+                    <p>OUR NFTs</p>
                 </div>
                 <div style="display: flex; flex-direction: column;">
                     <div style="display: flex; flex-direction: row; align-items: center;">
@@ -122,10 +136,11 @@
                             IVORY
                         </div>
                         <div class="rarityDivs">
-                            <img src="../IMG/diamond.png" class="nftsImgIvory">
-                            <img src="../IMG/fullgold.png" class="nftsImgIvory">
-                            <img src="../IMG/fullgold.png" class="nftsImgIvory">
-                            <img src="../IMG/fullgold.png" class="nftsImgIvory">
+                            
+                            <span class="nftsImgIvory" style="background: url('../IMG/diamonivorygray.png'); background-size: 400px; background-repeat: no-repeat; background-position-x: -70px; background-position-y: -200px;"></span>
+                            <span class="nftsImgIvory" style="background: url('../IMG/goldivorygray.png'); background-size: 400px; background-repeat: no-repeat; background-position-x: -70px; background-position-y: -200px;"></span>
+                            <span class="nftsImgIvory" style="background: url('../IMG/silverivorygray.png'); background-size: 400px; background-repeat: no-repeat; background-position-x: -70px; background-position-y: -200px;"></span>
+                            <span class="nftsImgIvory" style="background: url('../IMG/bronzivorygray.png'); background-size: 400px; background-repeat: no-repeat; background-position-x: -70px; background-position-y: -200px;"></span>
                         </div>
                     </div>
                     <div style="display: flex; flex-direction: row; align-items: center;">
@@ -133,9 +148,9 @@
                             CULTURE
                         </div>
                         <div class="rarityDivs">
-                            <img src="../IMG/diamond.png" class="nftsImg">
-                            <img src="../IMG/fullgold.png" class="nftsImg">
-                            <img src="../IMG/fullgold.png" class="nftsImg">
+                            <span class="nftsImg" style="background: url('../IMG/hasirsapka.png'); background-size: 310px; background-position-x: -27px; background-position-y: -16px;"></span>
+                            <span  class="nftsImg" style="background: url('../IMG/yingyang.png'); background-size: 600px; background-position-x: -150px; background-position-y: -100px;"></span>
+                            <span  class="nftsImg" style="background: url('../IMG/grayWithEye.png'); background-size: 650px; background-position-x: -155px; background-position-y: -195px;"></span>
                         </div>
                     </div>
                     <div style="display: flex; flex-direction: row; align-items: center;">
@@ -143,9 +158,9 @@
                             ELEPHANTS
                         </div>
                         <div class="rarityDivs">
-                            <img src="../IMG/diamond.png" class="nftsImg">
-                            <img src="../IMG/fullgold.png" class="nftsImg">
-                            <img src="../IMG/fullgold.png" class="nftsImg">
+                            <span class="nftsImg"  style="background: url('../IMG/hallivory.png'); background-size: 280px; background-position-y: -57px;"></span>
+                            <span  class="nftsImg" style="background: url('../IMG/halfivory.png'); background-size: 280px; background-position-y: -57px;"></span>
+                            <span  class="nftsImg" style="background: url('../IMG/ivoryless.png'); background-size: 280px; background-position-y: -57px;"></span>
                         </div>
                     </div>
                 </div>
@@ -153,9 +168,10 @@
         </div>
     </div>
     <div id="gameModal" class="modal"
-        style="width: 100%; height: 100%; justify-content: center; align-items: center; display: block;">
+        style="width: 100%; height: 100%; justify-content: center; align-items: center; display: none;">
         <div class="modal-content" style="display: flex; flex-direction: row;">
-            <div style="width: 400px; display: flex; height: 700px; padding: 35px 24px 35px 0px; justify-content: center; align-items: center; flex-direction: column;">
+            <div
+                style="width: 400px; display: flex; height: 700px; padding: 35px 24px 35px 0px; justify-content: center; align-items: center; flex-direction: column;">
                 <div style="text-align: center; font-size: 28px; padding-top: 100px; font-weight: bold;">
                     <p style="padding: 5px 5px 55px 5px; ">Collect Peanuts</p>
                     <p style="padding: 5px 5px 55px 5px;">Finish Fastest Time</p>
@@ -163,7 +179,8 @@
                     <p style="padding: 5px 5px 55px 5px;">Alpha Version is Published</p>
                 </div>
             </div>
-            <div style="width: 1000px; display: flex; height: 750px; padding: 60px 20px 35px 20px; align-items: center; flex-direction: column;">
+            <div
+                style="width: 1000px; display: flex; height: 750px; padding: 60px 20px 35px 20px; align-items: center; flex-direction: column;">
                 <div style="text-align: center; font-size: 73px; font-weight: bold;">
                     <p style="padding-bottom: 80px; font-family: Bakbak One;">PEANUT RUSH!</p>
                     <img src="../IMG/gamegif.png" style="width: 980px; height: 500px;">
@@ -173,17 +190,156 @@
     </div>
     <div id="storyModal" class="modal"
         style="width: 100%; height: 100%; justify-content: center; align-items: center; display: none;">
-        <div class="modal-content">
+        <div class="modal-content" style="flex-direction: column;">
+            <div style="font-size: 40px; font-family: Bakbak One; ">
+                WHAT IS THE LUCK?
+            </div>
+            <div style="display: flex; position: relative; flex-direction: row;">
+                <div style="width: 950px; height: 650px; padding-top: 20px; padding-left: 50px;">
+                    <div style="padding-top: 20px;">
+                        <img src="../IMG/storyOne.png"
+                            style="border: 2px solid #21E786; height: 300px; border-radius: 40px; margin-right: 60px;">
+                        <img src="../IMG/storyTwo.png"
+                            style="border: 2px solid #21E786; height: 300px; border-radius: 40px; "><br>
+                    </div>
+                    <div style="padding-left: 100px; padding-top: 30px;">
+                        <img src="../IMG/storyThree.png"
+                            style="border: 2px solid #21E786; height: 300px; border-radius: 40px; ">
+                        <img src="../IMG/storyFour.png"
+                            style="border: 2px solid #21E786; height: 300px; border-radius: 40px; margin-left: 60px;">
+                    </div>
+                </div>
+                <div style="width: 450px; font-size: 25px; font-weight: bold; padding-top: 110px;">
+                    <p style="padding-top: 175px;">An elephant without a single tusk in the
+                        elephant tribe faces a great dilemma.
+                        Are these teeth a blessing or punishment?</p>
+                </div>
+
+            </div>
         </div>
     </div>
     <div id="marketingModal" class="modal"
         style="width: 100%; height: 100%; justify-content: center; align-items: center; display: none;">
-        <div class="modal-content">
+        <div class="modal-content" style="display: flex; position: relative; flex-direction: row;">
+            <div style="width: 700px; text-align: center;">
+                <div style="font-size: 35px; font-weight: bold; padding-bottom: 140px">GROWTH PLANING</div>
+                <div>
+                    <table style="width: 600px; margin-left: 50px;" border="1">
+                        <tr>
+                            <td style="width: 250px;">
+                                MIN FOLLOWER
+                            </td>
+                            <td>
+                                MIN 
+                            </td>
+                            <td>
+                                MAX 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                50K
+                            </td>
+                            <td>
+                                10
+                            </td>
+                            <td>
+                                20
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                100K
+                            </td>
+                            <td>
+                                10
+                            </td>
+                            <td>
+                                20
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                200K
+                            </td>
+                            <td>
+                                10
+                            </td>
+                            <td>
+                                20
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                500K
+                            </td>
+                            <td>
+                                15
+                            </td>
+                            <td>
+                                30
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div style="padding-top: 110px; font-size: 25px; font-weight: bold;">
+                    <p style="padding-bottom: 50px;">We will use just a social medias</p>
+                    <p style="padding-bottom: 50px;">We will work with influencers</p>
+                    <p>We want to work with Animal
+                        Rights Fundations</p>
+                </div>
+            </div>
+            <div style="width: 1px; height: 700px; border: 2px solid #21E786"></div>
+            <div style="width: 700px;">
+                <div style="font-size: 35px; font-weight: bold; padding-bottom: 100px; text-align: center;">WHY WE ARE BETTER THEN?</div>
+                <div style="font-size: 30px; font-weight: bold; display: flex; position: relative; flex-direction: column;">
+                    <span style=" padding-left:130px; align-items: center; display: flex;">
+                        <img src="../IMG/moonbirds.png" style="margin-right:10px;width: 100px; height: 100px; border-radius: 50%;"> Moonbirds
+                    </span><br>
+                    <span style=" padding-left:400px; align-items: center; display: flex;">
+                        <img src="../IMG/azuki.avif" style="margin-right:10px; width: 100px; height: 100px; border-radius: 50%;"> AZUKI
+                    </span><br>
+                    <span style="padding-left:130px; align-items: center; display: flex;">
+                        <img src="../IMG/Pudgypenguins.avif" style="margin-right:10px;width: 100px; height: 100px; border-radius: 50%;"> Pudgypenguins
+                    </span><br>
+                    <span style="padding-left:400px; align-items: center; display: flex;">
+                        <img src="../IMG/Meebits.png" style="margin-right:10px;width: 100px; height: 100px; border-radius: 50%;"> Meebits
+                    </span>
+                </div>
+            </div>
         </div>
     </div>
     <div id="offerModal" class="modal"
         style="width: 100%; height: 100%; justify-content: center; align-items: center; display: none;">
-        <div class="modal-content">
+        <div class="modal-content" style="display: flex; position: relative; flex-direction: column;">
+            <span style="padding-bottom: 40px; font-size: 35px; font-weight: bold;">
+                WHEN WE SOLD OUT
+            </span>
+            <table
+                style="border-collapse:collapse; text-align: center; width: 1200px; height: 550px; font-size: 25px; font-weight: bold;">
+                <tr style="border-bottom: 3px solid #21E786; ">
+                    <td>Investing Amount</td>
+                    <td>300.000$<span style="font-size:15px">/ETH</span></td>
+                    <td style="border-left: 3px solid #21E786; padding: 0 40px 0 40px;">Total</td>
+                    <td style="border-left: 3px solid #21E786;">13000<span style="font-size:15px">ETH</span></td>
+                </tr>
+                <tr style="border-bottom: 3px solid #21E786;">
+                    <td>Short Term</td>
+                    <td>Only Mint Income</td>
+                    <td style="border-left: 3px solid #21E786;">7.5%</td>
+                    <td style="border-left: 3px solid #21E786;">975<span style="font-size:15px">ETH</span></td>
+                </tr>
+                <tr style="border-bottom: 3px solid #21E786;">
+                    <td>Long Term</td>
+                    <td>PHASE 1 Income</td>
+                    <td style="border-left: 3px solid #21E786;">5%</td>
+                    <td style="border-left: 3px solid #21E786; height: 180px;">650<span style="font-size:15px">ETH</span> <br>+<br> Monthly Income</td>
+                </tr>
+            </table>
+            <span style="padding-top: 40px; font-size: 25px; font-weight: bold;">
+                If your invest low or higher than this amount we will make a custom offer for you
+            </span>
         </div>
     </div>
 
@@ -204,7 +360,7 @@
     </div>
     <div id="offer" style="display: flex; position: relative; left: -34px; top: 614px;">
         <a>
-            <span>offer</span>
+            <span>SOLD OUT</span>
             <div class="liquid"></div>
         </a>
     </div>
